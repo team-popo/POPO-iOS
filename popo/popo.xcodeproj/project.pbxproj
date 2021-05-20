@@ -22,6 +22,9 @@
 		562F557826452249000F8CAB /* CellExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557726452249000F8CAB /* CellExample.swift */; };
 		562F557A26452252000F8CAB /* ViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557926452252000F8CAB /* ViewExample.swift */; };
 		562F557D26452408000F8CAB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 562F557C26452408000F8CAB /* .swiftlint.yml */; };
+		56924E07265635DA00745273 /* LoginMethod.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56924E06265635DA00745273 /* LoginMethod.storyboard */; };
+		56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E08265635ED00745273 /* LoginMethodViewController.swift */; };
+		56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E0A265648EB00745273 /* UIView+Extension.swift */; };
 		F065790638E6CE247683CA74 /* Pods_popo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9900D9492EE36CE1A8C04071 /* Pods_popo.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		562F557726452249000F8CAB /* CellExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellExample.swift; sourceTree = "<group>"; };
 		562F557926452252000F8CAB /* ViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExample.swift; sourceTree = "<group>"; };
 		562F557C26452408000F8CAB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		56924E06265635DA00745273 /* LoginMethod.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginMethod.storyboard; sourceTree = "<group>"; };
+		56924E08265635ED00745273 /* LoginMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodViewController.swift; sourceTree = "<group>"; };
+		56924E0A265648EB00745273 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9900D9492EE36CE1A8C04071 /* Pods_popo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C232EAFF605BCD2CA3B4168B /* Pods-popo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popo.release.xcconfig"; path = "Target Support Files/Pods-popo/Pods-popo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				562F555026452101000F8CAB /* ViewController.swift */,
+				56924E08265635ED00745273 /* LoginMethodViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				562F557526452243000F8CAB /* Example+Extensions.swift */,
+				56924E0A265648EB00745273 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 			children = (
 				562F555726452103000F8CAB /* LaunchScreen.storyboard */,
 				562F555226452101000F8CAB /* Main.storyboard */,
+				56924E06265635DA00745273 /* LoginMethod.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 				562F557D26452408000F8CAB /* .swiftlint.yml in Resources */,
 				562F555926452103000F8CAB /* LaunchScreen.storyboard in Resources */,
 				562F556C26452208000F8CAB /* Colors.xcassets in Resources */,
+				56924E07265635DA00745273 /* LoginMethod.storyboard in Resources */,
 				562F555626452103000F8CAB /* Assets.xcassets in Resources */,
 				562F555426452101000F8CAB /* Main.storyboard in Resources */,
 			);
@@ -324,10 +334,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				562F557826452249000F8CAB /* CellExample.swift in Sources */,
+				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
 				562F557A26452252000F8CAB /* ViewExample.swift in Sources */,
 				562F555126452101000F8CAB /* ViewController.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				562F557626452243000F8CAB /* Example+Extensions.swift in Sources */,
+				56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */,
 				562F554D26452101000F8CAB /* AppDelegate.swift in Sources */,
 				562F55742645223B000F8CAB /* AppModelExample.swift in Sources */,
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
