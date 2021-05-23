@@ -19,6 +19,7 @@ class LoginMethodViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initButton()
     }
     // MARK: - Functions
     private func initButton() {

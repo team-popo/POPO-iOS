@@ -1,6 +1,7 @@
 disabled_rules:
 - line_length
-- trailing_newline
+- trailing_whitespace
+- nesting
 excluded:
 - Pods
 - popo/Sources/AppDelegate.swift
