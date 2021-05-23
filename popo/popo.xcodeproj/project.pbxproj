@@ -22,9 +22,11 @@
 		562F557A26452252000F8CAB /* ViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557926452252000F8CAB /* ViewExample.swift */; };
 		562F557D26452408000F8CAB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 562F557C26452408000F8CAB /* .swiftlint.yml */; };
 		567BF244265A571300285956 /* CoverCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567BF243265A571300285956 /* CoverCalendar.storyboard */; };
+		567BF246265A5BBE00285956 /* CoverUserPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */; };
 		567BF248265A604100285956 /* CoverCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567BF247265A604100285956 /* CoverCalendarViewController.swift */; };
 		567BF24A265A626100285956 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567BF249265A626100285956 /* Storyboard.swift */; };
 		567BF24C265A62C000285956 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567BF24B265A62C000285956 /* ViewController.swift */; };
+		5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */; };
 		56924E07265635DA00745273 /* LoginMethod.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56924E06265635DA00745273 /* LoginMethod.storyboard */; };
 		56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E08265635ED00745273 /* LoginMethodViewController.swift */; };
 		56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E0A265648EB00745273 /* UIView+Extension.swift */; };
@@ -50,9 +52,11 @@
 		562F557926452252000F8CAB /* ViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExample.swift; sourceTree = "<group>"; };
 		562F557C26452408000F8CAB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		567BF243265A571300285956 /* CoverCalendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverCalendar.storyboard; sourceTree = "<group>"; };
+		567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverUserPhoto.storyboard; sourceTree = "<group>"; };
 		567BF247265A604100285956 /* CoverCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverCalendarViewController.swift; sourceTree = "<group>"; };
 		567BF249265A626100285956 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		567BF24B265A62C000285956 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverUserPhotoViewController.swift; sourceTree = "<group>"; };
 		56924E06265635DA00745273 /* LoginMethod.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginMethod.storyboard; sourceTree = "<group>"; };
 		56924E08265635ED00745273 /* LoginMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodViewController.swift; sourceTree = "<group>"; };
 		56924E0A265648EB00745273 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			children = (
 				56924E08265635ED00745273 /* LoginMethodViewController.swift */,
 				567BF247265A604100285956 /* CoverCalendarViewController.swift */,
+				5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				562F555226452101000F8CAB /* Main.storyboard */,
 				56924E06265635DA00745273 /* LoginMethod.storyboard */,
 				567BF243265A571300285956 /* CoverCalendar.storyboard */,
+				567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567BF246265A5BBE00285956 /* CoverUserPhoto.storyboard in Resources */,
 				562F557D26452408000F8CAB /* .swiftlint.yml in Resources */,
 				562F555926452103000F8CAB /* LaunchScreen.storyboard in Resources */,
 				562F556C26452208000F8CAB /* Colors.xcassets in Resources */,
@@ -357,6 +364,7 @@
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
 				562F55702645222E000F8CAB /* APIServiceExample.swift in Sources */,
 				562F557226452234000F8CAB /* APIModelExample.swift in Sources */,
+				5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
