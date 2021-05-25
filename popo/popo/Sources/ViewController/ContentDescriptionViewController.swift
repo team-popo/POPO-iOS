@@ -9,21 +9,23 @@ import UIKit
 
 class ContentDescriptionViewController: UIViewController {
 
+    // MARK: - Properties
+    
+    // MARK: - @IBOutlet Properties
+
+    @IBOutlet weak var backgroundImage: UIImageView!
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setUI()
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - Extenstion Methods
+extension ContentDescriptionViewController {
+    func setUI() {
+        
     }
-    */
-
 }
