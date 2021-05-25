@@ -14,6 +14,11 @@ extension Const {
             static let loginMethod = "LoginMethod"
             static let coverCalendar = "CoverCalendar"
             static let coverUserPhoto = "CoverUserPhoto"
+            static let coverColor = "CoverColor"
+            static let coverGradient = "CoverGradient"
+            static let description = "Description"
+            static let contentDescription = "ContentDescription"
+            static let selectConcept = "ConceptSelect"
         }
         
     }
