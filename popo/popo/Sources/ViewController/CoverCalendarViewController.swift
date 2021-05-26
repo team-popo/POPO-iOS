@@ -60,8 +60,15 @@ class CoverCalendarViewController: UIViewController {
         whiteBgView.makeRounded(radius: 30)
     }
     
+    private func pushToConceptViewController() {
+        let conceptStoryboard = UIStoryboard(name: Const.Storyboard.Name.concept, bundle: nil)
+        guard let conceptViewController = conceptStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.concept) as? ConceptViewController else { return }
+        self.navigationController?.pushViewController(conceptViewController, animated: true)
+    }
+    
     // MARK: - @IBAction Functions
 
     @IBAction func touchPopo(_ sender: Any) {
+        pushToConceptViewController()
     }
 }

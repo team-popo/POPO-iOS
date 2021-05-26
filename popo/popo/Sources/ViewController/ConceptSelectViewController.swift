@@ -31,7 +31,7 @@ class ConceptSelectViewController: UIViewController {
 // MARK: - Extenstion Methods
 extension ConceptSelectViewController {
     private func setUI() {
-        self.conceptList = ["cover_01", "cover_02", "cover_03", "cover_04"]
+        self.conceptList = ["coverExample1", "coverExample2", "coverExample3", "coverExample4"]
         
         titleLabel.text = "나만의 포포를 만들어 볼까요?"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 36)
