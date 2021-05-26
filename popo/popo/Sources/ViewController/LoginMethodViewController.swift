@@ -20,6 +20,7 @@ class LoginMethodViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         initButton()
+        initNavigationBar()
     }
     // MARK: - Functions
     private func initButton() {
@@ -27,11 +28,25 @@ class LoginMethodViewController: UIViewController {
         appleLoginButton.makeRounded(radius: appleLoginButton.frame.height / 2)
         emailLoginButton.makeRounded(radius: emailLoginButton.frame.height / 2)
     }
+    
+    private func pushToDescriptionViewController() {
+        let descriptionStoryboard = UIStoryboard(name: Const.Storyboard.Name.description, bundle: nil)
+        guard let descriptionViewController = descriptionStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.description) as? DescriptionViewController else { return }
+        self.navigationController?.pushViewController(descriptionViewController, animated: true)
+    }
+    
+    private func initNavigationBar() {
+       // self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+    }
+    
     // MARK: - @IBAction Functions
     @IBAction func touchKakaoLoginButton(_ sender: Any) {
+        pushToDescriptionViewController()
     }
     @IBAction func touchAppleLoginButton(_ sender: Any) {
+        pushToDescriptionViewController()
     }
     @IBAction func touchEmailLoginButton(_ sender: Any) {
+        pushToDescriptionViewController()
     }
 }

@@ -21,6 +21,7 @@
 		562F557826452249000F8CAB /* CellExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557726452249000F8CAB /* CellExample.swift */; };
 		562F557A26452252000F8CAB /* ViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557926452252000F8CAB /* ViewExample.swift */; };
 		562F557D26452408000F8CAB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 562F557C26452408000F8CAB /* .swiftlint.yml */; };
+		567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */; };
 		567BF244265A571300285956 /* CoverCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567BF243265A571300285956 /* CoverCalendar.storyboard */; };
 		567BF246265A5BBE00285956 /* CoverUserPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */; };
 		567BF248265A604100285956 /* CoverCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567BF247265A604100285956 /* CoverCalendarViewController.swift */; };
@@ -65,6 +66,7 @@
 		562F557726452249000F8CAB /* CellExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellExample.swift; sourceTree = "<group>"; };
 		562F557926452252000F8CAB /* ViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExample.swift; sourceTree = "<group>"; };
 		562F557C26452408000F8CAB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		567BF243265A571300285956 /* CoverCalendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverCalendar.storyboard; sourceTree = "<group>"; };
 		567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverUserPhoto.storyboard; sourceTree = "<group>"; };
 		567BF247265A604100285956 /* CoverCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverCalendarViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				562F557526452243000F8CAB /* Example+Extensions.swift */,
 				56924E0A265648EB00745273 /* UIView+Extension.swift */,
+				567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				562F55742645223B000F8CAB /* AppModelExample.swift in Sources */,
 				F8731B0A265C019200770760 /* ConceptSelectViewController.swift in Sources */,
 				567BF24A265A626100285956 /* Storyboard.swift in Sources */,
+				567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */,
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
 				562F55702645222E000F8CAB /* APIServiceExample.swift in Sources */,
 				F8731B04265BE4EC00770760 /* DescriptionViewController.swift in Sources */,
