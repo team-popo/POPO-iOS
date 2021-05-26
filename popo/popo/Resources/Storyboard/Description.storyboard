@@ -19,14 +19,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Jf-ew-A7l">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5Hq-Ir-X3q">
-                                        <rect key="frame" x="127.33333333333334" y="393" width="120.33333333333334" height="26.333333333333314"/>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="m7t-ec-bcI">
+                                        <rect key="frame" x="127" y="635" width="121" height="27"/>
                                     </pageControl>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
-                                    <constraint firstItem="5Hq-Ir-X3q" firstAttribute="centerX" secondItem="5Jf-ew-A7l" secondAttribute="centerX" id="TSL-al-9tX"/>
-                                    <constraint firstItem="5Hq-Ir-X3q" firstAttribute="centerY" secondItem="5Jf-ew-A7l" secondAttribute="centerY" id="Zi4-ma-4Jk"/>
+                                    <constraint firstAttribute="bottom" secondItem="m7t-ec-bcI" secondAttribute="bottom" constant="150" id="SU4-Ws-u7F"/>
+                                    <constraint firstItem="m7t-ec-bcI" firstAttribute="centerX" secondItem="5Jf-ew-A7l" secondAttribute="centerX" id="uh3-fq-dIC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -41,20 +40,17 @@
                     </view>
                     <connections>
                         <outlet property="mainView" destination="5Jf-ew-A7l" id="iv7-b4-Cb6"/>
-                        <outlet property="pageControl" destination="5Hq-Ir-X3q" id="Yo9-oR-Qzf"/>
+                        <outlet property="pageControl" destination="m7t-ec-bcI" id="bjD-vX-fA8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
+            <point key="canvasLocation" x="150" y="124"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

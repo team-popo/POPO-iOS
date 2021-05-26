@@ -18,7 +18,7 @@ extension Const {
             static let coverGradient = "CoverGradient"
             static let description = "Description"
             static let contentDescription = "ContentDescription"
-            static let selectConcept = "ConceptSelect"
+            static let conceptSelect = "ConceptSelect"
         }
         
     }

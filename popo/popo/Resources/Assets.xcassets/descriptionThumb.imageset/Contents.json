@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "iphone-12-pro--graphite.png",
+      "filename" : "descriptionThumb.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "iphone-12-pro--graphite@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -25,7 +25,7 @@ class DescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pageImages = ["descriptionTopic", "descriptionTopic", "descriptionTopic" ]
+        self.pageImages = ["descriptionTopic", "descriptionThumb", "descriptionOption" ]
         
 //        self.contentPage = UIStoryboard(name: Const.Storyboard.Name.contentDescription, bundle: nil).instantiateViewController(withIdentifier: Const.ViewController.Identifier.contentDescription) as? UIPageViewController
         
@@ -38,6 +38,7 @@ class DescriptionViewController: UIViewController {
         
         //  페이지 뷰컨을 부모 뷰컨에 띄워줍니다
 //        mainView.addSubview(contentPage)
+        
         addChild(contentPage)
         view.addSubview(contentPage.view)
         contentPage.didMove(toParent: self)
@@ -46,6 +47,7 @@ class DescriptionViewController: UIViewController {
         
         setUI()
     }
+
 }
 
 // MARK: - Extenstion Methods

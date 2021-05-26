@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w2W-gA-inO">
-                                <rect key="frame" x="0.0" y="167" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="159" width="414" height="737"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eg3-am-Wfc">
                                     <size key="itemSize" width="128" height="128"/>
@@ -64,7 +64,7 @@
                         <constraints>
                             <constraint firstItem="w2W-gA-inO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0RN-5I-HhS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="w2W-gA-inO" secondAttribute="trailing" id="2Gm-IQ-lrq"/>
-                            <constraint firstItem="w2W-gA-inO" firstAttribute="top" secondItem="D4s-zz-utJ" secondAttribute="bottom" constant="16" id="2hY-u2-gbS"/>
+                            <constraint firstItem="w2W-gA-inO" firstAttribute="top" secondItem="D4s-zz-utJ" secondAttribute="bottom" constant="8" id="2hY-u2-gbS"/>
                             <constraint firstItem="0Rh-i6-hep" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4VQ-96-Pss"/>
                             <constraint firstAttribute="bottom" secondItem="0Rh-i6-hep" secondAttribute="bottom" id="AF0-5S-Fdf"/>
                             <constraint firstItem="D4s-zz-utJ" firstAttribute="top" secondItem="MOx-g2-WTI" secondAttribute="bottom" constant="16" id="Fah-pA-3ei"/>

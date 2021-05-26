@@ -22,21 +22,17 @@ class ConceptSelectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        conceptCollectionView.delegate = self
-        conceptCollectionView.dataSource = self
-        let conceptCell = UINib(nibName: "ConceptSelectCell", bundle: nil)
-        conceptCollectionView.register(conceptCell, forCellWithReuseIdentifier: "ConceptSelectCell")
         
         setUI()
+        registerCell()
     }
 }
 
 // MARK: - Extenstion Methods
 extension ConceptSelectViewController {
-    func setUI() {
+    private func setUI() {
         self.conceptList = ["cover_01", "cover_02", "cover_03", "cover_04"]
         
-//        backgroundImage.image = UIImage(named: "bgCircles2")
         titleLabel.text = "나만의 포포를 만들어 볼까요?"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 36)
         titleLabel.textColor = #colorLiteral(red: 0.5294117647, green: 0.4862745098, blue: 0.9333333333, alpha: 1)
@@ -44,6 +40,12 @@ extension ConceptSelectViewController {
         subtitleLabel.text = "여러분의 마음에 드는 포포의 컨셉을 정해주세요."
         subtitleLabel.font = UIFont.systemFont(ofSize: 18)
         subtitleLabel.textColor = #colorLiteral(red: 0.4784313725, green: 0.462745098, blue: 0.462745098, alpha: 1)
+    }
+    private func registerCell() {
+        conceptCollectionView.delegate = self
+        conceptCollectionView.dataSource = self
+        let conceptCell = UINib(nibName: "ConceptSelectCell", bundle: nil)
+        conceptCollectionView.register(conceptCell, forCellWithReuseIdentifier: "ConceptSelectCell")
     }
 }
 
@@ -60,11 +62,40 @@ extension ConceptSelectViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
 }
 
 extension ConceptSelectViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let storyboard = UIStoryboard.init(name: Const.Storyboard.Name.coverColor, bundle: nil)
+            guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.coverColor) as? CoverColorViewController else {
+                return
+            }
+
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        } else if indexPath.row == 1 {
+            let storyboard = UIStoryboard.init(name: Const.Storyboard.Name.coverGradient, bundle: nil)
+            guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.coverGradient) as? CoverGradientViewController else {
+                return
+            }
+
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        } else if indexPath.row == 2 {
+            let storyboard = UIStoryboard.init(name: Const.Storyboard.Name.coverCalendar, bundle: nil)
+            guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.coverCalendar) as? CoverCalendarViewController else {
+                return
+            }
+
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        } else {
+            let storyboard = UIStoryboard.init(name: Const.Storyboard.Name.coverUserPhoto, bundle: nil)
+            guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.coverUserPhoto) as? CoverUserPhotoViewController else {
+                return
+            }
+
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+    }
 }
 
 extension ConceptSelectViewController: UICollectionViewDelegateFlowLayout {

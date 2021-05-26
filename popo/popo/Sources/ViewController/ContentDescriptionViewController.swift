@@ -21,6 +21,15 @@ class ContentDescriptionViewController: UIViewController {
         
         setUI()
     }
+    @IBAction func pushToConceptSelect(_ sender: Any) {
+        print("touch")
+        let storyboard = UIStoryboard.init(name: Const.Storyboard.Name.conceptSelect, bundle: nil)
+        guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.conseptSelect) as? ConceptSelectViewController else {
+            return
+        }
+
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 // MARK: - Extenstion Methods
