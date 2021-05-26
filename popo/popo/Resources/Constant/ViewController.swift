@@ -15,6 +15,11 @@ extension Const {
             static let coverCalendar = "CoverCalendarViewController"
             static let coverUserPhoto = "CoverUserPhotoViewController"
             static let concept = "ConceptViewController"
+            static let coverColor = "CoverColorViewControlle"
+            static let coverGradient = "CoverGradientViewControlle"
+            static let description = "DescriptionViewController"
+            static let contentDescription = "ContentDescriptionViewController"
+            static let conseptSelect = "ConceptSelectViewController"
         }
         
     }
