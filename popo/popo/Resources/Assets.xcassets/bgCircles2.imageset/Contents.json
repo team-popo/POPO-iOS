@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "bgCircle2.png",
+      "filename" : "Frame 36.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Frame 36@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Frame 36@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
