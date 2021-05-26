@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgCircles2" translatesAutoresizingMaskIntoConstraints="NO" id="0Rh-i6-hep">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgCircles2" translatesAutoresizingMaskIntoConstraints="NO" id="0Rh-i6-hep">
+                                <rect key="frame" x="163" y="44" width="251" height="369"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOx-g2-WTI">
                                 <rect key="frame" x="50" y="94" width="280" height="20.5"/>
@@ -38,7 +38,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w2W-gA-inO">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w2W-gA-inO">
                                 <rect key="frame" x="0.0" y="159" width="414" height="737"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eg3-am-Wfc">
@@ -65,15 +65,13 @@
                             <constraint firstItem="w2W-gA-inO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0RN-5I-HhS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="w2W-gA-inO" secondAttribute="trailing" id="2Gm-IQ-lrq"/>
                             <constraint firstItem="w2W-gA-inO" firstAttribute="top" secondItem="D4s-zz-utJ" secondAttribute="bottom" constant="8" id="2hY-u2-gbS"/>
-                            <constraint firstItem="0Rh-i6-hep" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4VQ-96-Pss"/>
-                            <constraint firstAttribute="bottom" secondItem="0Rh-i6-hep" secondAttribute="bottom" id="AF0-5S-Fdf"/>
                             <constraint firstItem="D4s-zz-utJ" firstAttribute="top" secondItem="MOx-g2-WTI" secondAttribute="bottom" constant="16" id="Fah-pA-3ei"/>
-                            <constraint firstItem="0Rh-i6-hep" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LN4-Kc-nXs"/>
+                            <constraint firstItem="0Rh-i6-hep" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Gge-jk-JMz"/>
+                            <constraint firstItem="0Rh-i6-hep" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="J2j-bf-uHd"/>
                             <constraint firstItem="MOx-g2-WTI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="MCX-L6-Rui"/>
-                            <constraint firstItem="0Rh-i6-hep" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="THL-MY-BII"/>
+                            <constraint firstAttribute="bottom" secondItem="w2W-gA-inO" secondAttribute="bottom" id="ZaB-iW-q3Q"/>
                             <constraint firstItem="D4s-zz-utJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="aX9-52-bi7"/>
                             <constraint firstItem="MOx-g2-WTI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="eyd-Zg-PEQ"/>
-                            <constraint firstItem="0Rh-i6-hep" firstAttribute="bottom" secondItem="w2W-gA-inO" secondAttribute="bottom" id="peh-Q7-yBB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -89,7 +87,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bgCircles2" width="414" height="896"/>
+        <image name="bgCircles2" width="251" height="369"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

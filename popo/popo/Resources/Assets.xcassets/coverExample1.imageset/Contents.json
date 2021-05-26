@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "cover_01.png",
+      "filename" : "Group 572.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Group 572@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Group 572@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

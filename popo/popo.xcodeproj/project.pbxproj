@@ -247,12 +247,12 @@
 				56924E06265635DA00745273 /* LoginMethod.storyboard */,
 				567BF243265A571300285956 /* CoverCalendar.storyboard */,
 				567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */,
+				F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */,
+				F8C284DB265CCD2300B41054 /* CoverColor.storyboard */,
+				F8731B0B265C01A800770760 /* ConceptSelect.storyboard */,
 				56EE71BA265E165B005AC12A /* Concept.storyboard */,
 				F8731B01265BE4B400770760 /* Description.storyboard */,
 				F8731B07265BEE6300770760 /* ContentDescription.storyboard */,
-				F8731B0B265C01A800770760 /* ConceptSelect.storyboard */,
-				F8C284DB265CCD2300B41054 /* CoverColor.storyboard */,
-				F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
