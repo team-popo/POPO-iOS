@@ -17,8 +17,7 @@ extension Const {
             static let concept = "Concept"
             static let coverColor = "CoverColor"
             static let coverGradient = "CoverGradient"
-            static let description = "Description"
-            static let contentDescription = "ContentDescription"
+            static let onboarding = "Onboarding"
             static let conceptSelect = "ConceptSelect"
         }
         

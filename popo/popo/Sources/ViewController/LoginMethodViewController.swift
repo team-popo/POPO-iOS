@@ -29,10 +29,10 @@ class LoginMethodViewController: UIViewController {
         emailLoginButton.makeRounded(radius: emailLoginButton.frame.height / 2)
     }
     
-    private func pushToDescriptionViewController() {
-        let descriptionStoryboard = UIStoryboard(name: Const.Storyboard.Name.description, bundle: nil)
-        guard let descriptionViewController = descriptionStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.description) as? DescriptionViewController else { return }
-        self.navigationController?.pushViewController(descriptionViewController, animated: true)
+    private func pushToOnboardingViewController() {
+        let onboardingStoryboard = UIStoryboard(name: Const.Storyboard.Name.onboarding, bundle: nil)
+        guard let onbardingViewController = onboardingStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.onboarding) as? OnboardingViewController else { return }
+        self.navigationController?.pushViewController(onbardingViewController, animated: true)
     }
     
     private func initNavigationBar() {
@@ -41,12 +41,12 @@ class LoginMethodViewController: UIViewController {
     
     // MARK: - @IBAction Functions
     @IBAction func touchKakaoLoginButton(_ sender: Any) {
-        pushToDescriptionViewController()
+        pushToOnboardingViewController()
     }
     @IBAction func touchAppleLoginButton(_ sender: Any) {
-        pushToDescriptionViewController()
+        pushToOnboardingViewController()
     }
     @IBAction func touchEmailLoginButton(_ sender: Any) {
-        pushToDescriptionViewController()
+        pushToOnboardingViewController()
     }
 }
