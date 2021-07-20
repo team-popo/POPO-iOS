@@ -17,8 +17,7 @@ extension Const {
             static let coverColor = "CoverColorViewController"
             static let coverGradient = "CoverGradientViewController"
             static let concept = "ConceptViewController"
-            static let description = "DescriptionViewController"
-            static let contentDescription = "ContentDescriptionViewController"
+            static let onboarding = "OnboardingViewController"
             static let conseptSelect = "ConceptSelectViewController"
         }
         
