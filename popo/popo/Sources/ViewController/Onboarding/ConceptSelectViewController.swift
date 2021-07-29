@@ -40,7 +40,10 @@ extension ConceptSelectViewController {
         subtitleLabel.text = "여러분의 마음에 드는 포포의 컨셉을 정해주세요."
         subtitleLabel.font = UIFont.systemFont(ofSize: 18)
         subtitleLabel.textColor = #colorLiteral(red: 0.4784313725, green: 0.462745098, blue: 0.462745098, alpha: 1)
+        
+//        self.navigationController?.navigationBar.isHidden = true
     }
+    
     private func registerCell() {
         conceptCollectionView.delegate = self
         conceptCollectionView.dataSource = self
