@@ -170,6 +170,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6z-M6-Hcz">
+                                <rect key="frame" x="358" y="57" width="32" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="완료"/>
+                                <connections>
+                                    <action selector="touchCompleteButton:" destination="G5p-Gn-iGl" eventType="touchUpInside" id="Ikh-iQ-5iN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J5B-vu-oxe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -178,7 +186,9 @@
                             <constraint firstItem="6TB-tA-XXf" firstAttribute="leading" secondItem="IY5-Jf-6EL" secondAttribute="leading" id="BOA-Ul-Vpo"/>
                             <constraint firstItem="J5B-vu-oxe" firstAttribute="trailing" secondItem="Cju-kc-8Nh" secondAttribute="trailing" id="EWg-fP-HfD"/>
                             <constraint firstItem="J5B-vu-oxe" firstAttribute="trailing" secondItem="LoO-Tm-z13" secondAttribute="trailing" constant="40" id="FFM-Pl-Sq7"/>
+                            <constraint firstItem="J5B-vu-oxe" firstAttribute="trailing" secondItem="N6z-M6-Hcz" secondAttribute="trailing" constant="24" id="Jpx-lS-H32"/>
                             <constraint firstItem="Cju-kc-8Nh" firstAttribute="leading" secondItem="J5B-vu-oxe" secondAttribute="leading" id="P7Y-ss-c83"/>
+                            <constraint firstItem="N6z-M6-Hcz" firstAttribute="top" secondItem="J5B-vu-oxe" secondAttribute="top" constant="13" id="RPC-Dg-fbz"/>
                             <constraint firstItem="LoO-Tm-z13" firstAttribute="top" secondItem="6TB-tA-XXf" secondAttribute="bottom" constant="39" id="TBE-x0-bg7"/>
                             <constraint firstItem="J5B-vu-oxe" firstAttribute="bottom" secondItem="LoO-Tm-z13" secondAttribute="bottom" constant="30" id="opo-xe-Z74"/>
                             <constraint firstItem="J5B-vu-oxe" firstAttribute="trailing" secondItem="o2z-6B-jNb" secondAttribute="trailing" constant="5" id="shj-dF-Bpb"/>
@@ -191,6 +201,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="completeButton" destination="N6z-M6-Hcz" id="mSQ-OF-G7M"/>
                         <outlet property="coverImageView1" destination="o3S-Aq-1fK" id="H5a-e3-gPZ"/>
                         <outlet property="coverImageView10" destination="NZ6-gI-k4S" id="oOa-mx-YF5"/>
                         <outlet property="coverImageView11" destination="r4s-M1-NCa" id="3p6-39-m4T"/>
@@ -208,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pD-pl-gUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="117"/>
+            <point key="canvasLocation" x="-193" y="102"/>
         </scene>
     </scenes>
     <resources>
