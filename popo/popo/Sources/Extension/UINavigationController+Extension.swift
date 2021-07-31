@@ -51,4 +51,3 @@ extension UINavigationController {
         navigationItem?.hidesBackButton = true
     }
 }
-

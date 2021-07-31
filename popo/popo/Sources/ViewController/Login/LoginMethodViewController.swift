@@ -37,6 +37,7 @@ class LoginMethodViewController: UIViewController {
     
     private func initNavigationBar() {
        // self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     // MARK: - @IBAction Functions

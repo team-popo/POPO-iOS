@@ -16,9 +16,6 @@
 		562F556E26452218000F8CAB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F556D26452218000F8CAB /* Const.swift */; };
 		562F55702645222E000F8CAB /* APIServiceExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F556F2645222E000F8CAB /* APIServiceExample.swift */; };
 		562F557226452234000F8CAB /* APIModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557126452234000F8CAB /* APIModelExample.swift */; };
-		562F55742645223B000F8CAB /* AppModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F55732645223B000F8CAB /* AppModelExample.swift */; };
-		562F557626452243000F8CAB /* Example+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557526452243000F8CAB /* Example+Extensions.swift */; };
-		562F557826452249000F8CAB /* CellExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557726452249000F8CAB /* CellExample.swift */; };
 		562F557A26452252000F8CAB /* ViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557926452252000F8CAB /* ViewExample.swift */; };
 		562F557D26452408000F8CAB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 562F557C26452408000F8CAB /* .swiftlint.yml */; };
 		567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */; };
@@ -40,6 +37,9 @@
 		F8731B0F265C05E900770760 /* ConceptSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8731B0D265C05E900770760 /* ConceptSelectCell.swift */; };
 		F8731B10265C05E900770760 /* ConceptSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8731B0E265C05E900770760 /* ConceptSelectCell.xib */; };
 		F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648126A668DE00F121DC /* OnboardingViewController.swift */; };
+		F873648526A6A5E500F121DC /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648326A6A5E500F121DC /* OnboardingCell.swift */; };
+		F873648626A6A5E500F121DC /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F873648426A6A5E500F121DC /* OnboardingCell.xib */; };
+		F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648A26A6A92600F121DC /* OnboardingDescriptionModel.swift */; };
 		F8C284DC265CCD2300B41054 /* CoverColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DB265CCD2300B41054 /* CoverColor.storyboard */; };
 		F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */; };
 		F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */; };
@@ -59,9 +59,6 @@
 		562F556D26452218000F8CAB /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		562F556F2645222E000F8CAB /* APIServiceExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceExample.swift; sourceTree = "<group>"; };
 		562F557126452234000F8CAB /* APIModelExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModelExample.swift; sourceTree = "<group>"; };
-		562F55732645223B000F8CAB /* AppModelExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelExample.swift; sourceTree = "<group>"; };
-		562F557526452243000F8CAB /* Example+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Example+Extensions.swift"; sourceTree = "<group>"; };
-		562F557726452249000F8CAB /* CellExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellExample.swift; sourceTree = "<group>"; };
 		562F557926452252000F8CAB /* ViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExample.swift; sourceTree = "<group>"; };
 		562F557C26452408000F8CAB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
@@ -84,6 +81,9 @@
 		F8731B0D265C05E900770760 /* ConceptSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptSelectCell.swift; sourceTree = "<group>"; };
 		F8731B0E265C05E900770760 /* ConceptSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConceptSelectCell.xib; sourceTree = "<group>"; };
 		F873648126A668DE00F121DC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		F873648326A6A5E500F121DC /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		F873648426A6A5E500F121DC /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
+		F873648A26A6A92600F121DC /* OnboardingDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescriptionModel.swift; sourceTree = "<group>"; };
 		F8C284DB265CCD2300B41054 /* CoverColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverColor.storyboard; sourceTree = "<group>"; };
 		F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverColorViewController.swift; sourceTree = "<group>"; };
 		F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverGradient.storyboard; sourceTree = "<group>"; };
@@ -158,14 +158,8 @@
 		562F5561264521BB000F8CAB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				56924E08265635ED00745273 /* LoginMethodViewController.swift */,
-				F873648126A668DE00F121DC /* OnboardingViewController.swift */,
-				567BF247265A604100285956 /* CoverCalendarViewController.swift */,
-				5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */,
-				56EE71BC265E18BA005AC12A /* ConceptViewController.swift */,
-				F8731B09265C019200770760 /* ConceptSelectViewController.swift */,
-				F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */,
-				F8C284E1265CD4EB00B41054 /* CoverGradientViewController.swift */,
+				F873648926A6A61300F121DC /* Login */,
+				F873648826A6A60A00F121DC /* Onboarding */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -181,9 +175,7 @@
 		562F5563264521C6000F8CAB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				562F557726452249000F8CAB /* CellExample.swift */,
-				F8731B0D265C05E900770760 /* ConceptSelectCell.swift */,
-				F8731B0E265C05E900770760 /* ConceptSelectCell.xib */,
+				F873648726A6A60100F121DC /* Onboarding */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -191,7 +183,6 @@
 		562F5564264521CC000F8CAB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				562F557526452243000F8CAB /* Example+Extensions.swift */,
 				56924E0A265648EB00745273 /* UIView+Extension.swift */,
 				567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */,
 			);
@@ -201,7 +192,7 @@
 		562F5565264521D1000F8CAB /* AppModel */ = {
 			isa = PBXGroup;
 			children = (
-				562F55732645223B000F8CAB /* AppModelExample.swift */,
+				F873648C26A6A92900F121DC /* Onboarding */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -237,16 +228,10 @@
 		562F5569264521ED000F8CAB /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				F88491BF26B2DF28007590E9 /* Onboarding */,
 				562F555726452103000F8CAB /* LaunchScreen.storyboard */,
 				562F555226452101000F8CAB /* Main.storyboard */,
 				56924E06265635DA00745273 /* LoginMethod.storyboard */,
-				F8731B01265BE4B400770760 /* Onboarding.storyboard */,
-				567BF243265A571300285956 /* CoverCalendar.storyboard */,
-				567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */,
-				F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */,
-				F8C284DB265CCD2300B41054 /* CoverColor.storyboard */,
-				F8731B0B265C01A800770760 /* ConceptSelect.storyboard */,
-				56EE71BA265E165B005AC12A /* Concept.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -267,6 +252,61 @@
 				9900D9492EE36CE1A8C04071 /* Pods_popo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F873648726A6A60100F121DC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F873648326A6A5E500F121DC /* OnboardingCell.swift */,
+				F873648426A6A5E500F121DC /* OnboardingCell.xib */,
+				F8731B0D265C05E900770760 /* ConceptSelectCell.swift */,
+				F8731B0E265C05E900770760 /* ConceptSelectCell.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F873648826A6A60A00F121DC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F873648126A668DE00F121DC /* OnboardingViewController.swift */,
+				F8731B09265C019200770760 /* ConceptSelectViewController.swift */,
+				567BF247265A604100285956 /* CoverCalendarViewController.swift */,
+				5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */,
+				56EE71BC265E18BA005AC12A /* ConceptViewController.swift */,
+				F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */,
+				F8C284E1265CD4EB00B41054 /* CoverGradientViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F873648926A6A61300F121DC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				56924E08265635ED00745273 /* LoginMethodViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F873648C26A6A92900F121DC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F873648A26A6A92600F121DC /* OnboardingDescriptionModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F88491BF26B2DF28007590E9 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F8731B01265BE4B400770760 /* Onboarding.storyboard */,
+				F8731B0B265C01A800770760 /* ConceptSelect.storyboard */,
+				567BF243265A571300285956 /* CoverCalendar.storyboard */,
+				567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */,
+				F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */,
+				F8C284DB265CCD2300B41054 /* CoverColor.storyboard */,
+				56EE71BA265E165B005AC12A /* Concept.storyboard */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +376,7 @@
 				F8731B0C265C01A800770760 /* ConceptSelect.storyboard in Resources */,
 				F8C284DC265CCD2300B41054 /* CoverColor.storyboard in Resources */,
 				F8731B10265C05E900770760 /* ConceptSelectCell.xib in Resources */,
+				F873648626A6A5E500F121DC /* OnboardingCell.xib in Resources */,
 				56924E07265635DA00745273 /* LoginMethod.storyboard in Resources */,
 				562F555626452103000F8CAB /* Assets.xcassets in Resources */,
 				F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */,
@@ -397,22 +438,21 @@
 			files = (
 				567BF24C265A62C000285956 /* ViewController.swift in Sources */,
 				56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */,
-				562F557826452249000F8CAB /* CellExample.swift in Sources */,
 				F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */,
 				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
 				562F557A26452252000F8CAB /* ViewExample.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
-				562F557626452243000F8CAB /* Example+Extensions.swift in Sources */,
+				F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */,
 				F8731B0F265C05E900770760 /* ConceptSelectCell.swift in Sources */,
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
 				56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */,
 				567BF248265A604100285956 /* CoverCalendarViewController.swift in Sources */,
 				562F554D26452101000F8CAB /* AppDelegate.swift in Sources */,
-				562F55742645223B000F8CAB /* AppModelExample.swift in Sources */,
 				F8731B0A265C019200770760 /* ConceptSelectViewController.swift in Sources */,
 				567BF24A265A626100285956 /* Storyboard.swift in Sources */,
 				567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */,
+				F873648526A6A5E500F121DC /* OnboardingCell.swift in Sources */,
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
 				562F55702645222E000F8CAB /* APIServiceExample.swift in Sources */,
 				562F557226452234000F8CAB /* APIModelExample.swift in Sources */,
