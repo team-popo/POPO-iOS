@@ -16,7 +16,7 @@ class OnboardingViewController: UIViewController {
     lazy var nextButton: UIButton = {
         let button = UIButton()
         button.setTitle("포포 시작하기", for: .normal)
-        button.backgroundColor = .purple
+        button.backgroundColor = #colorLiteral(red: 0.5294117647, green: 0.4862745098, blue: 0.9333333333, alpha: 1)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         button.setTitleColor(.white, for: .normal)
         button.makeRounded(radius: 25)
@@ -35,6 +35,10 @@ class OnboardingViewController: UIViewController {
         registerCell()
         setList()
     }
+}
+ 
+// MARK: - Extenstions
+extension OnboardingViewController {
     
     // MARK: - @objc Methods
     @objc

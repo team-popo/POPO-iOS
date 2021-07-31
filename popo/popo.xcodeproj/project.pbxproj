@@ -31,6 +31,7 @@
 		56EE71BB265E165B005AC12A /* Concept.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56EE71BA265E165B005AC12A /* Concept.storyboard */; };
 		56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE71BC265E18BA005AC12A /* ConceptViewController.swift */; };
 		F065790638E6CE247683CA74 /* Pods_popo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9900D9492EE36CE1A8C04071 /* Pods_popo.framework */; };
+		F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */; };
 		F8731B02265BE4B400770760 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8731B01265BE4B400770760 /* Onboarding.storyboard */; };
 		F8731B0A265C019200770760 /* ConceptSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8731B09265C019200770760 /* ConceptSelectViewController.swift */; };
 		F8731B0C265C01A800770760 /* ConceptSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8731B0B265C01A800770760 /* ConceptSelect.storyboard */; };
@@ -75,6 +76,7 @@
 		56EE71BC265E18BA005AC12A /* ConceptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptViewController.swift; sourceTree = "<group>"; };
 		9900D9492EE36CE1A8C04071 /* Pods_popo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C232EAFF605BCD2CA3B4168B /* Pods-popo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popo.release.xcconfig"; path = "Target Support Files/Pods-popo/Pods-popo.release.xcconfig"; sourceTree = "<group>"; };
+		F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F8731B01265BE4B400770760 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		F8731B09265C019200770760 /* ConceptSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptSelectViewController.swift; sourceTree = "<group>"; };
 		F8731B0B265C01A800770760 /* ConceptSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConceptSelect.storyboard; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				56924E0A265648EB00745273 /* UIView+Extension.swift */,
 				567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */,
+				F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -300,10 +303,10 @@
 			children = (
 				F8731B01265BE4B400770760 /* Onboarding.storyboard */,
 				F8731B0B265C01A800770760 /* ConceptSelect.storyboard */,
+				F8C284DB265CCD2300B41054 /* CoverColor.storyboard */,
+				F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */,
 				567BF243265A571300285956 /* CoverCalendar.storyboard */,
 				567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */,
-				F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */,
-				F8C284DB265CCD2300B41054 /* CoverColor.storyboard */,
 				56EE71BA265E165B005AC12A /* Concept.storyboard */,
 			);
 			path = Onboarding;
@@ -439,6 +442,7 @@
 				567BF24C265A62C000285956 /* ViewController.swift in Sources */,
 				56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */,
 				F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */,
+				F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */,
 				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
 				562F557A26452252000F8CAB /* ViewExample.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
