@@ -10,6 +10,7 @@ import UIKit
 class OnboardingViewController: UIViewController {
     
     // MARK: - Properties
+    
     private var onboardingList: [OnboardingDescriptionModel] = []
     private var currentPage = 0
     
@@ -26,9 +27,11 @@ class OnboardingViewController: UIViewController {
     }()
     
     // MARK: - @IBOutlet Properties
+    
     @IBOutlet weak var onboardingCollectionView: UICollectionView!
     
     // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -38,9 +41,11 @@ class OnboardingViewController: UIViewController {
 }
  
 // MARK: - Extenstions
+
 extension OnboardingViewController {
     
     // MARK: - @objc Methods
+    
     @objc
     func presentToConceptSelect() {
         guard let nextVC = UIStoryboard(name: Const.Storyboard.Name.conceptSelect, bundle: nil).instantiateViewController(withIdentifier: Const.ViewController.Identifier.conseptSelect) as? UINavigationController else {
@@ -53,6 +58,7 @@ extension OnboardingViewController {
     }
     
     // MARK: - Methods
+    
     private func setUI() {
         onboardingCollectionView.isPagingEnabled = true
         onboardingCollectionView.showsHorizontalScrollIndicator = false
@@ -72,9 +78,9 @@ extension OnboardingViewController {
     
     private func setList() {
         onboardingList.append(contentsOf: [
-            OnboardingDescriptionModel(title: "주제별로 기록해요", subtitle: "12개의 컨셉을 선택해 각자 다른 주제의 포포를 만들어 보세요!", pageImage: "pageControllerImg1", image: "onboardingPhoneImg1"),
-            OnboardingDescriptionModel(title: "한눈에 확인해요", subtitle: "각 포포에서 내가 기록한 썸네일을 한눈에 볼 수 있어요!", pageImage: "pageControllerImg2", image: "onboardingPhoneImg2"),
-            OnboardingDescriptionModel(title: "원하는 대로 기록해요", subtitle: "내가 기록하고 싶은 항목을 내 맘대로 설정할 수 있어요!", pageImage: "pageControllerImg3", image: "onboardingPhoneImg3")
+            OnboardingDescriptionModel(title: "주제별로 기록해요", subtitle: "12개의 컨셉을 선택해\n 각자 다른 주제의 포포를 만들어 보세요!", pageImage: "pageControllerImg1", image: "onboardingPhoneImg1"),
+            OnboardingDescriptionModel(title: "한눈에 확인해요", subtitle: "각 포포에서 내가 기록한\n 썸네일을 한눈에 볼 수 있어요!", pageImage: "pageControllerImg2", image: "onboardingPhoneImg2"),
+            OnboardingDescriptionModel(title: "원하는 대로 기록해요", subtitle: "내가 기록하고 싶은\n 항목을 내 맘대로 설정할 수 있어요!", pageImage: "pageControllerImg3", image: "onboardingPhoneImg3")
         ])
     }
     
@@ -93,6 +99,7 @@ extension OnboardingViewController {
 }
 
 // MARK: - UICollectionViewDelegate
+
 extension OnboardingViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageNum = Int(round(scrollView.contentOffset.x / scrollView.frame.size.width))
@@ -110,6 +117,7 @@ extension OnboardingViewController: UICollectionViewDelegate {
 }
 
 // MARK: - UICollectionViewDataSource
+
 extension OnboardingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return onboardingList.count
@@ -126,6 +134,7 @@ extension OnboardingViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
+
 extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0

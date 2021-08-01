@@ -273,11 +273,11 @@
 			children = (
 				F873648126A668DE00F121DC /* OnboardingViewController.swift */,
 				F8731B09265C019200770760 /* ConceptSelectViewController.swift */,
+				F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */,
+				F8C284E1265CD4EB00B41054 /* CoverGradientViewController.swift */,
 				567BF247265A604100285956 /* CoverCalendarViewController.swift */,
 				5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */,
 				56EE71BC265E18BA005AC12A /* ConceptViewController.swift */,
-				F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */,
-				F8C284E1265CD4EB00B41054 /* CoverGradientViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";

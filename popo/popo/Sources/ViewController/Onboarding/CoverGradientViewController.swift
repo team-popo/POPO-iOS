@@ -12,6 +12,7 @@ class CoverGradientViewController: UIViewController {
     // MARK: - Properties
     
     // MARK: - @IBOutlet Properties
+    
     @IBOutlet weak var whiteBgView: UIView!
     @IBOutlet weak var coverImageView1: UIImageView!
     @IBOutlet weak var coverImageView2: UIImageView!
@@ -29,15 +30,15 @@ class CoverGradientViewController: UIViewController {
 //    var colorViews: [String] = []
     
     // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
-//        setRandomCover()
-        
     }
     
     // MARK: - @IBAction Properties
+    
     @IBAction func touchPopo(_ sender: Any) {
     }
     

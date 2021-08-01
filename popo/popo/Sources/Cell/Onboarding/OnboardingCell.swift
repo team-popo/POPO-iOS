@@ -31,8 +31,13 @@ class OnboardingCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         pageControllerImage.contentMode = .scaleAspectFit
         
-        titleLabel.font = UIFont.systemFont(ofSize: 30)
-        subtitleLabel.font = UIFont.systemFont(ofSize: 18)
+        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        titleLabel.textColor = #colorLiteral(red: 0.3764705882, green: 0.3294117647, blue: 0.8, alpha: 1)
+        
+        subtitleLabel.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        subtitleLabel.textColor = #colorLiteral(red: 0.4784313725, green: 0.462745098, blue: 0.462745098, alpha: 1)
+        subtitleLabel.numberOfLines = 2
+        subtitleLabel.textAlignment = .center
     }
     
     func initCell(title: String, subtitle: String, pageImage: String, imageView: String) {
