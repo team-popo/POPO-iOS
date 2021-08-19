@@ -11,7 +11,7 @@ class CoverColorViewController: UIViewController {
     
     // MARK: - Propertiesc
     
-    private var colorViewList = [String]()
+    private var completedColorList = [String]()
     private var coverColorViewList = [UIView]()
     
     // MARK: - @IBOutlet Properties
@@ -43,12 +43,12 @@ class CoverColorViewController: UIViewController {
     // MARK: - @IBAction Methods
     
     @IBAction func touchPopo(_ sender: Any) {
-        var _ = coverColorViewList.map { $0.backgroundColor = setRandomColor() }
+        _ = coverColorViewList.map { $0.backgroundColor = setRandomColor() }
     }
     
     @IBAction func touchCompleteButton(_ sender: Any) {
-        colorViewList = makeColorArray()
-        onboardingCoverColorWithAPI(clorViewList: colorViewList)
+        completedColorList = makeColorArray()
+        onboardingCoverColorWithAPI(coverColorViewList: completedColorList)
     }
 }
 
@@ -61,10 +61,15 @@ extension CoverColorViewController {
     private func setUI() {
         whiteBgView.makeRounded(radius: 30)
         
+        completeButton.setTitle("완료", for: .normal)
         completeButton.setTitleColor(#colorLiteral(red: 0.5294117647, green: 0.4862745098, blue: 0.9333333333, alpha: 1), for: .normal)
         completeButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         
         coverColorViewList = [coverColorView1, coverColorView2, coverColorView3, coverColorView4, coverColorView5, coverColorView6, coverColorView7, coverColorView8, coverColorView9, coverColorView10, coverColorView11, coverColorView12]
+        
+        // 온보딩과정에서 커버를 제공할 때 랜덤으로 색을 초기화할 것인지 우리가 어울리는 것을 제공할 것인지
+        // 우선 랜덤 적용
+        _ = coverColorViewList.map { $0.backgroundColor = setRandomColor() }
     }
 
     private func setRandomColor() -> UIColor {
@@ -82,7 +87,7 @@ extension CoverColorViewController {
         return colorList
     }
     
-    private func onboardingCoverColorWithAPI(clorViewList: [String]) {
+    private func onboardingCoverColorWithAPI(coverColorViewList: [String]) {
         // 서버통신
     }
 }
