@@ -100,8 +100,7 @@ extension CoverGradientViewController {
     }
     
     private func makeGradientArray() -> [[String]] {
-//        let gradientList = coverGradientViewList.map { $0.layer }
-
+        // gradient layer 의 colors 에 들어가는 cgcolor 를 string 으로 변환
         return [[""]]
     }
     
