@@ -27,6 +27,11 @@ class CoverUserPhotoViewController: UIViewController {
     
     var coverImageViews: [UIImageView] = []
     
+    var imagePicker = UIImagePickerController()
+    var currentPickerIndex = Int.max
+    // TODO: - 유저가 이미지 선택 안 했을 시 기본 이미지 넣을건지? 그러면 repeating값 기본 이미지로 수정
+    var selectedCoverImages: [UIImage] = Array(repeating: UIImage(), count: 11)
+    
     // MARK: - @IBOutlet Properties
     
     // MARK: - View Life Cycle
@@ -37,6 +42,8 @@ class CoverUserPhotoViewController: UIViewController {
         // Do any additional setup after loading the view.
         makeImageViewArray()
         initViewRounding()
+        assignDelegate()
+        initTapGesterRecognizer()
     }
     
     // MARK: - Functions
@@ -60,5 +67,41 @@ class CoverUserPhotoViewController: UIViewController {
         whiteBgView.makeRounded(radius: 30)
     }
     
+    private func assignDelegate() {
+        imagePicker.delegate = self
+    }
+    
+    private func initTapGesterRecognizer() {
+        for (index, coverImageView) in coverImageViews.enumerated() {
+            let coverTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchCover(_:)))
+            coverTapRecognizer.numberOfTapsRequired = 1
+            coverImageView.tag = index
+            coverImageView.isUserInteractionEnabled = true
+            coverImageView.addGestureRecognizer(coverTapRecognizer)
+        }
+    }
+    
     // MARK: - @IBAction Functions
+    
+    @objc func touchCover(_ sender: UITapGestureRecognizer) {
+        imagePicker.sourceType = .photoLibrary
+        guard let senderTag = sender.view?.tag else { return }
+        currentPickerIndex = senderTag
+        present(imagePicker, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+extension CoverUserPhotoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // didFinishPickingMediaWithInfo
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        
+        // 선택한 이미지 커버 이미지뷰의 이미지로 변경
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            coverImageViews[currentPickerIndex].image = image
+            selectedCoverImages[currentPickerIndex] = image
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }
