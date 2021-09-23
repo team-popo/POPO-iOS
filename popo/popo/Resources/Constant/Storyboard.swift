@@ -19,6 +19,7 @@ extension Const {
             static let coverGradient = "CoverGradient"
             static let onboarding = "Onboarding"
             static let conceptSelect = "ConceptSelect"
+            static let category = "Category"
         }
         
     }
