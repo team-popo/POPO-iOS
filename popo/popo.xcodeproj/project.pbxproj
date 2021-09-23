@@ -14,7 +14,6 @@
 		562F555926452103000F8CAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 562F555726452103000F8CAB /* LaunchScreen.storyboard */; };
 		562F556C26452208000F8CAB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 562F556B26452208000F8CAB /* Colors.xcassets */; };
 		562F556E26452218000F8CAB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F556D26452218000F8CAB /* Const.swift */; };
-		562F55702645222E000F8CAB /* APIServiceExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F556F2645222E000F8CAB /* APIServiceExample.swift */; };
 		562F557A26452252000F8CAB /* ViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557926452252000F8CAB /* ViewExample.swift */; };
 		562F557D26452408000F8CAB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 562F557C26452408000F8CAB /* .swiftlint.yml */; };
 		567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */; };
@@ -30,6 +29,10 @@
 		56EE71BB265E165B005AC12A /* Concept.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56EE71BA265E165B005AC12A /* Concept.storyboard */; };
 		56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE71BC265E18BA005AC12A /* ConceptViewController.swift */; };
 		F065790638E6CE247683CA74 /* Pods_popo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9900D9492EE36CE1A8C04071 /* Pods_popo.framework */; };
+		F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65926FC62FD000C0270 /* PopoService.swift */; };
+		F816E65D26FC631F000C0270 /* FetchPopoListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65C26FC631F000C0270 /* FetchPopoListAPI.swift */; };
+		F816E66026FC6441000C0270 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65F26FC6441000C0270 /* TempAPI.swift */; };
+		F816E66226FC6CAB000C0270 /* GeneralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E66126FC6CAB000C0270 /* GeneralAPI.swift */; };
 		F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */; };
 		F8731B02265BE4B400770760 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8731B01265BE4B400770760 /* Onboarding.storyboard */; };
 		F8731B0A265C019200770760 /* ConceptSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8731B09265C019200770760 /* ConceptSelectViewController.swift */; };
@@ -40,7 +43,7 @@
 		F873648526A6A5E500F121DC /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648326A6A5E500F121DC /* OnboardingCell.swift */; };
 		F873648626A6A5E500F121DC /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F873648426A6A5E500F121DC /* OnboardingCell.xib */; };
 		F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648A26A6A92600F121DC /* OnboardingDescriptionModel.swift */; };
-		F881A73E26FC191400AEE21E /* ConceptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73D26FC191400AEE21E /* ConceptModel.swift */; };
+		F881A73E26FC191400AEE21E /* ConceptData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73D26FC191400AEE21E /* ConceptData.swift */; };
 		F881A74026FC50B200AEE21E /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73F26FC50B200AEE21E /* GenericResponse.swift */; };
 		F881A74226FC588400AEE21E /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A74126FC588400AEE21E /* NetworkResult.swift */; };
 		F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */; };
@@ -64,7 +67,6 @@
 		562F555A26452103000F8CAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		562F556B26452208000F8CAB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		562F556D26452218000F8CAB /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		562F556F2645222E000F8CAB /* APIServiceExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceExample.swift; sourceTree = "<group>"; };
 		562F557926452252000F8CAB /* ViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExample.swift; sourceTree = "<group>"; };
 		562F557C26452408000F8CAB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
@@ -81,6 +83,10 @@
 		56EE71BC265E18BA005AC12A /* ConceptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptViewController.swift; sourceTree = "<group>"; };
 		9900D9492EE36CE1A8C04071 /* Pods_popo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C232EAFF605BCD2CA3B4168B /* Pods-popo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popo.release.xcconfig"; path = "Target Support Files/Pods-popo/Pods-popo.release.xcconfig"; sourceTree = "<group>"; };
+		F816E65926FC62FD000C0270 /* PopoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoService.swift; sourceTree = "<group>"; };
+		F816E65C26FC631F000C0270 /* FetchPopoListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPopoListAPI.swift; sourceTree = "<group>"; };
+		F816E65F26FC6441000C0270 /* TempAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPI.swift; sourceTree = "<group>"; };
+		F816E66126FC6CAB000C0270 /* GeneralAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAPI.swift; sourceTree = "<group>"; };
 		F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F8731B01265BE4B400770760 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		F8731B09265C019200770760 /* ConceptSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptSelectViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +97,7 @@
 		F873648326A6A5E500F121DC /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		F873648426A6A5E500F121DC /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
 		F873648A26A6A92600F121DC /* OnboardingDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescriptionModel.swift; sourceTree = "<group>"; };
-		F881A73D26FC191400AEE21E /* ConceptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptModel.swift; sourceTree = "<group>"; };
+		F881A73D26FC191400AEE21E /* ConceptData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptData.swift; sourceTree = "<group>"; };
 		F881A73F26FC50B200AEE21E /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		F881A74126FC588400AEE21E /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -227,7 +233,8 @@
 		562F5567264521DC000F8CAB /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				562F556F2645222E000F8CAB /* APIServiceExample.swift */,
+				F816E65E26FC6413000C0270 /* TrackerAPI */,
+				F816E65B26FC6306000C0270 /* PopoAPI */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -262,6 +269,7 @@
 				562F556D26452218000F8CAB /* Const.swift */,
 				567BF249265A626100285956 /* Storyboard.swift */,
 				567BF24B265A62C000285956 /* ViewController.swift */,
+				F816E66126FC6CAB000C0270 /* GeneralAPI.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -272,6 +280,23 @@
 				9900D9492EE36CE1A8C04071 /* Pods_popo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F816E65B26FC6306000C0270 /* PopoAPI */ = {
+			isa = PBXGroup;
+			children = (
+				F816E65926FC62FD000C0270 /* PopoService.swift */,
+				F816E65C26FC631F000C0270 /* FetchPopoListAPI.swift */,
+			);
+			path = PopoAPI;
+			sourceTree = "<group>";
+		};
+		F816E65E26FC6413000C0270 /* TrackerAPI */ = {
+			isa = PBXGroup;
+			children = (
+				F816E65F26FC6441000C0270 /* TempAPI.swift */,
+			);
+			path = TrackerAPI;
 			sourceTree = "<group>";
 		};
 		F873648726A6A60100F121DC /* Onboarding */ = {
@@ -317,7 +342,7 @@
 		F881A73C26FC18E100AEE21E /* PopoConcept */ = {
 			isa = PBXGroup;
 			children = (
-				F881A73D26FC191400AEE21E /* ConceptModel.swift */,
+				F881A73D26FC191400AEE21E /* ConceptData.swift */,
 			);
 			path = PopoConcept;
 			sourceTree = "<group>";
@@ -522,8 +547,11 @@
 				56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */,
 				F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */,
 				F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */,
+				F816E66226FC6CAB000C0270 /* GeneralAPI.swift in Sources */,
 				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
+				F816E65D26FC631F000C0270 /* FetchPopoListAPI.swift in Sources */,
 				562F557A26452252000F8CAB /* ViewExample.swift in Sources */,
+				F816E66026FC6441000C0270 /* TempAPI.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */,
 				F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */,
@@ -531,7 +559,8 @@
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
 				F8967D9326FA01F300F034E3 /* CategoryCell.swift in Sources */,
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
-				F881A73E26FC191400AEE21E /* ConceptModel.swift in Sources */,
+				F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */,
+				F881A73E26FC191400AEE21E /* ConceptData.swift in Sources */,
 				56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */,
 				567BF248265A604100285956 /* CoverCalendarViewController.swift in Sources */,
 				562F554D26452101000F8CAB /* AppDelegate.swift in Sources */,
@@ -541,7 +570,6 @@
 				567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */,
 				F873648526A6A5E500F121DC /* OnboardingCell.swift in Sources */,
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
-				562F55702645222E000F8CAB /* APIServiceExample.swift in Sources */,
 				5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

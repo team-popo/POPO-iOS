@@ -18,9 +18,8 @@ class ConceptViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         initWhiteBgView()
+        getPopoListWithAPI()
     }
     
     // MARK: - Functions
@@ -44,5 +43,9 @@ class ConceptViewController: UIViewController {
 
 extension ConceptViewController {
     // 서버통신
-    
+    func getPopoListWithAPI() {
+        FetchPopoListAPI.shared.getPopoList { result in
+            print(result)
+        }
+    }
 }
