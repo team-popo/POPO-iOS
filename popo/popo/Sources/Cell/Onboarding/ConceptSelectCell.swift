@@ -9,6 +9,8 @@ import UIKit
 
 class ConceptSelectCell: UICollectionViewCell {
 
+    static let identifier = "ConceptSelectCell"
+    
     @IBOutlet weak var backImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

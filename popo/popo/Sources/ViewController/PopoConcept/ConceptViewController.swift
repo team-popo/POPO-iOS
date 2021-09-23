@@ -26,15 +26,11 @@ class ConceptViewController: UIViewController {
     // MARK: - Functions
     
     private func initWhiteBgView() {
-        // rounding
         whiteBgView.makeRounded(radius: 30)
-        
-        // shadow
-        whiteBgView.layer.shadowColor = UIColor.black.cgColor
-        whiteBgView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        whiteBgView.layer.shadowRadius = 4
-        whiteBgView.layer.shadowOpacity = 0.25
-        whiteBgView.layer.masksToBounds = false
+        whiteBgView.makeShadow(color: UIColor.black,
+                               offset: CGSize(width: 0, height: 4),
+                               radius: 4,
+                               opacity: 0.25)
         
         // 그림자를 캐시에 저장해 재사용
         whiteBgView.layer.shouldRasterize = true
@@ -42,4 +38,11 @@ class ConceptViewController: UIViewController {
     
     // MARK: - @IBAction Functions
 
+}
+
+// MARK: - Extensions
+
+extension ConceptViewController {
+    // 서버통신
+    
 }

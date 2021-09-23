@@ -33,7 +33,8 @@ extension ConceptSelectViewController {
     private func setUI() {
         self.conceptList = ["coverExample1", "coverExample2", "coverExample3", "coverExample4"]
         
-        titleLabel.text = "나만의 포포를 만들어 볼까요?"
+        titleLabel.text = "12개 포포의 컨셉을 정해볼까요?"
+        titleLabel.numberOfLines = 2
         titleLabel.font = UIFont.boldSystemFont(ofSize: 36)
         titleLabel.textColor = #colorLiteral(red: 0.5294117647, green: 0.4862745098, blue: 0.9333333333, alpha: 1)
         
@@ -58,7 +59,7 @@ extension ConceptSelectViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ConceptSelectCell", for: indexPath) as? ConceptSelectCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConceptSelectCell.identifier, for: indexPath) as? ConceptSelectCell else {
             return UICollectionViewCell()
         }
         cell.setBackgroundImage(image: conceptList[indexPath.row])
@@ -108,5 +109,12 @@ extension ConceptSelectViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 20, bottom: 50, right: 20)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width - 80
+        let height = collectionView.frame.height
+        return CGSize(width: width, height: height)
+    }
 }
