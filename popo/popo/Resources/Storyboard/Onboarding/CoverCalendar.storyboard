@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -155,6 +156,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgStackView" destination="fz7-7G-hDh" id="Y3e-Zm-IBm"/>
                         <outlet property="coverImageView1" destination="RfI-wa-3yS" id="fQY-le-Uz1"/>
                         <outlet property="coverImageView10" destination="69l-0l-gFE" id="jst-OJ-CHQ"/>
                         <outlet property="coverImageView11" destination="7Kb-ef-Hpj" id="zjm-y4-92T"/>
@@ -167,6 +169,10 @@
                         <outlet property="coverImageView7" destination="sXy-OU-2qf" id="EZE-zl-GZl"/>
                         <outlet property="coverImageView8" destination="Lvp-ob-rBq" id="ocL-3t-fHg"/>
                         <outlet property="coverImageView9" destination="dOP-Mw-gfY" id="KO5-I3-L2N"/>
+                        <outlet property="coverStackView1" destination="rva-kd-roh" id="VFd-IV-ASW"/>
+                        <outlet property="coverStackView2" destination="0Kz-e6-f3G" id="YSo-hu-hzE"/>
+                        <outlet property="coverStackView3" destination="fvl-QE-Fo8" id="L9c-bz-Xik"/>
+                        <outlet property="coverStackView4" destination="YiW-GJ-Ge6" id="NMi-P9-9r0"/>
                         <outlet property="whiteBgView" destination="NbQ-OW-af0" id="slk-0r-Cue"/>
                     </connections>
                 </viewController>
