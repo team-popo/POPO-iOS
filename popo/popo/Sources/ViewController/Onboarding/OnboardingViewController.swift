@@ -72,8 +72,8 @@ extension OnboardingViewController {
     private func registerCell() {
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self
-        let onboardingCell = UINib(nibName: OnboardingCell.identifier, bundle: nil)
-        onboardingCollectionView.register(onboardingCell, forCellWithReuseIdentifier: OnboardingCell.identifier)
+        let onboardingCell = UINib(nibName: Const.Xib.OnboardingCell, bundle: nil)
+        onboardingCollectionView.register(onboardingCell, forCellWithReuseIdentifier: Const.Xib.OnboardingCell)
     }
     
     private func setList() {
@@ -124,7 +124,7 @@ extension OnboardingViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCell.identifier, for: indexPath) as? OnboardingCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.OnboardingCell, for: indexPath) as? OnboardingCell else {
             return UICollectionViewCell()
         }
         cell.initCell(title: onboardingList[indexPath.row].title, subtitle: onboardingList[indexPath.row].subtitle, pageImage: onboardingList[indexPath.row].pageImage, imageView: onboardingList[indexPath.row].image)

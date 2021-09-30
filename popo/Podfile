@@ -7,5 +7,5 @@ target 'popo' do
 
   # Pods for popo
 	pod 'SwiftLint'
-
+	pod 'Moya', '~> 15.0'
 end

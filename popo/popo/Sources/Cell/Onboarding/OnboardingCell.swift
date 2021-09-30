@@ -8,17 +8,16 @@
 import UIKit
 
 class OnboardingCell: UICollectionViewCell {
-
-    // MARK: - Properties
-    static let identifier = "OnboardingCell"
     
     // MARK: - @IBOutlet Properties
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var pageControllerImage: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     
-    // MARK: - View Life Cycle
+    // MARK: - Cell Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -27,6 +26,7 @@ class OnboardingCell: UICollectionViewCell {
     }
 
     // MARK: - Methods
+    
     private func setUI() {
         imageView.contentMode = .scaleAspectFit
         pageControllerImage.contentMode = .scaleAspectFit
