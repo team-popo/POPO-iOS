@@ -8,14 +8,17 @@
 import UIKit
 
 class ConceptSelectCell: UICollectionViewCell {
-
-    static let identifier = "ConceptSelectCell"
     
     @IBOutlet weak var backImage: UIImageView!
+    
+    // MARK: - Cell Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    // MARK: - Methods
+    
     func setBackgroundImage(image: String) {
         backImage.image = UIImage(named: image)
         backImage.sizeToFit()

@@ -8,10 +8,6 @@
 import UIKit
 
 class CategoryCell: UICollectionViewCell {
-
-    // MARK: - Properties
-    
-    static let identifier = "CategoryCell"
     
     // MARK: - @IBOutlet Properties
     

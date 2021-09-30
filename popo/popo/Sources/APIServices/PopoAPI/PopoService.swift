@@ -18,7 +18,7 @@ enum PopoService {
 
 extension PopoService: TargetType {
     var baseURL: URL {
-        return URL(string: Const.GeneralAPI.baseURL)!
+        return URL(string: Const.URL.baseURL)!
     }
     
     var path: String {

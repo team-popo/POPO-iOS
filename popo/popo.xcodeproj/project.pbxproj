@@ -32,7 +32,8 @@
 		F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65926FC62FD000C0270 /* PopoService.swift */; };
 		F816E65D26FC631F000C0270 /* FetchPopoListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65C26FC631F000C0270 /* FetchPopoListAPI.swift */; };
 		F816E66026FC6441000C0270 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65F26FC6441000C0270 /* TempAPI.swift */; };
-		F816E66226FC6CAB000C0270 /* GeneralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E66126FC6CAB000C0270 /* GeneralAPI.swift */; };
+		F816E66226FC6CAB000C0270 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E66126FC6CAB000C0270 /* URL.swift */; };
+		F84AA56C27057633008D77ED /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84AA56B27057633008D77ED /* Xib.swift */; };
 		F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */; };
 		F8731B02265BE4B400770760 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8731B01265BE4B400770760 /* Onboarding.storyboard */; };
 		F8731B0A265C019200770760 /* ConceptSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8731B09265C019200770760 /* ConceptSelectViewController.swift */; };
@@ -86,7 +87,8 @@
 		F816E65926FC62FD000C0270 /* PopoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoService.swift; sourceTree = "<group>"; };
 		F816E65C26FC631F000C0270 /* FetchPopoListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPopoListAPI.swift; sourceTree = "<group>"; };
 		F816E65F26FC6441000C0270 /* TempAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPI.swift; sourceTree = "<group>"; };
-		F816E66126FC6CAB000C0270 /* GeneralAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAPI.swift; sourceTree = "<group>"; };
+		F816E66126FC6CAB000C0270 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		F84AA56B27057633008D77ED /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F8731B01265BE4B400770760 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		F8731B09265C019200770760 /* ConceptSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptSelectViewController.swift; sourceTree = "<group>"; };
@@ -269,7 +271,8 @@
 				562F556D26452218000F8CAB /* Const.swift */,
 				567BF249265A626100285956 /* Storyboard.swift */,
 				567BF24B265A62C000285956 /* ViewController.swift */,
-				F816E66126FC6CAB000C0270 /* GeneralAPI.swift */,
+				F816E66126FC6CAB000C0270 /* URL.swift */,
+				F84AA56B27057633008D77ED /* Xib.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -547,10 +550,11 @@
 				56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */,
 				F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */,
 				F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */,
-				F816E66226FC6CAB000C0270 /* GeneralAPI.swift in Sources */,
+				F816E66226FC6CAB000C0270 /* URL.swift in Sources */,
 				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
 				F816E65D26FC631F000C0270 /* FetchPopoListAPI.swift in Sources */,
 				562F557A26452252000F8CAB /* ViewExample.swift in Sources */,
+				F84AA56C27057633008D77ED /* Xib.swift in Sources */,
 				F816E66026FC6441000C0270 /* TempAPI.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */,

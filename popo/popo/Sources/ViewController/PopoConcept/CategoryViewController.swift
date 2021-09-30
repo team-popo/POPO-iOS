@@ -64,8 +64,8 @@ extension CategoryViewController {
     private func registerCell() {
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
-        let cateogoryCell = UINib(nibName: CategoryCell.identifier, bundle: nil)
-        categoryCollectionView.register(cateogoryCell, forCellWithReuseIdentifier: CategoryCell.identifier)
+        let cateogoryCell = UINib(nibName: Const.Xib.CategoryCell, bundle: nil)
+        categoryCollectionView.register(cateogoryCell, forCellWithReuseIdentifier: Const.Xib.CategoryCell)
     }
 }
 
@@ -79,7 +79,7 @@ extension CategoryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as? CategoryCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.CategoryCell, for: indexPath) as? CategoryCell else {
             return UICollectionViewCell()
         }
         cell.initCell(imageList[indexPath.row], categoryList[indexPath.row])

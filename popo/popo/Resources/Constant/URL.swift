@@ -8,7 +8,7 @@
 import Foundation
 
 extension Const {
-    struct GeneralAPI {
+    struct URL {
         static let baseURL = "http://fortice.co.kr/popo"
     }
 }

@@ -59,7 +59,7 @@ extension ConceptSelectViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConceptSelectCell.identifier, for: indexPath) as? ConceptSelectCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.ConceptSelectCell, for: indexPath) as? ConceptSelectCell else {
             return UICollectionViewCell()
         }
         cell.setBackgroundImage(image: conceptList[indexPath.row])
