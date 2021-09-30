@@ -22,30 +22,12 @@
                                 <rect key="frame" x="0.0" y="81" width="414" height="815"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12개 포포의 컨셉을  정해볼까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-Jf-6EL">
-                                <rect key="frame" x="50" y="107" width="280.5" height="86"/>
+                                <rect key="frame" x="50" y="80" width="234" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="mX8-6k-EgL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" name="popoPurple"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2z-6B-jNb">
-                                <rect key="frame" x="80" y="173" width="329" height="164"/>
-                                <state key="normal" image="coverPopoCharacter"/>
-                                <connections>
-                                    <action selector="touchPopo:" destination="G5p-Gn-iGl" eventType="touchUpInside" id="2vb-QD-yN9"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TB-tA-XXf">
-                                <rect key="frame" x="50" y="218" width="268" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="WEU-Qq-26R"/>
-                                </constraints>
-                                <string key="text">포포의 표지를 정해주세요.
-포곰이를 클릭해서 마법을 기대해봐요!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6z-M6-Hcz">
@@ -57,24 +39,24 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LoO-Tm-z13">
-                                <rect key="frame" x="40" y="300" width="334" height="532"/>
+                                <rect key="frame" x="40" y="284" width="334" height="548"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vMo-Yk-3SC">
-                                        <rect key="frame" x="25" y="25" width="284" height="482"/>
+                                        <rect key="frame" x="25" y="25" width="284" height="498"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zmX-xM-Lo7">
-                                                <rect key="frame" x="0.0" y="0.0" width="284" height="113"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="284" height="117"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6c-ip-HGY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Iv-ok-s2f">
-                                                        <rect key="frame" x="98" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="98" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVn-ok-QiU">
-                                                        <rect key="frame" x="196" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="196" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                     </view>
                                                 </subviews>
@@ -92,18 +74,18 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bnm-p6-NmJ">
-                                                <rect key="frame" x="0.0" y="123" width="284" height="113"/>
+                                                <rect key="frame" x="0.0" y="127" width="284" height="117"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nw3-Rp-faG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcp-p1-9f9">
-                                                        <rect key="frame" x="98" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="98" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVA-hJ-6Ee">
-                                                        <rect key="frame" x="196" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="196" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                                     </view>
                                                 </subviews>
@@ -123,18 +105,18 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HOr-sT-n5K">
-                                                <rect key="frame" x="0.0" y="246" width="284" height="113"/>
+                                                <rect key="frame" x="0.0" y="254" width="284" height="117"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sc0-2Y-etq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97T-8L-QdZ">
-                                                        <rect key="frame" x="98" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="98" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUH-qW-mI2">
-                                                        <rect key="frame" x="196" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="196" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                     </view>
                                                 </subviews>
@@ -152,18 +134,18 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fLe-r1-nh8">
-                                                <rect key="frame" x="0.0" y="369" width="284" height="113"/>
+                                                <rect key="frame" x="0.0" y="381" width="284" height="117"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUz-pT-gHD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hnt-Fj-56u">
-                                                        <rect key="frame" x="98" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="98" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVP-tX-gDc">
-                                                        <rect key="frame" x="196" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="196" y="0.0" width="88" height="117"/>
                                                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                                                     </view>
                                                 </subviews>
@@ -204,6 +186,24 @@
                                     <constraint firstAttribute="bottom" secondItem="vMo-Yk-3SC" secondAttribute="bottom" constant="25" id="aSB-ET-QeM"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2z-6B-jNb">
+                                <rect key="frame" x="80" y="209" width="329" height="164"/>
+                                <state key="normal" image="popoMagicEffectImg"/>
+                                <connections>
+                                    <action selector="touchPopo:" destination="G5p-Gn-iGl" eventType="touchUpInside" id="2vb-QD-yN9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TB-tA-XXf">
+                                <rect key="frame" x="50" y="181" width="239" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="WEU-Qq-26R"/>
+                                </constraints>
+                                <string key="text">포포의 표지를 정해주세요.
+포곰이를 클릭해서 마법을 기대해봐요!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J5B-vu-oxe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -215,14 +215,14 @@
                             <constraint firstItem="J5B-vu-oxe" firstAttribute="trailing" secondItem="N6z-M6-Hcz" secondAttribute="trailing" constant="24" id="Jpx-lS-H32"/>
                             <constraint firstItem="Cju-kc-8Nh" firstAttribute="leading" secondItem="J5B-vu-oxe" secondAttribute="leading" id="P7Y-ss-c83"/>
                             <constraint firstItem="N6z-M6-Hcz" firstAttribute="top" secondItem="J5B-vu-oxe" secondAttribute="top" constant="13" id="RPC-Dg-fbz"/>
-                            <constraint firstItem="LoO-Tm-z13" firstAttribute="top" secondItem="6TB-tA-XXf" secondAttribute="bottom" constant="39" id="TBE-x0-bg7"/>
+                            <constraint firstItem="LoO-Tm-z13" firstAttribute="top" secondItem="6TB-tA-XXf" secondAttribute="bottom" constant="60" id="TBE-x0-bg7"/>
+                            <constraint firstItem="o2z-6B-jNb" firstAttribute="top" secondItem="6TB-tA-XXf" secondAttribute="bottom" constant="-15" id="kjg-UZ-APa"/>
                             <constraint firstItem="J5B-vu-oxe" firstAttribute="bottom" secondItem="LoO-Tm-z13" secondAttribute="bottom" constant="30" id="opo-xe-Z74"/>
                             <constraint firstItem="J5B-vu-oxe" firstAttribute="trailing" secondItem="o2z-6B-jNb" secondAttribute="trailing" constant="5" id="shj-dF-Bpb"/>
-                            <constraint firstItem="IY5-Jf-6EL" firstAttribute="top" secondItem="dRQ-fT-xe7" secondAttribute="top" constant="107" id="tht-pa-qPd"/>
+                            <constraint firstItem="IY5-Jf-6EL" firstAttribute="top" secondItem="dRQ-fT-xe7" secondAttribute="top" constant="80" id="tht-pa-qPd"/>
                             <constraint firstItem="IY5-Jf-6EL" firstAttribute="leading" secondItem="J5B-vu-oxe" secondAttribute="leading" constant="50" id="wOb-MW-odh"/>
-                            <constraint firstItem="o2z-6B-jNb" firstAttribute="top" secondItem="IY5-Jf-6EL" secondAttribute="bottom" constant="-20" id="wU3-Ce-EMj"/>
                             <constraint firstAttribute="bottom" secondItem="Cju-kc-8Nh" secondAttribute="bottom" id="xMW-wS-He7"/>
-                            <constraint firstItem="6TB-tA-XXf" firstAttribute="top" secondItem="IY5-Jf-6EL" secondAttribute="bottom" constant="25" id="zB9-QW-axI"/>
+                            <constraint firstItem="6TB-tA-XXf" firstAttribute="top" secondItem="IY5-Jf-6EL" secondAttribute="bottom" constant="15" id="zB9-QW-axI"/>
                             <constraint firstItem="LoO-Tm-z13" firstAttribute="leading" secondItem="J5B-vu-oxe" secondAttribute="leading" constant="40" id="zxc-4L-wau"/>
                         </constraints>
                     </view>
@@ -250,7 +250,7 @@
     </scenes>
     <resources>
         <image name="bgCircles" width="414" height="799"/>
-        <image name="coverPopoCharacter" width="331.5" height="241"/>
+        <image name="popoMagicEffectImg" width="329" height="164"/>
         <namedColor name="popoPurple">
             <color red="0.65098039215686276" green="0.55294117647058827" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

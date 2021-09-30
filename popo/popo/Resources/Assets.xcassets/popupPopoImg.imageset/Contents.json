@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "popoCharacter.png",
+      "filename" : "popupPopoImg.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "popoCharacter@2x.png",
+      "filename" : "popupPopoImg@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "popoCharacter@3x.png",
+      "filename" : "popupPopoImg@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

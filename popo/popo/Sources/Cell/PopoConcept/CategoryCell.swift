@@ -25,7 +25,7 @@ class CategoryCell: UICollectionViewCell {
     // MARK: - Methods
     
     private func setUI() {
-        categoryLabel.font = UIFont.systemFont(ofSize: 24)
+        categoryLabel.font = UIFont.systemFont(ofSize: 12)
         whiteBgView.makeRounded(radius: 20)
     }
 

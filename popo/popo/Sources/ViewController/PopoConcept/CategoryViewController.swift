@@ -51,14 +51,14 @@ extension CategoryViewController {
                                          "물",
                                          "운동",
                                          "기타"])
-        imageList.append(contentsOf: ["",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    "",
-                                    ""])
+        imageList.append(contentsOf: ["movieCategoryImg",
+                                      "bookCategoryImg",
+                                      "foodCategoryImg",
+                                      "musicCategoryImg",
+                                      "studyCategoryImg",
+                                      "waterCategoryImg",
+                                      "fitnessCategoryImg",
+                                      "etcCategoryImg"])
     }
     
     private func registerCell() {

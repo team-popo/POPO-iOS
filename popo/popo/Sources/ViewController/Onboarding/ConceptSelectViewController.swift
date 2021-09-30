@@ -35,7 +35,7 @@ extension ConceptSelectViewController {
         
         titleLabel.text = "12개 포포의 컨셉을 정해볼까요?"
         titleLabel.numberOfLines = 2
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 36)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
         titleLabel.textColor = #colorLiteral(red: 0.5294117647, green: 0.4862745098, blue: 0.9333333333, alpha: 1)
         
         subtitleLabel.text = "여러분의 마음에 드는 포포의 컨셉을 정해주세요."
