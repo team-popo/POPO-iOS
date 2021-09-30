@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "coverPopoCharacter.png",
+      "filename" : "studyCategoryImg.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "coverPopoCharacter@2x.png",
+      "filename" : "studyCategoryImg@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "coverPopoCharacter@3x.png",
+      "filename" : "studyCategoryImg@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

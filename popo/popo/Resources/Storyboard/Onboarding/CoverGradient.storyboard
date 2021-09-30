@@ -22,31 +22,31 @@
                                 <rect key="frame" x="0.0" y="81" width="414" height="815"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12개 포포의 컨셉을  정해볼까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gz-PO-a82">
-                                <rect key="frame" x="50" y="107" width="280.5" height="86"/>
+                                <rect key="frame" x="50" y="80" width="234" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="XJ2-il-JYw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" name="popoPurple"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xb-hO-ntd">
-                                <rect key="frame" x="40" y="300" width="334" height="532"/>
+                                <rect key="frame" x="40" y="284" width="334" height="548"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uEP-UE-oqI">
-                                        <rect key="frame" x="25" y="25" width="284" height="482"/>
+                                        <rect key="frame" x="25" y="25" width="284" height="498"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="05j-ap-1cn">
-                                                <rect key="frame" x="0.0" y="0.0" width="284" height="113"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="284" height="117"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1U-as-YaB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="117"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gy8-Bo-aqQ">
-                                                        <rect key="frame" x="98" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="98" y="0.0" width="88" height="117"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5M2-oH-8Ji">
-                                                        <rect key="frame" x="196" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="196" y="0.0" width="88" height="117"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -63,16 +63,16 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NkW-aa-UfL">
-                                                <rect key="frame" x="0.0" y="123" width="284" height="113"/>
+                                                <rect key="frame" x="0.0" y="127" width="284" height="117"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="939-6k-CkD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="117"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0Z-SC-4mz">
-                                                        <rect key="frame" x="98" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="98" y="0.0" width="88" height="117"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eV3-wR-V7t">
-                                                        <rect key="frame" x="196" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="196" y="0.0" width="88" height="117"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -91,16 +91,16 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g0c-y6-PJG">
-                                                <rect key="frame" x="0.0" y="246" width="284" height="113"/>
+                                                <rect key="frame" x="0.0" y="254" width="284" height="117"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l70-PX-hvi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="117"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wq-sY-jnq">
-                                                        <rect key="frame" x="98" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="98" y="0.0" width="88" height="117"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZ1-36-7Ai">
-                                                        <rect key="frame" x="196" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="196" y="0.0" width="88" height="117"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -117,16 +117,16 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-DI-sIV">
-                                                <rect key="frame" x="0.0" y="369" width="284" height="113"/>
+                                                <rect key="frame" x="0.0" y="381" width="284" height="117"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWh-um-qc1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="88" height="117"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPY-ji-pRe">
-                                                        <rect key="frame" x="98" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="98" y="0.0" width="88" height="117"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CdZ-IW-QJf">
-                                                        <rect key="frame" x="196" y="0.0" width="88" height="113"/>
+                                                        <rect key="frame" x="196" y="0.0" width="88" height="117"/>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -167,20 +167,20 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLj-dC-6Hg">
-                                <rect key="frame" x="80" y="173" width="329" height="164"/>
-                                <state key="normal" image="coverPopoCharacter"/>
+                                <rect key="frame" x="80" y="209" width="329" height="164"/>
+                                <state key="normal" image="popoMagicEffectImg"/>
                                 <connections>
                                     <action selector="touchPopo:" destination="gXB-mX-hHF" eventType="touchUpInside" id="wAm-Ob-xJZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8a-yK-7aa">
-                                <rect key="frame" x="50" y="218" width="221.5" height="43"/>
+                                <rect key="frame" x="50" y="181" width="197.5" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="mH4-Gm-2jO"/>
                                 </constraints>
                                 <string key="text">포포의 표지를 정해주세요.
 우리 귀여운 포곰이와 함께해요!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -197,17 +197,17 @@
                         <constraints>
                             <constraint firstItem="5gz-PO-a82" firstAttribute="leading" secondItem="bbP-SD-GgT" secondAttribute="leading" constant="50" id="1ry-JC-GEi"/>
                             <constraint firstItem="N8a-yK-7aa" firstAttribute="leading" secondItem="5gz-PO-a82" secondAttribute="leading" id="6GV-qV-WQI"/>
-                            <constraint firstItem="2xb-hO-ntd" firstAttribute="top" secondItem="N8a-yK-7aa" secondAttribute="bottom" constant="39" id="6NA-j6-TaJ"/>
+                            <constraint firstItem="2xb-hO-ntd" firstAttribute="top" secondItem="N8a-yK-7aa" secondAttribute="bottom" constant="60" id="6NA-j6-TaJ"/>
                             <constraint firstItem="bbP-SD-GgT" firstAttribute="trailing" secondItem="2xb-hO-ntd" secondAttribute="trailing" constant="40" id="6NO-zK-Rrd"/>
                             <constraint firstItem="2BZ-de-Ro1" firstAttribute="leading" secondItem="bbP-SD-GgT" secondAttribute="leading" id="6wt-H3-EBF"/>
-                            <constraint firstItem="5gz-PO-a82" firstAttribute="top" secondItem="7j7-xd-4XC" secondAttribute="top" constant="107" id="8r7-ep-bWZ"/>
+                            <constraint firstItem="5gz-PO-a82" firstAttribute="top" secondItem="7j7-xd-4XC" secondAttribute="top" constant="80" id="8r7-ep-bWZ"/>
                             <constraint firstItem="2xb-hO-ntd" firstAttribute="leading" secondItem="bbP-SD-GgT" secondAttribute="leading" constant="40" id="9gs-tO-n70"/>
                             <constraint firstItem="dIJ-6X-jOb" firstAttribute="top" secondItem="bbP-SD-GgT" secondAttribute="top" constant="24" id="Bgq-S6-EZS"/>
                             <constraint firstItem="bbP-SD-GgT" firstAttribute="trailing" secondItem="bLj-dC-6Hg" secondAttribute="trailing" constant="5" id="DeC-VH-eoF"/>
                             <constraint firstItem="2BZ-de-Ro1" firstAttribute="top" secondItem="7j7-xd-4XC" secondAttribute="top" constant="81" id="LdL-ho-04k"/>
                             <constraint firstItem="bbP-SD-GgT" firstAttribute="trailing" secondItem="2BZ-de-Ro1" secondAttribute="trailing" id="Nb8-uK-igh"/>
-                            <constraint firstItem="N8a-yK-7aa" firstAttribute="top" secondItem="5gz-PO-a82" secondAttribute="bottom" constant="25" id="WjV-o7-pbG"/>
-                            <constraint firstItem="bLj-dC-6Hg" firstAttribute="top" secondItem="5gz-PO-a82" secondAttribute="bottom" constant="-20" id="YYL-23-Kxd"/>
+                            <constraint firstItem="N8a-yK-7aa" firstAttribute="top" secondItem="5gz-PO-a82" secondAttribute="bottom" constant="15" id="WjV-o7-pbG"/>
+                            <constraint firstItem="bLj-dC-6Hg" firstAttribute="top" secondItem="N8a-yK-7aa" secondAttribute="bottom" constant="-15" id="YYL-23-Kxd"/>
                             <constraint firstAttribute="bottom" secondItem="2BZ-de-Ro1" secondAttribute="bottom" id="dn4-IN-hS8"/>
                             <constraint firstItem="bbP-SD-GgT" firstAttribute="bottom" secondItem="2xb-hO-ntd" secondAttribute="bottom" constant="30" id="kwW-ae-B9z"/>
                             <constraint firstItem="bbP-SD-GgT" firstAttribute="trailing" secondItem="dIJ-6X-jOb" secondAttribute="trailing" constant="13" id="yZh-Dc-yEp"/>
@@ -237,7 +237,7 @@
     </scenes>
     <resources>
         <image name="bgCircles" width="414" height="799"/>
-        <image name="coverPopoCharacter" width="331.5" height="241"/>
+        <image name="popoMagicEffectImg" width="329" height="164"/>
         <namedColor name="popoPurple">
             <color red="0.65098039215686276" green="0.55294117647058827" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

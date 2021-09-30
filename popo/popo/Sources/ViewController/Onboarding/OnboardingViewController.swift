@@ -21,7 +21,7 @@ class OnboardingViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         button.setTitleColor(.white, for: .normal)
         button.makeRounded(radius: 25)
-        button.addTarget(self, action: #selector(presentToConceptSelect), for: .touchUpInside)
+        button.addTarget(self, action: #selector(pushToConceptSelect), for: .touchUpInside)
         
         return button
     }()
@@ -47,14 +47,11 @@ extension OnboardingViewController {
     // MARK: - @objc Methods
     
     @objc
-    func presentToConceptSelect() {
-        guard let nextVC = UIStoryboard(name: Const.Storyboard.Name.conceptSelect, bundle: nil).instantiateViewController(withIdentifier: Const.ViewController.Identifier.conseptSelect) as? UINavigationController else {
+    func pushToConceptSelect() {
+        guard let nextVC = UIStoryboard(name: Const.Storyboard.Name.conceptSelect, bundle: nil).instantiateViewController(withIdentifier: Const.ViewController.Identifier.conseptSelect) as? ConceptSelectViewController else {
             return
         }
-        nextVC.modalTransitionStyle = .crossDissolve
-        nextVC.modalPresentationStyle = .currentContext
-        
-        self.present(nextVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     // MARK: - Methods
