@@ -44,7 +44,7 @@ class CoverGradientViewController: UIViewController {
     
     @IBAction func touchPopo(_ sender: Any) {
         
-        setRandomGradient()
+        initRandomGradient()
     }
     
     @IBAction func touchCompleteButton(_ sender: Any) {
@@ -62,14 +62,14 @@ extension CoverGradientViewController {
         
         _ = coverGradientViewList.map { $0.layer.masksToBounds = true }
         
-        setRandomGradient()
+        initRandomGradient()
         
         completeButton.setTitle("완료", for: .normal)
         completeButton.setTitleColor(#colorLiteral(red: 0.5294117647, green: 0.4862745098, blue: 0.9333333333, alpha: 1), for: .normal)
         completeButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
     }
     
-    private func setRandomGradient() {
+    private func initRandomGradient() {
         
         // 온보딩과정에서 커버를 제공할 때 랜덤으로 색을 초기화할 것인지 우리가 어울리는 것을 제공할 것인지
         // 우선 랜덤 적용
@@ -82,7 +82,7 @@ extension CoverGradientViewController {
             var gradientLayerList = [CALayer]()
             
             for _ in 1...2 {
-                randomColorList.append(setRandomColor())
+                randomColorList.append(initRandomColor())
             }
             gradientLayer.colors = randomColorList
             gradientLayerList.append(gradientLayer)
@@ -90,7 +90,7 @@ extension CoverGradientViewController {
         }
     }
     
-    private func setRandomColor() -> CGColor {
+    private func initRandomColor() -> CGColor {
         let randomRed = CGFloat(drand48())
         let randomGreen = CGFloat(drand48())
         let randomBlue = CGFloat(drand48())

@@ -36,7 +36,7 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         registerCell()
-        setList()
+        initList()
     }
 }
  
@@ -69,11 +69,11 @@ extension OnboardingViewController {
     private func registerCell() {
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self
-        let onboardingCell = UINib(nibName: Const.Xib.OnboardingCell, bundle: nil)
-        onboardingCollectionView.register(onboardingCell, forCellWithReuseIdentifier: Const.Xib.OnboardingCell)
+        let onboardingCell = UINib(nibName: Const.Xib.onboardingCell, bundle: nil)
+        onboardingCollectionView.register(onboardingCell, forCellWithReuseIdentifier: Const.Xib.onboardingCell)
     }
     
-    private func setList() {
+    private func initList() {
         onboardingList.append(contentsOf: [
             OnboardingDescriptionModel(title: "주제별로 기록해요", subtitle: "12개의 컨셉을 선택해\n 각자 다른 주제의 포포를 만들어 보세요!", pageImage: "pageControllerImg1", image: "onboardingPhoneImg1"),
             OnboardingDescriptionModel(title: "한눈에 확인해요", subtitle: "각 포포에서 내가 기록한\n 썸네일을 한눈에 볼 수 있어요!", pageImage: "pageControllerImg2", image: "onboardingPhoneImg2"),
@@ -121,7 +121,7 @@ extension OnboardingViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.OnboardingCell, for: indexPath) as? OnboardingCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.onboardingCell, for: indexPath) as? OnboardingCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.initCell(title: onboardingList[indexPath.row].title, subtitle: onboardingList[indexPath.row].subtitle, pageImage: onboardingList[indexPath.row].pageImage, imageView: onboardingList[indexPath.row].image)

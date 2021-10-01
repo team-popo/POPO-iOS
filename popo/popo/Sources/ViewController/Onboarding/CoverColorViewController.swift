@@ -43,7 +43,7 @@ class CoverColorViewController: UIViewController {
     // MARK: - @IBAction Methods
     
     @IBAction func touchPopo(_ sender: Any) {
-        _ = coverColorViewList.map { $0.backgroundColor = setRandomColor() }
+        _ = coverColorViewList.map { $0.backgroundColor = initRandomColor() }
     }
     
     @IBAction func touchCompleteButton(_ sender: Any) {
@@ -69,10 +69,10 @@ extension CoverColorViewController {
         
         // 온보딩과정에서 커버를 제공할 때 랜덤으로 색을 초기화할 것인지 우리가 어울리는 것을 제공할 것인지
         // 우선 랜덤 적용
-        _ = coverColorViewList.map { $0.backgroundColor = setRandomColor() }
+        _ = coverColorViewList.map { $0.backgroundColor = initRandomColor() }
     }
 
-    private func setRandomColor() -> UIColor {
+    private func initRandomColor() -> UIColor {
         let randomRed = CGFloat(drand48())
         let randomGreen = CGFloat(drand48())
         let randomBlue = CGFloat(drand48())

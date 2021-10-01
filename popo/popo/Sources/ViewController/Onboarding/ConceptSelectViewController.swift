@@ -48,8 +48,8 @@ extension ConceptSelectViewController {
     private func registerCell() {
         conceptCollectionView.delegate = self
         conceptCollectionView.dataSource = self
-        let conceptCell = UINib(nibName: "ConceptSelectCell", bundle: nil)
-        conceptCollectionView.register(conceptCell, forCellWithReuseIdentifier: "ConceptSelectCell")
+        let conceptCell = UINib(nibName: Const.Xib.conceptSelectCell, bundle: nil)
+        conceptCollectionView.register(conceptCell, forCellWithReuseIdentifier: Const.Xib.conceptSelectCell)
     }
 }
 
@@ -59,10 +59,10 @@ extension ConceptSelectViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.ConceptSelectCell, for: indexPath) as? ConceptSelectCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.conceptSelectCell, for: indexPath) as? ConceptSelectCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setBackgroundImage(image: conceptList[indexPath.row])
+        cell.initBackgroundImage(image: conceptList[indexPath.row])
         
         return cell
     }

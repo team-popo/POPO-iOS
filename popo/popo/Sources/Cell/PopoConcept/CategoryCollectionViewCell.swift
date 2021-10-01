@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryCell: UICollectionViewCell {
+class CategoryCollectionViewCell: UICollectionViewCell {
     
     // MARK: - @IBOutlet Properties
     
