@@ -42,7 +42,7 @@ extension ConceptSelectViewController {
         subtitleLabel.font = UIFont.systemFont(ofSize: 18)
         subtitleLabel.textColor = #colorLiteral(red: 0.4784313725, green: 0.462745098, blue: 0.462745098, alpha: 1)
         
-        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.initWithBackButton()
     }
     
     private func registerCell() {
