@@ -9,8 +9,8 @@ import Foundation
 
 extension Const {
     struct Xib {
-        static let CategoryCell = "CategoryCell"
-        static let OnboardingCell = "OnboardingCell"
-        static let ConceptSelectCell = "ConceptSelectCell"
+        static let categoryCell = "CategoryCollectionViewCell"
+        static let onboardingCell = "OnboardingCollectionViewCell"
+        static let conceptSelectCell = "ConceptSelectCollectionViewCell"
     }
 }

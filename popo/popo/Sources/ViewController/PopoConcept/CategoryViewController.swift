@@ -23,7 +23,7 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setCategoryList()
+        initCategoryList()
         registerCell()
     }
 
@@ -42,7 +42,7 @@ extension CategoryViewController {
         categoryCollectionView.backgroundColor = .clear
     }
     
-    private func setCategoryList() {
+    private func initCategoryList() {
         categoryList.append(contentsOf: ["영화",
                                          "책",
                                          "음식",
@@ -64,8 +64,8 @@ extension CategoryViewController {
     private func registerCell() {
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
-        let cateogoryCell = UINib(nibName: Const.Xib.CategoryCell, bundle: nil)
-        categoryCollectionView.register(cateogoryCell, forCellWithReuseIdentifier: Const.Xib.CategoryCell)
+        let cateogoryCell = UINib(nibName: Const.Xib.categoryCell, bundle: nil)
+        categoryCollectionView.register(cateogoryCell, forCellWithReuseIdentifier: Const.Xib.categoryCell)
     }
 }
 
@@ -79,7 +79,7 @@ extension CategoryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.CategoryCell, for: indexPath) as? CategoryCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.categoryCell, for: indexPath) as? CategoryCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.initCell(imageList[indexPath.row], categoryList[indexPath.row])

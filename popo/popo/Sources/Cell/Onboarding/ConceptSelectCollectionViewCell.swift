@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConceptSelectCell: UICollectionViewCell {
+class ConceptSelectCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var backImage: UIImageView!
     
@@ -19,7 +19,7 @@ class ConceptSelectCell: UICollectionViewCell {
     
     // MARK: - Methods
     
-    func setBackgroundImage(image: String) {
+    func initBackgroundImage(image: String) {
         backImage.image = UIImage(named: image)
         backImage.sizeToFit()
     }
