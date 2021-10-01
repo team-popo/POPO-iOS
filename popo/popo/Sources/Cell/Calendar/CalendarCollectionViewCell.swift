@@ -31,10 +31,6 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         self.thumbImageView.makeRounded(radius: 5)
     }
     
-    private func initEmptyCell() {
-        
-    }
-    
     func setCell(tracker: Tracker) {
         
         if tracker.id != -1 {
