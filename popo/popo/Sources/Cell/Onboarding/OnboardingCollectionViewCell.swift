@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnboardingCell: UICollectionViewCell {
+class OnboardingCollectionViewCell: UICollectionViewCell {
     
     // MARK: - @IBOutlet Properties
     

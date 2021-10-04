@@ -45,18 +45,18 @@
 		F8731B02265BE4B400770760 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8731B01265BE4B400770760 /* Onboarding.storyboard */; };
 		F8731B0A265C019200770760 /* ConceptSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8731B09265C019200770760 /* ConceptSelectViewController.swift */; };
 		F8731B0C265C01A800770760 /* ConceptSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8731B0B265C01A800770760 /* ConceptSelect.storyboard */; };
-		F8731B0F265C05E900770760 /* ConceptSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8731B0D265C05E900770760 /* ConceptSelectCell.swift */; };
-		F8731B10265C05E900770760 /* ConceptSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8731B0E265C05E900770760 /* ConceptSelectCell.xib */; };
+		F8731B0F265C05E900770760 /* ConceptSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8731B0D265C05E900770760 /* ConceptSelectCollectionViewCell.swift */; };
+		F8731B10265C05E900770760 /* ConceptSelectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8731B0E265C05E900770760 /* ConceptSelectCollectionViewCell.xib */; };
 		F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648126A668DE00F121DC /* OnboardingViewController.swift */; };
-		F873648526A6A5E500F121DC /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648326A6A5E500F121DC /* OnboardingCell.swift */; };
-		F873648626A6A5E500F121DC /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F873648426A6A5E500F121DC /* OnboardingCell.xib */; };
+		F873648526A6A5E500F121DC /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648326A6A5E500F121DC /* OnboardingCollectionViewCell.swift */; };
+		F873648626A6A5E500F121DC /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F873648426A6A5E500F121DC /* OnboardingCollectionViewCell.xib */; };
 		F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648A26A6A92600F121DC /* OnboardingDescriptionModel.swift */; };
 		F881A73E26FC191400AEE21E /* ConceptData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73D26FC191400AEE21E /* ConceptData.swift */; };
 		F881A74026FC50B200AEE21E /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73F26FC50B200AEE21E /* GenericResponse.swift */; };
 		F881A74226FC588400AEE21E /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A74126FC588400AEE21E /* NetworkResult.swift */; };
 		F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */; };
-		F8967D9326FA01F300F034E3 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D9126FA01F300F034E3 /* CategoryCell.swift */; };
-		F8967D9426FA01F300F034E3 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9226FA01F300F034E3 /* CategoryCell.xib */; };
+		F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */; };
+		F8967D9426FA01F300F034E3 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */; };
 		F8967D9626FA090500F034E3 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9526FA090500F034E3 /* Category.storyboard */; };
 		F8C284DC265CCD2300B41054 /* CoverColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DB265CCD2300B41054 /* CoverColor.storyboard */; };
 		F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */; };
@@ -107,18 +107,18 @@
 		F8731B01265BE4B400770760 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		F8731B09265C019200770760 /* ConceptSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptSelectViewController.swift; sourceTree = "<group>"; };
 		F8731B0B265C01A800770760 /* ConceptSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConceptSelect.storyboard; sourceTree = "<group>"; };
-		F8731B0D265C05E900770760 /* ConceptSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptSelectCell.swift; sourceTree = "<group>"; };
-		F8731B0E265C05E900770760 /* ConceptSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConceptSelectCell.xib; sourceTree = "<group>"; };
+		F8731B0D265C05E900770760 /* ConceptSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptSelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		F8731B0E265C05E900770760 /* ConceptSelectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConceptSelectCollectionViewCell.xib; sourceTree = "<group>"; };
 		F873648126A668DE00F121DC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		F873648326A6A5E500F121DC /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
-		F873648426A6A5E500F121DC /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
+		F873648326A6A5E500F121DC /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		F873648426A6A5E500F121DC /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		F873648A26A6A92600F121DC /* OnboardingDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescriptionModel.swift; sourceTree = "<group>"; };
 		F881A73D26FC191400AEE21E /* ConceptData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptData.swift; sourceTree = "<group>"; };
 		F881A73F26FC50B200AEE21E /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		F881A74126FC588400AEE21E /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		F8967D9126FA01F300F034E3 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		F8967D9226FA01F300F034E3 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		F8967D9526FA090500F034E3 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		F8C284DB265CCD2300B41054 /* CoverColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverColor.storyboard; sourceTree = "<group>"; };
 		F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverColorViewController.swift; sourceTree = "<group>"; };
@@ -366,10 +366,10 @@
 		F873648726A6A60100F121DC /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				F873648326A6A5E500F121DC /* OnboardingCell.swift */,
-				F873648426A6A5E500F121DC /* OnboardingCell.xib */,
-				F8731B0D265C05E900770760 /* ConceptSelectCell.swift */,
-				F8731B0E265C05E900770760 /* ConceptSelectCell.xib */,
+				F873648326A6A5E500F121DC /* OnboardingCollectionViewCell.swift */,
+				F873648426A6A5E500F121DC /* OnboardingCollectionViewCell.xib */,
+				F8731B0D265C05E900770760 /* ConceptSelectCollectionViewCell.swift */,
+				F8731B0E265C05E900770760 /* ConceptSelectCollectionViewCell.xib */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -445,8 +445,8 @@
 		F8967D9026FA01C400F034E3 /* PopoConcept */ = {
 			isa = PBXGroup;
 			children = (
-				F8967D9126FA01F300F034E3 /* CategoryCell.swift */,
-				F8967D9226FA01F300F034E3 /* CategoryCell.xib */,
+				F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */,
+				F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */,
 			);
 			path = PopoConcept;
 			sourceTree = "<group>";
@@ -517,14 +517,15 @@
 				F8731B02265BE4B400770760 /* Onboarding.storyboard in Resources */,
 				565A1F0827056C7E000CAB1B /* Calendar.storyboard in Resources */,
 				562F556C26452208000F8CAB /* Colors.xcassets in Resources */,
-				F8967D9426FA01F300F034E3 /* CategoryCell.xib in Resources */,
+				F8967D9426FA01F300F034E3 /* CategoryCollectionViewCell.xib in Resources */,
 				F8967D9626FA090500F034E3 /* Category.storyboard in Resources */,
 				565A1F162706F58F000CAB1B /* CalendarCollectionViewCell.xib in Resources */,
 				F8731B0C265C01A800770760 /* ConceptSelect.storyboard in Resources */,
 				565A1F0B2705EEC8000CAB1B /* LoginMethod.storyboard in Resources */,
 				F8C284DC265CCD2300B41054 /* CoverColor.storyboard in Resources */,
-				F8731B10265C05E900770760 /* ConceptSelectCell.xib in Resources */,
-				F873648626A6A5E500F121DC /* OnboardingCell.xib in Resources */,
+				F8731B10265C05E900770760 /* ConceptSelectCollectionViewCell.xib in Resources */,
+				F873648626A6A5E500F121DC /* OnboardingCollectionViewCell.xib in Resources */,
+				56924E07265635DA00745273 /* LoginMethod.storyboard in Resources */,
 				562F555626452103000F8CAB /* Assets.xcassets in Resources */,
 				F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */,
 				567BF244265A571300285956 /* CoverCalendar.storyboard in Resources */,
@@ -617,9 +618,9 @@
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */,
 				F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */,
-				F8731B0F265C05E900770760 /* ConceptSelectCell.swift in Sources */,
+				F8731B0F265C05E900770760 /* ConceptSelectCollectionViewCell.swift in Sources */,
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
-				F8967D9326FA01F300F034E3 /* CategoryCell.swift in Sources */,
+				F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */,
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
 				F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */,
 				F881A73E26FC191400AEE21E /* ConceptData.swift in Sources */,
@@ -631,7 +632,7 @@
 				565A1F1B2707073E000CAB1B /* Calendar.swift in Sources */,
 				567BF24A265A626100285956 /* Storyboard.swift in Sources */,
 				567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */,
-				F873648526A6A5E500F121DC /* OnboardingCell.swift in Sources */,
+				F873648526A6A5E500F121DC /* OnboardingCollectionViewCell.swift in Sources */,
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
 				565A1F152706F58F000CAB1B /* CalendarCollectionViewCell.swift in Sources */,
 				565A1F0227056B9F000CAB1B /* AppDate.swift in Sources */,
