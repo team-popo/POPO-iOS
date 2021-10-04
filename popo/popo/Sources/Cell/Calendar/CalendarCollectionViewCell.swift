@@ -31,7 +31,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         self.thumbImageView.makeRounded(radius: 5)
     }
     
-    func setCell(tracker: Tracker) {
+    func initCell(tracker: Tracker) {
         
         if tracker.id != -1 {
             dateLabel.isHidden = true

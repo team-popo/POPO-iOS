@@ -160,7 +160,7 @@ extension CalendarViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.setCell(tracker: data.tracker[indexPath.row])
+        cell.initCell(tracker: data.tracker[indexPath.row])
         
         return cell
     }
