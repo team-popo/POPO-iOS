@@ -20,6 +20,7 @@ extension Const {
             static let onboarding = "OnboardingViewController"
             static let conseptSelect = "ConceptSelectViewController"
             static let category = "CategoryViewController"
+            static let calendar = "CalendarViewController"
         }
         
     }

@@ -42,6 +42,7 @@ class CoverUserPhotoViewController: UIViewController {
         // Do any additional setup after loading the view.
         makeImageViewArray()
         initViewRounding()
+        initNavigationBar()
         assignDelegate()
         initTapGesterRecognizer()
     }
@@ -67,6 +68,12 @@ class CoverUserPhotoViewController: UIViewController {
         whiteBgView.makeRounded(radius: 30)
     }
     
+    private func initNavigationBar() {
+        self.navigationController?.initWithBackAndDoneButton(
+            navigationItem: self.navigationItem,
+            doneButtonClosure: #selector(touchDoneButton(_:)))
+    }
+    
     private func assignDelegate() {
         imagePicker.delegate = self
     }
@@ -88,6 +95,12 @@ class CoverUserPhotoViewController: UIViewController {
         guard let senderTag = sender.view?.tag else { return }
         currentPickerIndex = senderTag
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @objc func touchDoneButton(_ sender: UIBarButtonItem) {
+        let calendarStoryboard = UIStoryboard(name: Const.Storyboard.Name.calendar, bundle: nil)
+        guard let calendarViewController = calendarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.calendar) as? CalendarViewController else { return }
+        self.navigationController?.pushViewController(calendarViewController, animated: true)
     }
 }
 

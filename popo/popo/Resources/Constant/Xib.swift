@@ -12,5 +12,6 @@ extension Const {
         static let categoryCell = "CategoryCollectionViewCell"
         static let onboardingCell = "OnboardingCollectionViewCell"
         static let conceptSelectCell = "ConceptSelectCollectionViewCell"
+        static let calendarCollectionViewCell = "CalendarCollectionViewCell"
     }
 }

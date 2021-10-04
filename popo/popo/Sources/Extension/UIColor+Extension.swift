@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 
 extension UIColor {
+    
+    // MARK: - Properties
+    
+    static let emptyCalendarBg = UIColor(named: "emptyCalendarBg")
+    
+    // MARK: - Functions
 
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()

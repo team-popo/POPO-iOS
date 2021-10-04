@@ -20,6 +20,7 @@ extension Const {
             static let onboarding = "Onboarding"
             static let conceptSelect = "ConceptSelect"
             static let category = "Category"
+            static let calendar = "Calendar"
         }
         
     }
