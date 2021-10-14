@@ -14,7 +14,6 @@
 		562F555926452103000F8CAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 562F555726452103000F8CAB /* LaunchScreen.storyboard */; };
 		562F556C26452208000F8CAB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 562F556B26452208000F8CAB /* Colors.xcassets */; };
 		562F556E26452218000F8CAB /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F556D26452218000F8CAB /* Const.swift */; };
-		562F557A26452252000F8CAB /* ViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F557926452252000F8CAB /* ViewExample.swift */; };
 		562F557D26452408000F8CAB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 562F557C26452408000F8CAB /* .swiftlint.yml */; };
 		565A1F0527056C47000CAB1B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A1F0427056C47000CAB1B /* CalendarViewController.swift */; };
 		565A1F0827056C7E000CAB1B /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565A1F0727056C7E000CAB1B /* Calendar.storyboard */; };
@@ -62,6 +61,13 @@
 		F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */; };
 		F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */; };
 		F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C284E1265CD4EB00B41054 /* CoverGradientViewController.swift */; };
+		F8D39A56271702AC0032DDD2 /* Options.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D39A55271702AC0032DDD2 /* Options.storyboard */; };
+		F8D39A58271702CA0032DDD2 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A57271702CA0032DDD2 /* OptionsViewController.swift */; };
+		F8D39A5B27170BD60032DDD2 /* RecommendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A5927170BD60032DDD2 /* RecommendationCollectionViewCell.swift */; };
+		F8D39A5C27170BD60032DDD2 /* RecommendationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D39A5A27170BD60032DDD2 /* RecommendationCollectionViewCell.xib */; };
+		F8D39A5E27171F530032DDD2 /* RecommendationOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A5D27171F530032DDD2 /* RecommendationOptionView.swift */; };
+		F8D39A6027171FEA0032DDD2 /* PlustOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A5F27171FEA0032DDD2 /* PlustOptionView.swift */; };
+		F8D39A62271862C20032DDD2 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A61271862C20032DDD2 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +81,6 @@
 		562F555A26452103000F8CAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		562F556B26452208000F8CAB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		562F556D26452218000F8CAB /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		562F557926452252000F8CAB /* ViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExample.swift; sourceTree = "<group>"; };
 		562F557C26452408000F8CAB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		565A1F0427056C47000CAB1B /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		565A1F0727056C7E000CAB1B /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
@@ -124,6 +129,13 @@
 		F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverColorViewController.swift; sourceTree = "<group>"; };
 		F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverGradient.storyboard; sourceTree = "<group>"; };
 		F8C284E1265CD4EB00B41054 /* CoverGradientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverGradientViewController.swift; sourceTree = "<group>"; };
+		F8D39A55271702AC0032DDD2 /* Options.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Options.storyboard; sourceTree = "<group>"; };
+		F8D39A57271702CA0032DDD2 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		F8D39A5927170BD60032DDD2 /* RecommendationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCollectionViewCell.swift; sourceTree = "<group>"; };
+		F8D39A5A27170BD60032DDD2 /* RecommendationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationCollectionViewCell.xib; sourceTree = "<group>"; };
+		F8D39A5D27171F530032DDD2 /* RecommendationOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationOptionView.swift; sourceTree = "<group>"; };
+		F8D39A5F27171FEA0032DDD2 /* PlustOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlustOptionView.swift; sourceTree = "<group>"; };
+		F8D39A61271862C20032DDD2 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +217,8 @@
 		562F5562264521C2000F8CAB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				562F557926452252000F8CAB /* ViewExample.swift */,
+				F8D39A5D27171F530032DDD2 /* RecommendationOptionView.swift */,
+				F8D39A5F27171FEA0032DDD2 /* PlustOptionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +305,7 @@
 				567BF24B265A62C000285956 /* ViewController.swift */,
 				F816E66126FC6CAB000C0270 /* URL.swift */,
 				F84AA56B27057633008D77ED /* Xib.swift */,
+				F8D39A61271862C20032DDD2 /* Notification.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -429,6 +443,7 @@
 			children = (
 				56EE71BC265E18BA005AC12A /* ConceptViewController.swift */,
 				F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */,
+				F8D39A57271702CA0032DDD2 /* OptionsViewController.swift */,
 			);
 			path = PopoConcept;
 			sourceTree = "<group>";
@@ -438,6 +453,7 @@
 			children = (
 				56EE71BA265E165B005AC12A /* Concept.storyboard */,
 				F8967D9526FA090500F034E3 /* Category.storyboard */,
+				F8D39A55271702AC0032DDD2 /* Options.storyboard */,
 			);
 			path = PopoConcept;
 			sourceTree = "<group>";
@@ -447,6 +463,8 @@
 			children = (
 				F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */,
 				F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */,
+				F8D39A5927170BD60032DDD2 /* RecommendationCollectionViewCell.swift */,
+				F8D39A5A27170BD60032DDD2 /* RecommendationCollectionViewCell.xib */,
 			);
 			path = PopoConcept;
 			sourceTree = "<group>";
@@ -512,6 +530,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				567BF246265A5BBE00285956 /* CoverUserPhoto.storyboard in Resources */,
+				F8D39A56271702AC0032DDD2 /* Options.storyboard in Resources */,
+				F8D39A5C27170BD60032DDD2 /* RecommendationCollectionViewCell.xib in Resources */,
 				562F557D26452408000F8CAB /* .swiftlint.yml in Resources */,
 				562F555926452103000F8CAB /* LaunchScreen.storyboard in Resources */,
 				F8731B02265BE4B400770760 /* Onboarding.storyboard in Resources */,
@@ -525,7 +545,6 @@
 				F8C284DC265CCD2300B41054 /* CoverColor.storyboard in Resources */,
 				F8731B10265C05E900770760 /* ConceptSelectCollectionViewCell.xib in Resources */,
 				F873648626A6A5E500F121DC /* OnboardingCollectionViewCell.xib in Resources */,
-				56924E07265635DA00745273 /* LoginMethod.storyboard in Resources */,
 				562F555626452103000F8CAB /* Assets.xcassets in Resources */,
 				F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */,
 				567BF244265A571300285956 /* CoverCalendar.storyboard in Resources */,
@@ -611,17 +630,21 @@
 				F816E66226FC6CAB000C0270 /* URL.swift in Sources */,
 				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
 				F816E65D26FC631F000C0270 /* FetchPopoListAPI.swift in Sources */,
-				562F557A26452252000F8CAB /* ViewExample.swift in Sources */,
+				F8D39A5E27171F530032DDD2 /* RecommendationOptionView.swift in Sources */,
 				F84AA56C27057633008D77ED /* Xib.swift in Sources */,
 				565A1F1D27070768000CAB1B /* Tracker.swift in Sources */,
 				F816E66026FC6441000C0270 /* TempAPI.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */,
+				F8D39A5B27170BD60032DDD2 /* RecommendationCollectionViewCell.swift in Sources */,
 				F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */,
 				F8731B0F265C05E900770760 /* ConceptSelectCollectionViewCell.swift in Sources */,
+				F8D39A6027171FEA0032DDD2 /* PlustOptionView.swift in Sources */,
+				F8D39A62271862C20032DDD2 /* Notification.swift in Sources */,
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
 				F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */,
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
+				F8D39A58271702CA0032DDD2 /* OptionsViewController.swift in Sources */,
 				F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */,
 				F881A73E26FC191400AEE21E /* ConceptData.swift in Sources */,
 				56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */,
@@ -635,7 +658,6 @@
 				F873648526A6A5E500F121DC /* OnboardingCollectionViewCell.swift in Sources */,
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
 				565A1F152706F58F000CAB1B /* CalendarCollectionViewCell.swift in Sources */,
-				565A1F0227056B9F000CAB1B /* AppDate.swift in Sources */,
 				5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

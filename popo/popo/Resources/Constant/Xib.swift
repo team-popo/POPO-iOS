@@ -13,5 +13,6 @@ extension Const {
         static let onboardingCell = "OnboardingCollectionViewCell"
         static let conceptSelectCell = "ConceptSelectCollectionViewCell"
         static let calendarCollectionViewCell = "CalendarCollectionViewCell"
+        static let recommendationCollectionViewCell = "RecommendationCollectionViewCell"
     }
 }
