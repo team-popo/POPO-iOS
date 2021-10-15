@@ -12,7 +12,7 @@ class ConceptViewController: UIViewController {
     // MARK: - Properties
     
     var conceptImageViews = [UIImageView]()
-    var devidedImages = [CGImage]()
+    var dividedImages = [CGImage]()
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var whiteBgView: UIView!
@@ -40,7 +40,7 @@ class ConceptViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        initCoverImage(images: devidedImages)
+        initCoverImage(images: dividedImages)
     }
     
     // MARK: - Functions

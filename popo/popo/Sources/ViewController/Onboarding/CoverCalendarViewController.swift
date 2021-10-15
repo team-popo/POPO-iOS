@@ -106,7 +106,7 @@ class CoverCalendarViewController: UIViewController {
         let conceptStoryboard = UIStoryboard(name: Const.Storyboard.Name.concept, bundle: nil)
         guard let conceptViewController = conceptStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.concept) as? ConceptViewController else { return }
         
-        conceptViewController.devidedImages = self.dividedImages
+        conceptViewController.dividedImages = self.dividedImages
         
         self.navigationController?.pushViewController(conceptViewController, animated: true)
     }
@@ -140,6 +140,8 @@ extension CoverCalendarViewController: UIImagePickerControllerDelegate, UINaviga
     
     // didFinishPickingMediaWithInfo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        
+        self.dividedImages.removeAll()
 
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             
