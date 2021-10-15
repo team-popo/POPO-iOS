@@ -15,6 +15,7 @@ class CoverCalendarViewController: UIViewController {
     var coverStackViews: [UIStackView] = []
     var imagePicker = UIImagePickerController()
     var imageRects: [CGRect] = Array(repeating: CGRect(x: 0, y: 0, width: 0, height: 0), count: 12)
+    var dividedImages: [CGImage] = []
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var whiteBgView: UIView!
@@ -41,6 +42,7 @@ class CoverCalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initNavigationBar()
         makeImageViewArray()
         makeStackViewArray()
         initViewRounding()
@@ -52,6 +54,11 @@ class CoverCalendarViewController: UIViewController {
     }
     
     // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initWithBackAndDoneButton(navigationItem: self.navigationItem,
+                                                             doneButtonClosure: #selector(pushToConceptViewController(_:)))
+    }
     
     private func makeImageViewArray() {
         coverImageViews.append(coverImageView1)
@@ -95,9 +102,12 @@ class CoverCalendarViewController: UIViewController {
         }
     }
     
-    private func pushToConceptViewController() {
+    @objc func pushToConceptViewController(_ sender: UIBarButtonItem) {
         let conceptStoryboard = UIStoryboard(name: Const.Storyboard.Name.concept, bundle: nil)
         guard let conceptViewController = conceptStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.concept) as? ConceptViewController else { return }
+        
+        conceptViewController.devidedImages = self.dividedImages
+        
         self.navigationController?.pushViewController(conceptViewController, animated: true)
     }
     
@@ -138,7 +148,6 @@ extension CoverCalendarViewController: UIImagePickerControllerDelegate, UINaviga
             let minimumSize: CGSize = CGSize(
                 width: coverImageView3.frame.origin.x + coverImageView3.frame.width - coverImageView1.frame.origin.x,
                 height: bgStackView.frame.height)
-            var dividedImages: [CGImage] = []
             // 사진의 비율에 맞춰 resize될 CGSize
             var newSize: CGSize = CGSize(width: 0, height: 0)
             

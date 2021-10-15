@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -137,6 +138,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="conceptImageView1" destination="ZwW-Pf-ga1" id="IU9-7A-V7q"/>
+                        <outlet property="conceptImageView10" destination="dEc-vf-Bf9" id="CbE-UV-5zl"/>
+                        <outlet property="conceptImageView11" destination="Xdf-KG-lXm" id="bbd-VC-vXv"/>
+                        <outlet property="conceptImageView12" destination="vVx-Oz-KbJ" id="rag-vG-3bw"/>
+                        <outlet property="conceptImageView2" destination="lqo-ri-3CY" id="MBo-8U-wyH"/>
+                        <outlet property="conceptImageView3" destination="EPw-cx-iV3" id="Ols-4W-xda"/>
+                        <outlet property="conceptImageView4" destination="o6K-B1-5Po" id="a8i-Js-S3c"/>
+                        <outlet property="conceptImageView5" destination="NQP-KB-RCV" id="X2Z-c1-PP7"/>
+                        <outlet property="conceptImageView6" destination="hwU-S3-q4z" id="QC1-yj-rGO"/>
+                        <outlet property="conceptImageView7" destination="TLV-7k-mtN" id="eWU-cI-zsN"/>
+                        <outlet property="conceptImageView8" destination="87j-1K-lGr" id="kMc-qt-gWU"/>
+                        <outlet property="conceptImageView9" destination="3fC-jF-bnh" id="E7X-IH-jaD"/>
                         <outlet property="whiteBgView" destination="h0j-rb-GFZ" id="ZOt-jr-QR5"/>
                     </connections>
                 </viewController>
