@@ -35,6 +35,7 @@ class OptionsViewController: UIViewController {
         super.viewDidLoad()
         initRecommendationOptionsList()
         setUI()
+        initNavigationBar()
         registerCell()
         initNotification()
     }
@@ -44,9 +45,7 @@ class OptionsViewController: UIViewController {
 
 extension OptionsViewController {
     private func setUI() {
-        self.navigationController?.navigationBar.isHidden = true
         scrollView.contentInsetAdjustmentBehavior = .never
-//        recommendationCollectionView.contentInset = .zero
         
         recommendationCollectionView.backgroundColor = .clear
         let recommendationOptionView = RecommendationOptionView(title: recommendationOptionsList[0])
@@ -64,6 +63,10 @@ extension OptionsViewController {
         recommendationCollectionView.allowsMultipleSelection = true
     }
     
+    private func initNavigationBar() {
+        self.navigationController?.initWithBackAndDoneButton(navigationItem: self.navigationItem, doneButtonClosure: #selector(pushToConceptViewController))
+     }
+    
     private func registerCell() {
         recommendationCollectionView.delegate = self
         recommendationCollectionView.dataSource = self
@@ -80,6 +83,11 @@ extension OptionsViewController {
     private func initNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(removeOption(_:)), name: .removeOption, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(plusOption), name: .plusOption, object: nil)
+    }
+    
+    @objc
+    private func pushToConceptViewController() {
+        // TODO: 화면전환
     }
     
     @objc

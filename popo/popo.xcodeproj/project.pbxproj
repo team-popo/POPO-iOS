@@ -441,8 +441,8 @@
 		F8967D8126F9F66A00F034E3 /* PopoConcept */ = {
 			isa = PBXGroup;
 			children = (
-				56EE71BC265E18BA005AC12A /* ConceptViewController.swift */,
 				F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */,
+				56EE71BC265E18BA005AC12A /* ConceptViewController.swift */,
 				F8D39A57271702CA0032DDD2 /* OptionsViewController.swift */,
 			);
 			path = PopoConcept;

@@ -70,7 +70,13 @@ extension CategoryViewController {
 }
 
 extension CategoryViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: Const.Storyboard.Name.options, bundle: nil)
+        guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.options) as? OptionsViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 extension CategoryViewController: UICollectionViewDataSource {

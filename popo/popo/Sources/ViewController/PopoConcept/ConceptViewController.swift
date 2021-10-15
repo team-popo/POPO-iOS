@@ -34,6 +34,7 @@ class ConceptViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
         initWhiteBgView()
         makeImageViewArray()
         getPopoListWithAPI()
@@ -42,8 +43,17 @@ class ConceptViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         initCoverImage(images: dividedImages)
     }
+}
     
-    // MARK: - Functions
+// MARK: - Extensions
+
+extension ConceptViewController {
+    private func setUI() {
+        self.navigationController?.navigationBar.isHidden = true
+        let pushToCalendarViewControllerGesture = UITapGestureRecognizer(target: self, action: #selector(pushToCalenarViewController))
+        conceptImageView1.isUserInteractionEnabled = true
+        conceptImageView1.addGestureRecognizer(pushToCalendarViewControllerGesture)
+    }
     
     private func initWhiteBgView() {
         whiteBgView.makeRounded(radius: 30)
@@ -80,20 +90,22 @@ class ConceptViewController: UIViewController {
         } else {
             print("error")
         }
-        
     }
     
-    // MARK: - @IBAction Functions
-
-}
-
-// MARK: - Extensions
-
-extension ConceptViewController {
     // 서버통신
     func getPopoListWithAPI() {
         FetchPopoListAPI.shared.getPopoList { result in
             print(result)
         }
+    }
+    
+    @objc
+    func pushToCalenarViewController() {
+        let storyboard = UIStoryboard(name: Const.Storyboard.Name.calendar, bundle: nil)
+        guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.calendar) as? CalendarViewController else {
+            return
+        }
+
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
