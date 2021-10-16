@@ -18,15 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a75-Ry-IrR">
-                                <rect key="frame" x="46" y="64" width="11" height="22"/>
-                                <state key="normal" image="backButtonImg"/>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgCircles" translatesAutoresizingMaskIntoConstraints="NO" id="DhV-9O-0VS">
                                 <rect key="frame" x="0.0" y="125" width="414" height="771"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ing-MG-Vg7">
-                                <rect key="frame" x="50" y="222" width="217" height="43"/>
+                                <rect key="frame" x="50" y="180" width="217" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Aro-9W-BiE"/>
                                 </constraints>
@@ -37,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wGA-GA-YhZ">
-                                <rect key="frame" x="43" y="301" width="328" height="544"/>
+                                <rect key="frame" x="43" y="259" width="328" height="586"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bHi-VB-miH">
                                     <size key="itemSize" width="128" height="128"/>
@@ -47,7 +43,7 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvA-aL-khP">
-                                <rect key="frame" x="50" y="116" width="214" height="86"/>
+                                <rect key="frame" x="50" y="74" width="214" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="2Cm-vF-kzL"/>
                                 </constraints>
@@ -64,15 +60,13 @@
                             <constraint firstItem="DhV-9O-0VS" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="HI5-WH-ExA"/>
                             <constraint firstItem="DhV-9O-0VS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="81" id="Iw6-be-BPO"/>
                             <constraint firstItem="Ing-MG-Vg7" firstAttribute="top" secondItem="KvA-aL-khP" secondAttribute="bottom" constant="20" id="P4Q-np-A3J"/>
-                            <constraint firstItem="a75-Ry-IrR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="46" id="Vid-LY-KHI"/>
-                            <constraint firstItem="KvA-aL-khP" firstAttribute="top" secondItem="a75-Ry-IrR" secondAttribute="bottom" constant="30" id="Xvm-Kh-oJo"/>
                             <constraint firstItem="wGA-GA-YhZ" firstAttribute="top" secondItem="Ing-MG-Vg7" secondAttribute="bottom" constant="36" id="boQ-kJ-ecW"/>
                             <constraint firstItem="wGA-GA-YhZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43" id="cCo-mt-17s"/>
                             <constraint firstItem="Ing-MG-Vg7" firstAttribute="leading" secondItem="KvA-aL-khP" secondAttribute="leading" id="ci2-sw-NAE"/>
-                            <constraint firstItem="a75-Ry-IrR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="cq7-PD-Wre"/>
                             <constraint firstAttribute="bottom" secondItem="wGA-GA-YhZ" secondAttribute="bottom" constant="51" id="ecR-Cp-ztA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wGA-GA-YhZ" secondAttribute="trailing" constant="43" id="iRA-7t-YKT"/>
                             <constraint firstItem="DhV-9O-0VS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sMc-Xd-Bfz"/>
+                            <constraint firstItem="KvA-aL-khP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="sdy-CR-x8u"/>
                             <constraint firstItem="KvA-aL-khP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="w1h-Ij-7d7"/>
                             <constraint firstAttribute="bottom" secondItem="DhV-9O-0VS" secondAttribute="bottom" id="xAv-Km-FK9"/>
                         </constraints>
@@ -87,7 +81,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backButtonImg" width="10.5" height="17"/>
         <image name="bgCircles" width="414" height="799"/>
         <namedColor name="popoPurple">
             <color red="0.65098039215686276" green="0.55294117647058827" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
