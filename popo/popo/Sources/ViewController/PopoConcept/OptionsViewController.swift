@@ -111,8 +111,14 @@ extension OptionsViewController {
     
     @objc
     private func plusOption() {
-        print("plus")
-        // TODO: - 화면전환
+        let storyboard = UIStoryboard(name: Const.Storyboard.Name.customOptions, bundle: nil)
+        guard let popVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.customOptions) as? CustomOptionsViewController else {
+            return
+        }
+        popVC.modalTransitionStyle = .crossDissolve
+        popVC.modalPresentationStyle = .overFullScreen
+        self.present(popVC, animated: true, completion: nil)
+        
     }
 }
 
