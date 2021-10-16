@@ -138,7 +138,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="conceptImageView1" destination="ZwW-Pf-ga1" id="IU9-7A-V7q"/>
+                        <outlet property="conceptImageView1" destination="ZwW-Pf-ga1" id="74s-zr-aeB"/>
                         <outlet property="conceptImageView10" destination="dEc-vf-Bf9" id="CbE-UV-5zl"/>
                         <outlet property="conceptImageView11" destination="Xdf-KG-lXm" id="bbd-VC-vXv"/>
                         <outlet property="conceptImageView12" destination="vVx-Oz-KbJ" id="rag-vG-3bw"/>

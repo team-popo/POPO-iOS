@@ -82,6 +82,7 @@ class CalendarViewController: UIViewController {
     
     // init functions
     private func initNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.initWithTwoCustomButtons(
             navigationItem: self.navigationItem,
             firstButtonImage: UIImage(systemName: "photo.on.rectangle.angled")!,

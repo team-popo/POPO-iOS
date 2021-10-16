@@ -14,7 +14,6 @@
         <!--Options View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="OptionsViewController" id="Y6W-OH-hqX" customClass="OptionsViewController" customModule="popo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -129,6 +128,7 @@ ex) 제목, 감상평, 줄거리</string>
                         <outlet property="scrollview" destination="s2T-do-4NR" id="RTA-6Y-Yn1"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="270" y="49"/>
         </scene>

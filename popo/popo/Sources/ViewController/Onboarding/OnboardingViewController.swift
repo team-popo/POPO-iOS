@@ -35,6 +35,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        initNavigationBar()
         registerCell()
         initList()
     }
@@ -65,6 +66,10 @@ extension OnboardingViewController {
         
         setNextButton()
     }
+    
+    private func initNavigationBar() {
+         self.navigationController?.initWithBackButton()
+     }
     
     private func registerCell() {
         onboardingCollectionView.delegate = self
