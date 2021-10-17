@@ -9,6 +9,6 @@ import Foundation
 
 extension Const {
     struct URL {
-        static let baseURL = "http://fortice.co.kr/popo"
+        static let popoURL = "http://fortice.co.kr/popo"
     }
 }

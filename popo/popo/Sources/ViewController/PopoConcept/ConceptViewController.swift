@@ -56,10 +56,22 @@ extension ConceptViewController {
         whiteBgView.layer.shouldRasterize = true
     }
     
-    // 서버통신
     func getPopoListWithAPI() {
         PopoAPI.shared.getPopoList { result  in
-            print(result)
+            switch result {
+            case .success(let data) :
+                if let conceptData = data as? [Concept] {
+                    self.conceptDataList = conceptData
+                }
+            case .requestErr(let message):
+                print("getPopoListWithAPI - requestErr: \(message)")
+            case .pathErr:
+                print("getPopoListWithAPI - pathErr")
+            case .serverErr:
+                print("getPopoListWithAPI - serverErr")
+            case .networkFail:
+                print("getPopoListWithAPI - networkFail")
+            }
         }
     }
     

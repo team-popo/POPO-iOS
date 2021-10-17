@@ -57,6 +57,7 @@
 		F881A73E26FC191400AEE21E /* Concept.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73D26FC191400AEE21E /* Concept.swift */; };
 		F881A74026FC50B200AEE21E /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73F26FC50B200AEE21E /* GenericResponse.swift */; };
 		F881A74226FC588400AEE21E /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A74126FC588400AEE21E /* NetworkResult.swift */; };
+		F88FBC5A271C9473003A5F0B /* InsertPopoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FBC59271C9473003A5F0B /* InsertPopoRequest.swift */; };
 		F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */; };
 		F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */; };
 		F8967D9426FA01F300F034E3 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */; };
@@ -129,6 +130,7 @@
 		F881A73D26FC191400AEE21E /* Concept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concept.swift; sourceTree = "<group>"; };
 		F881A73F26FC50B200AEE21E /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		F881A74126FC588400AEE21E /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		F88FBC59271C9473003A5F0B /* InsertPopoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopoRequest.swift; sourceTree = "<group>"; };
 		F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				F881A73D26FC191400AEE21E /* Concept.swift */,
+				F88FBC59271C9473003A5F0B /* InsertPopoRequest.swift */,
 			);
 			path = PopoConcept;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				F8D39A5E27171F530032DDD2 /* RecommendationOptionView.swift in Sources */,
 				F84AA56C27057633008D77ED /* Xib.swift in Sources */,
 				565A1F1D27070768000CAB1B /* Tracker.swift in Sources */,
+				F88FBC5A271C9473003A5F0B /* InsertPopoRequest.swift in Sources */,
 				F816E66026FC6441000C0270 /* TempAPI.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				F86E64E5271C461C00C1DBF9 /* ConceptCollectionViewCell.swift in Sources */,
