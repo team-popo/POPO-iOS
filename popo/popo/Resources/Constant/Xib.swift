@@ -14,5 +14,6 @@ extension Const {
         static let conceptSelectCell = "ConceptSelectCollectionViewCell"
         static let calendarCollectionViewCell = "CalendarCollectionViewCell"
         static let recommendationCollectionViewCell = "RecommendationCollectionViewCell"
+        static let conceptCollectionViewCell = "ConceptCollectionViewCell"
     }
 }

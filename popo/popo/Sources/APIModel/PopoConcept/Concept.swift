@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ConceptData: Codable {
+struct Concept: Codable {
     let identifier, conceptID, category, order: Int
     let background: String
     let ownerID: Int

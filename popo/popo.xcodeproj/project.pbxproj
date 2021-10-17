@@ -36,11 +36,13 @@
 		56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE71BC265E18BA005AC12A /* ConceptViewController.swift */; };
 		F065790638E6CE247683CA74 /* Pods_popo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9900D9492EE36CE1A8C04071 /* Pods_popo.framework */; };
 		F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65926FC62FD000C0270 /* PopoService.swift */; };
-		F816E65D26FC631F000C0270 /* FetchPopoListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65C26FC631F000C0270 /* FetchPopoListAPI.swift */; };
+		F816E65D26FC631F000C0270 /* PopoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65C26FC631F000C0270 /* PopoAPI.swift */; };
 		F816E66026FC6441000C0270 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65F26FC6441000C0270 /* TempAPI.swift */; };
 		F816E66226FC6CAB000C0270 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E66126FC6CAB000C0270 /* URL.swift */; };
 		F84AA56C27057633008D77ED /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84AA56B27057633008D77ED /* Xib.swift */; };
 		F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */; };
+		F86E64E5271C461C00C1DBF9 /* ConceptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E64E3271C461C00C1DBF9 /* ConceptCollectionViewCell.swift */; };
+		F86E64E6271C461C00C1DBF9 /* ConceptCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F86E64E4271C461C00C1DBF9 /* ConceptCollectionViewCell.xib */; };
 		F8731B02265BE4B400770760 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8731B01265BE4B400770760 /* Onboarding.storyboard */; };
 		F8731B0A265C019200770760 /* ConceptSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8731B09265C019200770760 /* ConceptSelectViewController.swift */; };
 		F8731B0C265C01A800770760 /* ConceptSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8731B0B265C01A800770760 /* ConceptSelect.storyboard */; };
@@ -52,7 +54,7 @@
 		F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F873648A26A6A92600F121DC /* OnboardingDescriptionModel.swift */; };
 		F87958A9271A937100804C4C /* CustomOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F87958A8271A937100804C4C /* CustomOptions.storyboard */; };
 		F87958AB271A93A800804C4C /* CustomOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87958AA271A93A800804C4C /* CustomOptionsViewController.swift */; };
-		F881A73E26FC191400AEE21E /* ConceptData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73D26FC191400AEE21E /* ConceptData.swift */; };
+		F881A73E26FC191400AEE21E /* Concept.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73D26FC191400AEE21E /* Concept.swift */; };
 		F881A74026FC50B200AEE21E /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73F26FC50B200AEE21E /* GenericResponse.swift */; };
 		F881A74226FC588400AEE21E /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A74126FC588400AEE21E /* NetworkResult.swift */; };
 		F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */; };
@@ -106,11 +108,13 @@
 		9900D9492EE36CE1A8C04071 /* Pods_popo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C232EAFF605BCD2CA3B4168B /* Pods-popo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popo.release.xcconfig"; path = "Target Support Files/Pods-popo/Pods-popo.release.xcconfig"; sourceTree = "<group>"; };
 		F816E65926FC62FD000C0270 /* PopoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoService.swift; sourceTree = "<group>"; };
-		F816E65C26FC631F000C0270 /* FetchPopoListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPopoListAPI.swift; sourceTree = "<group>"; };
+		F816E65C26FC631F000C0270 /* PopoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoAPI.swift; sourceTree = "<group>"; };
 		F816E65F26FC6441000C0270 /* TempAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPI.swift; sourceTree = "<group>"; };
 		F816E66126FC6CAB000C0270 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		F84AA56B27057633008D77ED /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F86E64E3271C461C00C1DBF9 /* ConceptCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptCollectionViewCell.swift; sourceTree = "<group>"; };
+		F86E64E4271C461C00C1DBF9 /* ConceptCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConceptCollectionViewCell.xib; sourceTree = "<group>"; };
 		F8731B01265BE4B400770760 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		F8731B09265C019200770760 /* ConceptSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptSelectViewController.swift; sourceTree = "<group>"; };
 		F8731B0B265C01A800770760 /* ConceptSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConceptSelect.storyboard; sourceTree = "<group>"; };
@@ -122,7 +126,7 @@
 		F873648A26A6A92600F121DC /* OnboardingDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDescriptionModel.swift; sourceTree = "<group>"; };
 		F87958A8271A937100804C4C /* CustomOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomOptions.storyboard; sourceTree = "<group>"; };
 		F87958AA271A93A800804C4C /* CustomOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOptionsViewController.swift; sourceTree = "<group>"; };
-		F881A73D26FC191400AEE21E /* ConceptData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptData.swift; sourceTree = "<group>"; };
+		F881A73D26FC191400AEE21E /* Concept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concept.swift; sourceTree = "<group>"; };
 		F881A73F26FC50B200AEE21E /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		F881A74126FC588400AEE21E /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -368,7 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				F816E65926FC62FD000C0270 /* PopoService.swift */,
-				F816E65C26FC631F000C0270 /* FetchPopoListAPI.swift */,
+				F816E65C26FC631F000C0270 /* PopoAPI.swift */,
 			);
 			path = PopoAPI;
 			sourceTree = "<group>";
@@ -424,7 +428,7 @@
 		F881A73C26FC18E100AEE21E /* PopoConcept */ = {
 			isa = PBXGroup;
 			children = (
-				F881A73D26FC191400AEE21E /* ConceptData.swift */,
+				F881A73D26FC191400AEE21E /* Concept.swift */,
 			);
 			path = PopoConcept;
 			sourceTree = "<group>";
@@ -471,6 +475,8 @@
 				F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */,
 				F8D39A5927170BD60032DDD2 /* RecommendationCollectionViewCell.swift */,
 				F8D39A5A27170BD60032DDD2 /* RecommendationCollectionViewCell.xib */,
+				F86E64E3271C461C00C1DBF9 /* ConceptCollectionViewCell.swift */,
+				F86E64E4271C461C00C1DBF9 /* ConceptCollectionViewCell.xib */,
 			);
 			path = PopoConcept;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				562F555626452103000F8CAB /* Assets.xcassets in Resources */,
 				F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */,
 				567BF244265A571300285956 /* CoverCalendar.storyboard in Resources */,
+				F86E64E6271C461C00C1DBF9 /* ConceptCollectionViewCell.xib in Resources */,
 				562F555426452101000F8CAB /* Main.storyboard in Resources */,
 				56EE71BB265E165B005AC12A /* Concept.storyboard in Resources */,
 			);
@@ -637,12 +644,13 @@
 				F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */,
 				F816E66226FC6CAB000C0270 /* URL.swift in Sources */,
 				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
-				F816E65D26FC631F000C0270 /* FetchPopoListAPI.swift in Sources */,
+				F816E65D26FC631F000C0270 /* PopoAPI.swift in Sources */,
 				F8D39A5E27171F530032DDD2 /* RecommendationOptionView.swift in Sources */,
 				F84AA56C27057633008D77ED /* Xib.swift in Sources */,
 				565A1F1D27070768000CAB1B /* Tracker.swift in Sources */,
 				F816E66026FC6441000C0270 /* TempAPI.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
+				F86E64E5271C461C00C1DBF9 /* ConceptCollectionViewCell.swift in Sources */,
 				F873648B26A6A92600F121DC /* OnboardingDescriptionModel.swift in Sources */,
 				F8D39A5B27170BD60032DDD2 /* RecommendationCollectionViewCell.swift in Sources */,
 				F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */,
@@ -654,7 +662,7 @@
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
 				F8D39A58271702CA0032DDD2 /* OptionsViewController.swift in Sources */,
 				F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */,
-				F881A73E26FC191400AEE21E /* ConceptData.swift in Sources */,
+				F881A73E26FC191400AEE21E /* Concept.swift in Sources */,
 				56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */,
 				567BF248265A604100285956 /* CoverCalendarViewController.swift in Sources */,
 				562F554D26452101000F8CAB /* AppDelegate.swift in Sources */,
