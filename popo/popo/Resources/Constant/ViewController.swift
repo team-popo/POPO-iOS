@@ -22,6 +22,7 @@ extension Const {
             static let category = "CategoryViewController"
             static let calendar = "CalendarViewController"
             static let options = "OptionsViewController"
+            static let customOptions = "CustomOptionsViewController"
         }
         
     }
