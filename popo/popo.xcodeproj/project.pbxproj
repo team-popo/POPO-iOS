@@ -58,6 +58,7 @@
 		F881A74026FC50B200AEE21E /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A73F26FC50B200AEE21E /* GenericResponse.swift */; };
 		F881A74226FC588400AEE21E /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881A74126FC588400AEE21E /* NetworkResult.swift */; };
 		F88FBC5A271C9473003A5F0B /* InsertPopoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FBC59271C9473003A5F0B /* InsertPopoRequest.swift */; };
+		F88FBC5D271C9CF7003A5F0B /* OptionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88FBC5C271C9CF7003A5F0B /* OptionsList.swift */; };
 		F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */; };
 		F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */; };
 		F8967D9426FA01F300F034E3 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */; };
@@ -70,8 +71,8 @@
 		F8D39A58271702CA0032DDD2 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A57271702CA0032DDD2 /* OptionsViewController.swift */; };
 		F8D39A5B27170BD60032DDD2 /* RecommendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A5927170BD60032DDD2 /* RecommendationCollectionViewCell.swift */; };
 		F8D39A5C27170BD60032DDD2 /* RecommendationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D39A5A27170BD60032DDD2 /* RecommendationCollectionViewCell.xib */; };
-		F8D39A5E27171F530032DDD2 /* RecommendationOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A5D27171F530032DDD2 /* RecommendationOptionView.swift */; };
-		F8D39A6027171FEA0032DDD2 /* PlustOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A5F27171FEA0032DDD2 /* PlustOptionView.swift */; };
+		F8D39A5E27171F530032DDD2 /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A5D27171F530032DDD2 /* OptionView.swift */; };
+		F8D39A6027171FEA0032DDD2 /* PlusOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A5F27171FEA0032DDD2 /* PlusOptionView.swift */; };
 		F8D39A62271862C20032DDD2 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D39A61271862C20032DDD2 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		F881A73F26FC50B200AEE21E /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		F881A74126FC588400AEE21E /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		F88FBC59271C9473003A5F0B /* InsertPopoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPopoRequest.swift; sourceTree = "<group>"; };
+		F88FBC5C271C9CF7003A5F0B /* OptionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsList.swift; sourceTree = "<group>"; };
 		F8967D8C26F9FA6100F034E3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -143,8 +145,8 @@
 		F8D39A57271702CA0032DDD2 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		F8D39A5927170BD60032DDD2 /* RecommendationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8D39A5A27170BD60032DDD2 /* RecommendationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationCollectionViewCell.xib; sourceTree = "<group>"; };
-		F8D39A5D27171F530032DDD2 /* RecommendationOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationOptionView.swift; sourceTree = "<group>"; };
-		F8D39A5F27171FEA0032DDD2 /* PlustOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlustOptionView.swift; sourceTree = "<group>"; };
+		F8D39A5D27171F530032DDD2 /* OptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		F8D39A5F27171FEA0032DDD2 /* PlusOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusOptionView.swift; sourceTree = "<group>"; };
 		F8D39A61271862C20032DDD2 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,8 +229,8 @@
 		562F5562264521C2000F8CAB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F8D39A5D27171F530032DDD2 /* RecommendationOptionView.swift */,
-				F8D39A5F27171FEA0032DDD2 /* PlustOptionView.swift */,
+				F8D39A5D27171F530032DDD2 /* OptionView.swift */,
+				F8D39A5F27171FEA0032DDD2 /* PlusOptionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -256,6 +258,7 @@
 		562F5565264521D1000F8CAB /* AppModel */ = {
 			isa = PBXGroup;
 			children = (
+				F88FBC5B271C9CE4003A5F0B /* Options */,
 				F873648C26A6A92900F121DC /* Onboarding */,
 				565A1F172706FC22000CAB1B /* AppMonth.swift */,
 			);
@@ -447,6 +450,14 @@
 				567BF245265A5BBE00285956 /* CoverUserPhoto.storyboard */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F88FBC5B271C9CE4003A5F0B /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				F88FBC5C271C9CF7003A5F0B /* OptionsList.swift */,
+			);
+			path = Options;
 			sourceTree = "<group>";
 		};
 		F8967D8126F9F66A00F034E3 /* PopoConcept */ = {
@@ -648,7 +659,8 @@
 				F816E66226FC6CAB000C0270 /* URL.swift in Sources */,
 				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
 				F816E65D26FC631F000C0270 /* PopoAPI.swift in Sources */,
-				F8D39A5E27171F530032DDD2 /* RecommendationOptionView.swift in Sources */,
+				F88FBC5D271C9CF7003A5F0B /* OptionsList.swift in Sources */,
+				F8D39A5E27171F530032DDD2 /* OptionView.swift in Sources */,
 				F84AA56C27057633008D77ED /* Xib.swift in Sources */,
 				565A1F1D27070768000CAB1B /* Tracker.swift in Sources */,
 				F88FBC5A271C9473003A5F0B /* InsertPopoRequest.swift in Sources */,
@@ -659,7 +671,7 @@
 				F8D39A5B27170BD60032DDD2 /* RecommendationCollectionViewCell.swift in Sources */,
 				F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */,
 				F8731B0F265C05E900770760 /* ConceptSelectCollectionViewCell.swift in Sources */,
-				F8D39A6027171FEA0032DDD2 /* PlustOptionView.swift in Sources */,
+				F8D39A6027171FEA0032DDD2 /* PlusOptionView.swift in Sources */,
 				F8D39A62271862C20032DDD2 /* Notification.swift in Sources */,
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
 				F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */,

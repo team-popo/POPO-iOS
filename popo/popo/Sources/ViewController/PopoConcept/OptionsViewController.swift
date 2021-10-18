@@ -11,8 +11,13 @@ class OptionsViewController: UIViewController {
     
     // MARK: - Porperties
     
-    private var recommendationOptionsList = [String]()
-    private var optionsList = [RecommendationOptionView]()
+    var recommendationOptionsList = [OptionsList?]()
+    var category: Int?
+    var id: Int?
+    
+    private var optionViewList = [OptionView]()
+    private var optionsCollectionViewList = [OptionsList]()
+    private var optionsParameter = [OptionsList]()
     
     enum Size {
         static let cellLeftRightSpacing: CGFloat = 50
@@ -33,8 +38,8 @@ class OptionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initRecommendationOptionsList()
         setUI()
+        initOptionsStackView()
         initNavigationBar()
         registerCell()
         initNotification()
@@ -48,24 +53,62 @@ extension OptionsViewController {
         scrollView.contentInsetAdjustmentBehavior = .never
         
         recommendationCollectionView.backgroundColor = .clear
-        let recommendationOptionView = RecommendationOptionView(title: recommendationOptionsList[0])
-        let plusOptionView = PlustOptionView()
-        
-        optionsList.append(recommendationOptionView)
-        optionsStackView.distribution = .fill
-        optionsStackView.spacing = Size.stackViewLineSpacing
-        optionsStackView.addArrangedSubview(recommendationOptionView)
-        optionsStackView.addArrangedSubview(plusOptionView)
-        optionsStackView.arrangedSubviews.forEach {
-            $0.heightAnchor.constraint(equalToConstant: Size.optionHeight).isActive = true
-        }
-        
         recommendationCollectionView.allowsMultipleSelection = true
+    }
+    
+    private func initOptionsStackView() {
+        guard let recommendationOptionsList = recommendationOptionsList as? [OptionsList] else { return }
+        if recommendationOptionsList[0].isRequired {
+            // required options
+            for value in recommendationOptionsList {
+                if value.isRequired {
+                    optionsParameter.append(value)
+                    let recommendationOptionView = OptionView(title: value.options,
+                                                                            isRequired: value.isRequired)
+                    optionViewList.append(recommendationOptionView)
+                    optionsStackView.addArrangedSubview(recommendationOptionView)
+                } else {
+                    // add to optionsCollectionViewList
+                    optionsParameter.append(value)
+                    optionsCollectionViewList.append(value)
+                }
+            }
+            let recommendationOptionView = OptionView(title: optionsCollectionViewList[0].options)
+            let plusOptionView = PlusOptionView()
+            
+            optionViewList.append(recommendationOptionView)
+            
+            optionsStackView.addArrangedSubview(recommendationOptionView)
+            optionsStackView.addArrangedSubview(plusOptionView)
+            optionsStackView.distribution = .fill
+            optionsStackView.spacing = Size.stackViewLineSpacing
+            optionsStackView.arrangedSubviews.forEach {
+                $0.heightAnchor.constraint(equalToConstant: Size.optionHeight).isActive = true
+            }
+        } else {
+            // required options nothing
+            // add to optionsCollectionViewList
+            optionsCollectionViewList = recommendationOptionsList
+            optionsParameter.append(recommendationOptionsList[0])
+            
+            let recommendationOptionView = OptionView(title: optionsCollectionViewList[0].options)
+            let plusOptionView = PlusOptionView()
+            
+            optionViewList.append(recommendationOptionView)
+            
+            optionsStackView.addArrangedSubview(recommendationOptionView)
+            optionsStackView.addArrangedSubview(plusOptionView)
+            optionsStackView.distribution = .fill
+            optionsStackView.spacing = Size.stackViewLineSpacing
+            optionsStackView.arrangedSubviews.forEach {
+                $0.heightAnchor.constraint(equalToConstant: Size.optionHeight).isActive = true
+            }
+        }
     }
     
     private func initNavigationBar() {
         self.navigationController?.initWithBackAndDoneButton(navigationItem: self.navigationItem, doneButtonClosure: #selector(pushToConceptViewController))
-     }
+    }
     
     private func registerCell() {
         recommendationCollectionView.delegate = self
@@ -73,21 +116,45 @@ extension OptionsViewController {
         let nib = UINib(nibName: Const.Xib.recommendationCollectionViewCell, bundle: nil)
         recommendationCollectionView.register(nib, forCellWithReuseIdentifier: Const.Xib.recommendationCollectionViewCell)
     }
-    private func initRecommendationOptionsList() {
-        // later initialize server data instead dummy data
-        recommendationOptionsList.append(contentsOf: ["제목",
-                                                      "저자",
-                                                      "줄거리",
-                                                      "인상 깊은 내용"])
-    }
+    
     private func initNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(removeOption(_:)), name: .removeOption, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(plusOption), name: .plusOption, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addCustomOption(_:)), name: .addCustomOption, object: nil)
+    }
+    
+    private func insertPopoWithAPI(completion: @escaping (NetworkResult<Any>) -> Void) {
+        //        optionsParameter
+        var insertPopoRequest: InsertPopoRequest
+        var options = [Options]()
+        for (index, parameter) in optionsParameter.enumerated() {
+            options.append(Options(name: parameter.options, order: index, type: parameter.type))
+        }
+        insertPopoRequest = InsertPopoRequest(category: self.category ?? -1, id: id ?? -1, options: options)
+        print(insertPopoRequest)
+        PopoAPI.shared.postInsertPopo(parameter: insertPopoRequest) { result in
+            completion(result)
+        }
     }
     
     @objc
     private func pushToConceptViewController() {
-        // TODO: 화면전환
+        insertPopoWithAPI { result in
+            switch result {
+            case .success(_) :
+                let storyboard = UIStoryboard(name: Const.Storyboard.Name.concept, bundle: nil)
+                guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.concept) as? ConceptViewController else { return }
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            case .requestErr(let message):
+                print("getPopoListWithAPI - requestErr: \(message)")
+            case .pathErr:
+                print("getPopoListWithAPI - pathErr")
+            case .serverErr:
+                print("getPopoListWithAPI - serverErr")
+            case .networkFail:
+                print("getPopoListWithAPI - networkFail")
+            }
+        }
     }
     
     @objc
@@ -95,18 +162,22 @@ extension OptionsViewController {
         guard let title = notification.object as? String else { return }
         // remove from optionsList, optionsStackView
         var removeOptionIndex = -1
-        for (index, value) in optionsList.enumerated() where value.getOptionTitle() == title {
+        for (index, value) in optionViewList.enumerated() where value.getOptionTitle() == title {
             removeOptionIndex = index
         }
-        let removeOptionView = optionsList.remove(at: removeOptionIndex)
+        let removeOptionView = optionViewList.remove(at: removeOptionIndex)
         optionsStackView.removeArrangedSubview(removeOptionView)
         removeOptionView.removeFromSuperview()
         
-        // deselect colletionView cell
-        for (index, value) in recommendationOptionsList.enumerated() where value == title {
-            recommendationCollectionView.deselectItem(at: IndexPath(item: index, section: 0), animated: true)
+        // remove optionsParameter
+        for (index, value) in optionsParameter.enumerated() where value.options == title {
+            optionsParameter.remove(at: index)
         }
         
+        // deselect colletionView cell
+        for (index, value) in optionsCollectionViewList.enumerated() where value.options == title {
+            recommendationCollectionView.deselectItem(at: IndexPath(item: index, section: 0), animated: true)
+        }
     }
     
     @objc
@@ -118,7 +189,22 @@ extension OptionsViewController {
         popVC.modalTransitionStyle = .crossDissolve
         popVC.modalPresentationStyle = .overFullScreen
         self.present(popVC, animated: true, completion: nil)
+    }
+    
+    @objc
+    private func addCustomOption(_ notification: Notification) {
+        guard let option = notification.object as? OptionsList else { return }
+        optionsParameter.append(option)
         
+        let optionView = OptionView(title: option.options)
+        optionViewList.append(optionView)
+        
+        if optionViewList.count == 0 {
+            optionsStackView.insertArrangedSubview(optionView, at: 0)
+        } else {
+            optionsStackView.insertArrangedSubview(optionView, at: optionViewList.count - 1)
+        }
+        optionView.heightAnchor.constraint(equalToConstant: Size.optionHeight).isActive = true
     }
 }
 
@@ -126,24 +212,32 @@ extension OptionsViewController {
 
 extension OptionsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let recommendationOptionView = RecommendationOptionView(title: recommendationOptionsList[indexPath.item])
-        optionsList.append(recommendationOptionView)
+        // add optionsParameter
+        optionsParameter.append(optionsCollectionViewList[indexPath.item])
         
-        if optionsList.count == 0 {
+        let recommendationOptionView = OptionView(title: optionsCollectionViewList[indexPath.item].options)
+        optionViewList.append(recommendationOptionView)
+        
+        if optionViewList.count == 0 {
             optionsStackView.insertArrangedSubview(recommendationOptionView, at: 0)
         } else {
-            optionsStackView.insertArrangedSubview(recommendationOptionView, at: optionsList.count - 1)
+            optionsStackView.insertArrangedSubview(recommendationOptionView, at: optionViewList.count - 1)
         }
         recommendationOptionView.heightAnchor.constraint(equalToConstant: Size.optionHeight).isActive = true
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        // remove from optionsList, optionsStackView
+        // remove optionsParameter
+        for (index, value) in optionsParameter.enumerated() where value.options == optionsCollectionViewList[indexPath.item].options {
+            optionsParameter.remove(at: index)
+        }
+        
+        // remove from optionsViewList, optionsStackView
         var removeIndex = -1
-        for (index, value) in optionsList.enumerated() where value.getOptionTitle() == recommendationOptionsList[indexPath.item] {
+        for (index, value) in optionViewList.enumerated() where value.getOptionTitle() == optionsCollectionViewList[indexPath.item].options {
             removeIndex = index
         }
-        let removeOptionView = optionsList.remove(at: removeIndex)
+        let removeOptionView = optionViewList.remove(at: removeIndex)
         optionsStackView.removeArrangedSubview(removeOptionView)
         removeOptionView.removeFromSuperview()
     }
@@ -153,7 +247,7 @@ extension OptionsViewController: UICollectionViewDelegate {
 
 extension OptionsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recommendationOptionsList.count
+        return optionsCollectionViewList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -161,7 +255,7 @@ extension OptionsViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         collectionView.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .init())
-        cell.initCell(recommendationOptionsList[indexPath.item])
+        cell.initCell(optionsCollectionViewList[indexPath.item].options)
         return cell
     }
 }
@@ -179,7 +273,7 @@ extension OptionsViewController: UICollectionViewDelegateFlowLayout {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.recommendationCollectionViewCell, for: indexPath) as? RecommendationCollectionViewCell else {
             return .zero
         }
-        cell.initCell(recommendationOptionsList[indexPath.item])
+        cell.initCell(optionsCollectionViewList[indexPath.item].options)
         cell.recommendationOptionsLabel.sizeToFit()
         let cellWidth = cell.recommendationOptionsLabel.frame.width + Size.cellLeftRightSpacing
         let cellHeigt = (collectionView.frame.height - Size.cellLineSpacing ) / 2

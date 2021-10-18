@@ -72,9 +72,9 @@ extension PopoService: TargetType {
     var headers: [String: String]? {
         switch self {
         case .fetchPopoList:
-            return ["Content-Type": "application/json"]
+            return .none
 //        case .setDefaultPopo:
-//            return ["Content-Type" : "multipart/form-data"]
+//            return ["Content-Type": "multipart/form-data"]
         case .insertPopo:
             return ["Content-Type": "application/json"]
 //        case .deletePopo:

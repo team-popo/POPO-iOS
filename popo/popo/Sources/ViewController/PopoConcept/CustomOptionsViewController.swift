@@ -9,6 +9,12 @@ import UIKit
 
 class CustomOptionsViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    private var isTextOptionSelected = false
+    private var isStarOptionSelected = false
+    private var isTextFeildFill = false
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var bgView: UIView!
@@ -32,8 +38,39 @@ class CustomOptionsViewController: UIViewController {
     @IBAction func dismissToOptionsViewController(_ sender: Any) {
         self.dismiss(animated: true, completion: nil )
     }
+    
     @IBAction func touchCompleteButton(_ sender: Any) {
+        guard let text = optionTextField.text else { return }
+        let type = isTextOptionSelected ? 0 : 1
+        let option = OptionsList(options: text, type: type, isRequired: false)
+        NotificationCenter.default.post(name: .addCustomOption, object: option)
         self.dismiss(animated: true, completion: nil )
+    }
+    
+    @IBAction func touchTextOptionButton(_ sender: Any) {
+        if isTextOptionSelected == false {
+            textOptionCheckButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            starOptionCheckButton.setImage(UIImage(systemName: "square"), for: .normal)
+            isTextOptionSelected = true
+            isStarOptionSelected = false
+            
+            if isTextFeildFill {
+                completeButton.isEnabled = true
+            }
+        }
+    }
+    
+    @IBAction func touchStarOptionButton(_ sender: Any) {
+        if isStarOptionSelected == false {
+            starOptionCheckButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            textOptionCheckButton.setImage(UIImage(systemName: "square"), for: .normal)
+            isTextOptionSelected = false
+            isStarOptionSelected = true
+            
+            if isTextFeildFill {
+                completeButton.isEnabled = true
+            }
+        }
     }
 }
 
@@ -42,6 +79,7 @@ class CustomOptionsViewController: UIViewController {
 extension CustomOptionsViewController {
     private func setUI() {
         self.navigationController?.navigationBar.isHidden = true
+        completeButton.isEnabled = false
         
         bgView.makeRounded(radius: 20)
         
@@ -66,15 +104,22 @@ extension CustomOptionsViewController {
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
         self.view.addGestureRecognizer(tapGesture)
     }
-    
 }
 
 // MARK: - CustomOptionsViewController
 
 extension CustomOptionsViewController: UITextFieldDelegate {
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        <#code#>
-//    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.hasText {
+            isTextFeildFill = true
+            if isTextOptionSelected || isStarOptionSelected {
+                completeButton.isEnabled = true
+            }
+        } else {
+            isTextFeildFill = false
+            completeButton.isEnabled = false
+        }
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
     }

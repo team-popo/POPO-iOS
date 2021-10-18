@@ -86,11 +86,17 @@
                                         <rect key="frame" x="25" y="169" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="touchTextOptionButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XBZ-3J-mIZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xll-Gj-zuY">
                                         <rect key="frame" x="25" y="312" width="67" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="touchStarOptionButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LrL-fU-Dj4"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dY-HX-cAP">
                                         <rect key="frame" x="100" y="319.5" width="22.5" height="16"/>

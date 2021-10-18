@@ -11,9 +11,8 @@ class ConceptViewController: UIViewController {
     
     // MARK: - Properties
     
-    var conceptImageViews = [UIImageView]()
-    var dividedImages = [CGImage]()
     var conceptDataList = [Concept]()
+    
     enum Size {
         static let cellLineSpacing: CGFloat = 16
         static let cellInterItemSpacing: CGFloat  = 16
@@ -29,11 +28,12 @@ class ConceptViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initWhiteBgView()
-        getPopoListWithAPI()
+        registerCell()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         initNavigationBar()
+        getPopoListWithAPI()
     }
 }
     
@@ -42,7 +42,6 @@ class ConceptViewController: UIViewController {
 extension ConceptViewController {
     private func initNavigationBar() {
         self.navigationController?.navigationBar.isHidden = true
-
     }
     
     private func initWhiteBgView() {
@@ -56,7 +55,7 @@ extension ConceptViewController {
         whiteBgView.layer.shouldRasterize = true
     }
     
-    func getPopoListWithAPI() {
+    private func getPopoListWithAPI() {
         PopoAPI.shared.getPopoList { result  in
             switch result {
             case .success(let data) :
@@ -75,7 +74,9 @@ extension ConceptViewController {
         }
     }
     
-    func registerCell() {
+    private func registerCell() {
+        conceptCollectionView.delegate = self
+        conceptCollectionView.dataSource = self
         let nib = UINib(nibName: Const.Xib.conceptCollectionViewCell, bundle: nil)
         conceptCollectionView.register(nib, forCellWithReuseIdentifier: Const.Xib.conceptCollectionViewCell)
     }
@@ -85,16 +86,16 @@ extension ConceptViewController {
 
 extension ConceptViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if conceptDataList[indexPath.item].conceptID == 1 {
-            let storyboard = UIStoryboard(name: Const.Storyboard.Name.calendar, bundle: nil)
-            guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.calendar) as? CalendarViewController else {
-                return
-            }
-            
-            self.navigationController?.pushViewController(nextVC, animated: true)
-        } else {
+        if conceptDataList[indexPath.item].category == -1 {
             let storyboard = UIStoryboard(name: Const.Storyboard.Name.category, bundle: nil)
             guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.category) as? CategoryViewController else {
+                return
+            }
+            nextVC.id = conceptDataList[indexPath.item].identifier
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: Const.Storyboard.Name.calendar, bundle: nil)
+            guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.calendar) as? CalendarViewController else {
                 return
             }
             
@@ -114,7 +115,6 @@ extension ConceptViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.conceptCollectionViewCell, for: indexPath) as? ConceptCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
         cell.initCell(conceptDataList[indexPath.item].background)
         return cell
     }
