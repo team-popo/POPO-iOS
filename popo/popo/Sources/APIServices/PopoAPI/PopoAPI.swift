@@ -8,9 +8,9 @@
 import Foundation
 import Moya
 
-public class FetchPopoListAPI {
+public class PopoAPI {
     
-    static let shared = FetchPopoListAPI()
+    static let shared = PopoAPI()
     var popoProvider = MoyaProvider<PopoService>()
     
     public init() { }
@@ -35,7 +35,7 @@ public class FetchPopoListAPI {
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<ConceptData>.self, from: data)
+        guard let decodedData = try? decoder.decode(GenericResponse<[Concept]>.self, from: data)
         else {
             return .pathErr
         }

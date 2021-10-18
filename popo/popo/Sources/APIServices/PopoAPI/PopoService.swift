@@ -11,14 +11,14 @@ import Moya
 enum PopoService {
     case fetchPopoList
 //    case setDefaultPopo
-//    case insertPopo(popoID: Int)
+    case insertPopo(popoID: Int, parameter: InsertPopoRequest)
 //    case deletePopo(popoID: Int)
-//    case changeBackground(popoID: Int)
+    case changeBackground(popoID: Int, backgroundImage: UIImage)
 }
 
 extension PopoService: TargetType {
     var baseURL: URL {
-        return URL(string: Const.URL.baseURL)!
+        return URL(string: Const.URL.popoURL)!
     }
     
     var path: String {
@@ -27,12 +27,12 @@ extension PopoService: TargetType {
             return ""
 //        case .setDefaultPopo:
 //            return ""
-//        case .insertPopo(popoID: let popoID):
+        case .insertPopo(let popoID, _):
+            return "/\(popoID)"
+//        case .deletePopo(let popoID):
 //            return "/\(popoID)"
-//        case .deletePopo(popoID: let popoID):
-//            return "/\(popoID)"
-//        case .changeBackground(popoID: let popoID):
-//            return "/popo/\(popoID)/background"
+        case .changeBackground(let popoID, _):
+            return "\(popoID)/background"
         }
     }
     
@@ -42,12 +42,12 @@ extension PopoService: TargetType {
             return .get
 //        case .setDefaultPopo:
 //            return .post
-//        case .insertPopo:
-//            return .post
+        case .insertPopo:
+            return .post
 //        case .deletePopo:
 //            return .delete
-//        case .changeBackground:
-//            return .patch
+        case .changeBackground:
+            return .patch
         }
     }
     
@@ -57,28 +57,30 @@ extension PopoService: TargetType {
             return .requestPlain
 //        case .setDefaultPopo:
 //            return
-//        case .insertPopo(popoID: let popoID):
-//            retrun
-//        case .deletePopo(popoID: let popoID):
-//            return
-//        case .changeBackground(popoID: let popoID):
-//            return
+        case .insertPopo(_, let parameter):
+            return .requestJSONEncodable(parameter)
+//        case .deletePopo:
+//            return .requestPlain
+        case .changeBackground(_, let backgroundImage):
+            if let backgroundImage = backgroundImage.jpegData(compressionQuality: 1.0) {
+                return .uploadMultipart([MultipartFormData(provider: .data(backgroundImage), name: "image", fileName: "background.jpg", mimeType: "image/jpg")])
+            }
+            return .requestPlain
         }
     }
     
     var headers: [String: String]? {
         switch self {
-            
         case .fetchPopoList:
             return ["Content-Type": "application/json"]
 //        case .setDefaultPopo:
 //            return ["Content-Type" : "multipart/form-data"]
-//        case .insertPopo:
-//            return ["Content-Type" : "application/json"]
+        case .insertPopo:
+            return ["Content-Type": "application/json"]
 //        case .deletePopo:
-//            return ["Content-Type" : "application/json"]
-//        case .changeBackground:
-//            return ["Content-Type" : "application/json"]
+//            return .none
+        case .changeBackground:
+            return ["Content-Type": "multipart/form-data"]
         }
     }
 }

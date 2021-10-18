@@ -13,46 +13,36 @@ class ConceptViewController: UIViewController {
     
     var conceptImageViews = [UIImageView]()
     var dividedImages = [CGImage]()
+    var conceptDataList = [Concept]()
+    enum Size {
+        static let cellLineSpacing: CGFloat = 16
+        static let cellInterItemSpacing: CGFloat  = 16
+    }
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var whiteBgView: UIView!
-    
-    @IBOutlet weak var conceptImageView1: UIImageView!
-    @IBOutlet weak var conceptImageView2: UIImageView!
-    @IBOutlet weak var conceptImageView3: UIImageView!
-    @IBOutlet weak var conceptImageView4: UIImageView!
-    @IBOutlet weak var conceptImageView5: UIImageView!
-    @IBOutlet weak var conceptImageView6: UIImageView!
-    @IBOutlet weak var conceptImageView7: UIImageView!
-    @IBOutlet weak var conceptImageView8: UIImageView!
-    @IBOutlet weak var conceptImageView9: UIImageView!
-    @IBOutlet weak var conceptImageView10: UIImageView!
-    @IBOutlet weak var conceptImageView11: UIImageView!
-    @IBOutlet weak var conceptImageView12: UIImageView!
+
+    @IBOutlet weak var conceptCollectionView: UICollectionView!
     
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
         initWhiteBgView()
-        makeImageViewArray()
         getPopoListWithAPI()
     }
     
-    override func viewDidLayoutSubviews() {
-        initCoverImage(images: dividedImages)
+    override func viewWillAppear(_ animated: Bool) {
+        initNavigationBar()
     }
 }
     
 // MARK: - Extensions
 
 extension ConceptViewController {
-    private func setUI() {
+    private func initNavigationBar() {
         self.navigationController?.navigationBar.isHidden = true
-        let pushToCalendarViewControllerGesture = UITapGestureRecognizer(target: self, action: #selector(pushToCalenarViewController))
-        conceptImageView1.isUserInteractionEnabled = true
-        conceptImageView1.addGestureRecognizer(pushToCalendarViewControllerGesture)
+
     }
     
     private func initWhiteBgView() {
@@ -66,46 +56,88 @@ extension ConceptViewController {
         whiteBgView.layer.shouldRasterize = true
     }
     
-    private func makeImageViewArray() {
-        conceptImageViews.append(conceptImageView1)
-        conceptImageViews.append(conceptImageView2)
-        conceptImageViews.append(conceptImageView3)
-        conceptImageViews.append(conceptImageView4)
-        conceptImageViews.append(conceptImageView5)
-        conceptImageViews.append(conceptImageView6)
-        conceptImageViews.append(conceptImageView7)
-        conceptImageViews.append(conceptImageView8)
-        conceptImageViews.append(conceptImageView9)
-        conceptImageViews.append(conceptImageView10)
-        conceptImageViews.append(conceptImageView11)
-        conceptImageViews.append(conceptImageView12)
-    }
-    
-    func initCoverImage(images: [CGImage]) {
-        
-        if images.count == 12 {
-            for (idx, image) in images.enumerated() {
-                conceptImageViews[idx].image = UIImage(cgImage: image)
-            }
-        } else {
-            print("error")
-        }
-    }
-    
-    // 서버통신
     func getPopoListWithAPI() {
-        FetchPopoListAPI.shared.getPopoList { result in
-            print(result)
+        PopoAPI.shared.getPopoList { result  in
+            switch result {
+            case .success(let data) :
+                if let conceptData = data as? [Concept] {
+                    self.conceptDataList = conceptData
+                }
+            case .requestErr(let message):
+                print("getPopoListWithAPI - requestErr: \(message)")
+            case .pathErr:
+                print("getPopoListWithAPI - pathErr")
+            case .serverErr:
+                print("getPopoListWithAPI - serverErr")
+            case .networkFail:
+                print("getPopoListWithAPI - networkFail")
+            }
         }
     }
     
-    @objc
-    func pushToCalenarViewController() {
-        let storyboard = UIStoryboard(name: Const.Storyboard.Name.calendar, bundle: nil)
-        guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.calendar) as? CalendarViewController else {
-            return
-        }
+    func registerCell() {
+        let nib = UINib(nibName: Const.Xib.conceptCollectionViewCell, bundle: nil)
+        conceptCollectionView.register(nib, forCellWithReuseIdentifier: Const.Xib.conceptCollectionViewCell)
+    }
+}
 
-        self.navigationController?.pushViewController(nextVC, animated: true)
+// MARK: - UICollectionViewDelegate
+
+extension ConceptViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if conceptDataList[indexPath.item].conceptID == 1 {
+            let storyboard = UIStoryboard(name: Const.Storyboard.Name.calendar, bundle: nil)
+            guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.calendar) as? CalendarViewController else {
+                return
+            }
+            
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: Const.Storyboard.Name.category, bundle: nil)
+            guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.category) as? CategoryViewController else {
+                return
+            }
+            
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension ConceptViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return conceptDataList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.conceptCollectionViewCell, for: indexPath) as? ConceptCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.initCell(conceptDataList[indexPath.item].background)
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension ConceptViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return Size.cellLineSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return Size.cellInterItemSpacing
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = collectionView.frame.width - 2 * Size.cellLineSpacing
+        let cellHeight = collectionView.frame.height - 3 * Size.cellInterItemSpacing
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .zero
     }
 }
