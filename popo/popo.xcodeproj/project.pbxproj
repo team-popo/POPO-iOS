@@ -32,6 +32,8 @@
 		5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */; };
 		56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E08265635ED00745273 /* LoginMethodViewController.swift */; };
 		56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E0A265648EB00745273 /* UIView+Extension.swift */; };
+		56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */; };
+		56DE3529271DD185009649CE /* ChangeMonthPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */; };
 		56EE71BB265E165B005AC12A /* Concept.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56EE71BA265E165B005AC12A /* Concept.storyboard */; };
 		56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE71BC265E18BA005AC12A /* ConceptViewController.swift */; };
 		F065790638E6CE247683CA74 /* Pods_popo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9900D9492EE36CE1A8C04071 /* Pods_popo.framework */; };
@@ -104,6 +106,8 @@
 		5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverUserPhotoViewController.swift; sourceTree = "<group>"; };
 		56924E08265635ED00745273 /* LoginMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodViewController.swift; sourceTree = "<group>"; };
 		56924E0A265648EB00745273 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMonthPopupViewController.swift; sourceTree = "<group>"; };
+		56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeMonthPopupViewController.xib; sourceTree = "<group>"; };
 		56EE71BA265E165B005AC12A /* Concept.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Concept.storyboard; sourceTree = "<group>"; };
 		56EE71BC265E18BA005AC12A /* ConceptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptViewController.swift; sourceTree = "<group>"; };
 		9900D9492EE36CE1A8C04071 /* Pods_popo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,6 +327,7 @@
 		565A1F0327056C2F000CAB1B /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */,
 				565A1F0427056C47000CAB1B /* CalendarViewController.swift */,
 			);
 			path = Calendar;
@@ -332,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				565A1F0727056C7E000CAB1B /* Calendar.storyboard */,
+				56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 			files = (
 				567BF246265A5BBE00285956 /* CoverUserPhoto.storyboard in Resources */,
 				F8D39A56271702AC0032DDD2 /* Options.storyboard in Resources */,
+				56DE3529271DD185009649CE /* ChangeMonthPopupViewController.xib in Resources */,
 				F8D39A5C27170BD60032DDD2 /* RecommendationCollectionViewCell.xib in Resources */,
 				562F557D26452408000F8CAB /* .swiftlint.yml in Resources */,
 				562F555926452103000F8CAB /* LaunchScreen.storyboard in Resources */,
@@ -664,6 +671,7 @@
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
 				F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */,
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
+				56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */,
 				F8D39A58271702CA0032DDD2 /* OptionsViewController.swift in Sources */,
 				F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */,
 				F881A73E26FC191400AEE21E /* Concept.swift in Sources */,
