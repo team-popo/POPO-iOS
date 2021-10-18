@@ -23,6 +23,7 @@ extension Const {
             static let calendar = "Calendar"
             static let options = "Options"
             static let customOptions = "CustomOptions"
+            static let popoToday = "PopoToday"
         }
         
     }
