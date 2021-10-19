@@ -44,6 +44,9 @@ class CalendarViewController: UIViewController {
         Tracker(id: 0, date: 31, image: "https://i.imgur.com/HNWMaIvb.jpg")
     ])
     
+    // date
+    var dateArray: [String] = ["", "", ""]
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var yearMonthLabel: UILabel!
@@ -76,6 +79,7 @@ class CalendarViewController: UIViewController {
         initYearMonthLabel()
         assignDelegation()
         registerXib()
+        getCurrentFormattedDate()
     }
     
     // MARK: - Functions
@@ -112,13 +116,32 @@ class CalendarViewController: UIViewController {
         calendarCollectionView.register(UINib(nibName: Const.Xib.calendarCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.calendarCollectionViewCell)
     }
     
+    func getCurrentFormattedDate() {
+        let today = AppDate()
+        let year = today.getYearToString()
+        let month = today.getMonthToString()
+        let day = today.getDayToString()
+        let weekDay = today.getWeekday().toKorean()
+        
+        dateArray[0] = year
+        dateArray[1] = month
+        dateArray[2] = day
+    }
+    
     // @objc functions
     @objc func touchChangeBackgroundButton(_ sender: UIBarButtonItem) {
         // TODO: - 갤러리 열기
     }
     
     @objc func touchCalendarButton(_ sender: UIBarButtonItem) {
-        // TODO: - present popup
+        let changeMonthPopupViewController = ChangeMonthPopupViewController()
+        changeMonthPopupViewController.modalTransitionStyle = .crossDissolve
+        changeMonthPopupViewController.modalPresentationStyle = .overFullScreen
+        
+        changeMonthPopupViewController.year = Int(dateArray[0]) ?? 0
+        changeMonthPopupViewController.month = Int(dateArray[1]) ?? 0
+        
+        self.present(changeMonthPopupViewController, animated: true, completion: nil)
     }
 
 }

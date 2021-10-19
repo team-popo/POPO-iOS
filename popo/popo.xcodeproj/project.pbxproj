@@ -32,6 +32,9 @@
 		5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */; };
 		56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E08265635ED00745273 /* LoginMethodViewController.swift */; };
 		56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E0A265648EB00745273 /* UIView+Extension.swift */; };
+		56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */; };
+		56DE3529271DD185009649CE /* ChangeMonthPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */; };
+		56DE352B271DD66F009649CE /* AppDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE352A271DD66F009649CE /* AppDate.swift */; };
 		56DE3518271DC619009649CE /* PopoToday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DE3517271DC619009649CE /* PopoToday.storyboard */; };
 		56DE351B271DC69E009649CE /* PopoTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE351A271DC69E009649CE /* PopoTodayViewController.swift */; };
 		56DE351F271DC6C6009649CE /* TodayImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE351D271DC6C6009649CE /* TodayImageCollectionViewCell.swift */; };
@@ -110,6 +113,9 @@
 		5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverUserPhotoViewController.swift; sourceTree = "<group>"; };
 		56924E08265635ED00745273 /* LoginMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodViewController.swift; sourceTree = "<group>"; };
 		56924E0A265648EB00745273 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMonthPopupViewController.swift; sourceTree = "<group>"; };
+		56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeMonthPopupViewController.xib; sourceTree = "<group>"; };
+		56DE352A271DD66F009649CE /* AppDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDate.swift; sourceTree = "<group>"; };
 		56DE3517271DC619009649CE /* PopoToday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopoToday.storyboard; sourceTree = "<group>"; };
 		56DE351A271DC69E009649CE /* PopoTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoTodayViewController.swift; sourceTree = "<group>"; };
 		56DE351D271DC6C6009649CE /* TodayImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -271,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				F873648C26A6A92900F121DC /* Onboarding */,
+				56DE352A271DD66F009649CE /* AppDate.swift */,
 				565A1F172706FC22000CAB1B /* AppMonth.swift */,
 			);
 			path = AppModel;
@@ -338,6 +345,7 @@
 		565A1F0327056C2F000CAB1B /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */,
 				565A1F0427056C47000CAB1B /* CalendarViewController.swift */,
 			);
 			path = Calendar;
@@ -347,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				565A1F0727056C7E000CAB1B /* Calendar.storyboard */,
+				56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -588,6 +597,7 @@
 			files = (
 				567BF246265A5BBE00285956 /* CoverUserPhoto.storyboard in Resources */,
 				F8D39A56271702AC0032DDD2 /* Options.storyboard in Resources */,
+				56DE3529271DD185009649CE /* ChangeMonthPopupViewController.xib in Resources */,
 				56DE3520271DC6C6009649CE /* TodayImageCollectionViewCell.xib in Resources */,
 				F8D39A5C27170BD60032DDD2 /* RecommendationCollectionViewCell.xib in Resources */,
 				562F557D26452408000F8CAB /* .swiftlint.yml in Resources */,
@@ -694,6 +704,7 @@
 				F816E66226FC6CAB000C0270 /* URL.swift in Sources */,
 				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
 				F816E65D26FC631F000C0270 /* PopoAPI.swift in Sources */,
+				56DE352B271DD66F009649CE /* AppDate.swift in Sources */,
 				F8D39A5E27171F530032DDD2 /* RecommendationOptionView.swift in Sources */,
 				F84AA56C27057633008D77ED /* Xib.swift in Sources */,
 				565A1F1D27070768000CAB1B /* Tracker.swift in Sources */,
@@ -711,6 +722,7 @@
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
 				F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */,
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
+				56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */,
 				56DE351F271DC6C6009649CE /* TodayImageCollectionViewCell.swift in Sources */,
 				F8D39A58271702CA0032DDD2 /* OptionsViewController.swift in Sources */,
 				F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */,
