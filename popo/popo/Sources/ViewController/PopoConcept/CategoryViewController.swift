@@ -24,6 +24,7 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        initNavigationBar()
         initCategoryList()
         registerCell()
     }
@@ -60,6 +61,11 @@ extension CategoryViewController {
         categoryCollectionView.dataSource = self
         let cateogoryCell = UINib(nibName: Const.Xib.categoryCell, bundle: nil)
         categoryCollectionView.register(cateogoryCell, forCellWithReuseIdentifier: Const.Xib.categoryCell)
+    }
+    
+    private func initNavigationBar() {
+        self.navigationController?.initWithBackButton()
+        self.navigationController?.navigationBar.isHidden = false
     }
 }
 
@@ -125,8 +131,8 @@ extension CategoryViewController: UICollectionViewDelegate {
             ]
         }
         nextVC.category = indexPath.item + 1
-//        nextVC.id = id
-        nextVC.id = 1
+        nextVC.id = id
+//        nextVC.id = 1
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

@@ -59,8 +59,9 @@ extension ConceptViewController {
         PopoAPI.shared.getPopoList { result  in
             switch result {
             case .success(let data) :
-                if let conceptData = data as? [Concept] {
-                    self.conceptDataList = conceptData
+                if let conceptDataList = data as? [Concept] {
+                    self.conceptDataList = conceptDataList
+                    self.conceptCollectionView.reloadData()
                 }
             case .requestErr(let message):
                 print("getPopoListWithAPI - requestErr: \(message)")
@@ -132,8 +133,8 @@ extension ConceptViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.frame.width - 2 * Size.cellLineSpacing
-        let cellHeight = collectionView.frame.height - 3 * Size.cellInterItemSpacing
+        let cellWidth = (collectionView.frame.width - 2 * Size.cellLineSpacing) / 3
+        let cellHeight = (collectionView.frame.height - 3 * Size.cellInterItemSpacing) / 4
         return CGSize(width: cellWidth, height: cellHeight)
     }
     

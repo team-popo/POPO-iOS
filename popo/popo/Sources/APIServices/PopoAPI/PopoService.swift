@@ -25,12 +25,8 @@ extension PopoService: TargetType {
         switch self {
         case .fetchPopoList:
             return ""
-//        case .setDefaultPopo:
-//            return ""
         case .insertPopo(let popoID, _):
             return "/\(popoID)"
-//        case .deletePopo(let popoID):
-//            return "/\(popoID)"
         case .changeBackground(let popoID, _):
             return "\(popoID)/background"
         }
@@ -40,12 +36,8 @@ extension PopoService: TargetType {
         switch self {
         case .fetchPopoList:
             return .get
-//        case .setDefaultPopo:
-//            return .post
         case .insertPopo:
             return .post
-//        case .deletePopo:
-//            return .delete
         case .changeBackground:
             return .patch
         }
@@ -55,12 +47,8 @@ extension PopoService: TargetType {
         switch self {
         case .fetchPopoList:
             return .requestPlain
-//        case .setDefaultPopo:
-//            return
         case .insertPopo(_, let parameter):
             return .requestJSONEncodable(parameter)
-//        case .deletePopo:
-//            return .requestPlain
         case .changeBackground(_, let backgroundImage):
             if let backgroundImage = backgroundImage.jpegData(compressionQuality: 1.0) {
                 return .uploadMultipart([MultipartFormData(provider: .data(backgroundImage), name: "image", fileName: "background.jpg", mimeType: "image/jpg")])
@@ -73,12 +61,8 @@ extension PopoService: TargetType {
         switch self {
         case .fetchPopoList:
             return .none
-//        case .setDefaultPopo:
-//            return ["Content-Type": "multipart/form-data"]
         case .insertPopo:
             return ["Content-Type": "application/json"]
-//        case .deletePopo:
-//            return .none
         case .changeBackground:
             return ["Content-Type": "multipart/form-data"]
         }
