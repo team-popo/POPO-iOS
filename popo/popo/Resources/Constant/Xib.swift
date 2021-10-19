@@ -15,5 +15,10 @@ extension Const {
         static let calendarCollectionViewCell = "CalendarCollectionViewCell"
         static let recommendationCollectionViewCell = "RecommendationCollectionViewCell"
         static let conceptCollectionViewCell = "ConceptCollectionViewCell"
+        static let ChangeMonthPopupViewController = "ChangeMonthPopupViewController"
+        
+        // 포포의 하루
+        static let todayImageCollectionViewCell = "TodayImageCollectionViewCell"
+        static let optionCollectionViewCell = "OptionCollectionViewCell"
     }
 }

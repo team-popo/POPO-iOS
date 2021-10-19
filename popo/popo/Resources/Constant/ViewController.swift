@@ -23,6 +23,8 @@ extension Const {
             static let calendar = "CalendarViewController"
             static let options = "OptionsViewController"
             static let customOptions = "CustomOptionsViewController"
+            static let changeMonthPopup = "ChangeMonthPopupViewController"
+            static let popoToday = "PopoTodayViewController"
         }
         
     }
