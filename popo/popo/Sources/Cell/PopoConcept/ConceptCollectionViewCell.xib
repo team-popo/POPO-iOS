@@ -11,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ConceptCollectionViewCell" customModule="popo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="141" height="127"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="141" height="127"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yJl-Bm-Dk0">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="141" height="127"/>
                     </imageView>
                 </subviews>
             </view>
@@ -29,10 +29,11 @@
                 <constraint firstItem="yJl-Bm-Dk0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jth-hL-3Ed"/>
                 <constraint firstAttribute="trailing" secondItem="yJl-Bm-Dk0" secondAttribute="trailing" id="vYj-Yf-8x7"/>
             </constraints>
+            <size key="customSize" width="141" height="127"/>
             <connections>
                 <outlet property="imageView" destination="yJl-Bm-Dk0" id="bne-Q7-uzj"/>
             </connections>
-            <point key="canvasLocation" x="139" y="114"/>
+            <point key="canvasLocation" x="203.62318840579712" y="139.62053571428569"/>
         </collectionViewCell>
     </objects>
 </document>

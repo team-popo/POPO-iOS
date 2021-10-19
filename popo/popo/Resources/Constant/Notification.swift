@@ -10,4 +10,5 @@ import Foundation
 extension Notification.Name {
     static let removeOption = Notification.Name("removeOption")
     static let plusOption = Notification.Name("plusOption")
+    static let addCustomOption = Notification.Name("addCustomOption")
 }

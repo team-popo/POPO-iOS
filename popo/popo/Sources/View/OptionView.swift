@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class RecommendationOptionView: UIView {
+class OptionView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -29,11 +29,12 @@ class RecommendationOptionView: UIView {
         return button
     }()
     
-    init(title: String) {
-        super.init(frame: CGRect())
+    init(title: String, isRequired: Bool = false) {
+        super.init(frame: .zero)
         setUI()
         setConstraint()
         self.titleLabel.text = title
+        self.closeButton.isHidden = isRequired
     }
     
     required init?(coder: NSCoder) {

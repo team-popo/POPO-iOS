@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PlustOptionView: UIView {
+class PlusOptionView: UIView {
     let plusButton: UIButton = {
         let button = UIButton(type: .system, primaryAction: UIAction(handler: { _ in
             NotificationCenter.default.post(name: .plusOption, object: nil)
