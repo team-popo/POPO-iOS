@@ -32,7 +32,7 @@ public class PopoAPI {
     }
     
     func postInsertPopo(parameter: InsertPopoRequest, completion: @escaping (NetworkResult<Any>) -> Void) {
-        popoProvider.request(.insertPopo(popoID: 1, parameter: parameter)) { (result) in
+        popoProvider.request(.insertPopo(popoID: parameter.id, parameter: parameter)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode

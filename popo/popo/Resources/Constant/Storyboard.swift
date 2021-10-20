@@ -24,6 +24,7 @@ extension Const {
             static let options = "Options"
             static let customOptions = "CustomOptions"
             static let popoToday = "PopoToday"
+            static let particularPopoToday = "GoalPopoToday"
         }
         
     }
