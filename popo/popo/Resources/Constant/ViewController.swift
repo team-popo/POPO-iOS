@@ -25,6 +25,7 @@ extension Const {
             static let customOptions = "CustomOptionsViewController"
             static let changeMonthPopup = "ChangeMonthPopupViewController"
             static let popoToday = "PopoTodayViewController"
+            static let goalPopoToday = "GoalPopoTodayViewController"
         }
         
     }

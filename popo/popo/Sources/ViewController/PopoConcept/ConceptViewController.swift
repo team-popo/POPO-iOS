@@ -92,7 +92,7 @@ extension ConceptViewController: UICollectionViewDelegate {
             guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.category) as? CategoryViewController else {
                 return
             }
-            nextVC.id = conceptDataList[indexPath.item].identifier
+            nextVC.id = conceptDataList[indexPath.item].id
             self.navigationController?.pushViewController(nextVC, animated: true)
         } else {
             let storyboard = UIStoryboard(name: Const.Storyboard.Name.calendar, bundle: nil)

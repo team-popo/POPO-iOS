@@ -20,5 +20,6 @@ extension Const {
         // 포포의 하루
         static let todayImageCollectionViewCell = "TodayImageCollectionViewCell"
         static let optionCollectionViewCell = "OptionCollectionViewCell"
+        static let todayGoalImageCollectionViewCell = "TodayGoalImageCollectionViewCell"
     }
 }

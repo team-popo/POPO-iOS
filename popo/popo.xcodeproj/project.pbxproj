@@ -50,6 +50,13 @@
 		F816E65D26FC631F000C0270 /* PopoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65C26FC631F000C0270 /* PopoAPI.swift */; };
 		F816E66026FC6441000C0270 /* TrackerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65F26FC6441000C0270 /* TrackerAPI.swift */; };
 		F816E66226FC6CAB000C0270 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E66126FC6CAB000C0270 /* URL.swift */; };
+		F82C1BE92720560700616762 /* GoalPopoTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BE82720560700616762 /* GoalPopoTodayViewController.swift */; };
+		F82C1BEB2720573700616762 /* GoalPopoToday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F82C1BEA2720573700616762 /* GoalPopoToday.storyboard */; };
+		F82C1BEE27205E4700616762 /* TodayGoalImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BEC27205E4700616762 /* TodayGoalImageCollectionViewCell.swift */; };
+		F82C1BEF27205E4700616762 /* TodayGoalImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82C1BED27205E4700616762 /* TodayGoalImageCollectionViewCell.xib */; };
+		F82C1BF22720693A00616762 /* PopoToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF12720693A00616762 /* PopoToday.swift */; };
+		F82C1BF427206A4F00616762 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF327206A4F00616762 /* Option.swift */; };
+		F82C1BF627206A7300616762 /* OptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF527206A7300616762 /* OptionRequest.swift */; };
 		F84AA56C27057633008D77ED /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84AA56B27057633008D77ED /* Xib.swift */; };
 		F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */; };
 		F86E64E5271C461C00C1DBF9 /* ConceptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E64E3271C461C00C1DBF9 /* ConceptCollectionViewCell.swift */; };
@@ -135,6 +142,13 @@
 		F816E65C26FC631F000C0270 /* PopoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoAPI.swift; sourceTree = "<group>"; };
 		F816E65F26FC6441000C0270 /* TrackerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAPI.swift; sourceTree = "<group>"; };
 		F816E66126FC6CAB000C0270 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		F82C1BE82720560700616762 /* GoalPopoTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPopoTodayViewController.swift; sourceTree = "<group>"; };
+		F82C1BEA2720573700616762 /* GoalPopoToday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalPopoToday.storyboard; sourceTree = "<group>"; };
+		F82C1BEC27205E4700616762 /* TodayGoalImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayGoalImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		F82C1BED27205E4700616762 /* TodayGoalImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayGoalImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		F82C1BF12720693A00616762 /* PopoToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoToday.swift; sourceTree = "<group>"; };
+		F82C1BF327206A4F00616762 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		F82C1BF527206A7300616762 /* OptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionRequest.swift; sourceTree = "<group>"; };
 		F84AA56B27057633008D77ED /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F86E64E3271C461C00C1DBF9 /* ConceptCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -298,6 +312,7 @@
 				F881A73F26FC50B200AEE21E /* GenericResponse.swift */,
 				F881A73C26FC18E100AEE21E /* PopoConcept */,
 				565A1F1927070730000CAB1B /* Calendar */,
+				F82C1BF02720690900616762 /* PopoToday */,
 			);
 			path = APIModel;
 			sourceTree = "<group>";
@@ -398,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				56DE3517271DC619009649CE /* PopoToday.storyboard */,
+				F82C1BEA2720573700616762 /* GoalPopoToday.storyboard */,
 			);
 			path = PopoToday;
 			sourceTree = "<group>";
@@ -406,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				56DE351A271DC69E009649CE /* PopoTodayViewController.swift */,
+				F82C1BE82720560700616762 /* GoalPopoTodayViewController.swift */,
 			);
 			path = PopoToday;
 			sourceTree = "<group>";
@@ -417,6 +434,8 @@
 				56DE351E271DC6C6009649CE /* TodayImageCollectionViewCell.xib */,
 				56DE3522271DC6DA009649CE /* OptionCollectionViewCell.swift */,
 				56DE3523271DC6DA009649CE /* OptionCollectionViewCell.xib */,
+				F82C1BEC27205E4700616762 /* TodayGoalImageCollectionViewCell.swift */,
+				F82C1BED27205E4700616762 /* TodayGoalImageCollectionViewCell.xib */,
 			);
 			path = PopoToday;
 			sourceTree = "<group>";
@@ -445,6 +464,15 @@
 				F816E65F26FC6441000C0270 /* TrackerAPI.swift */,
 			);
 			path = TrackerAPI;
+			sourceTree = "<group>";
+		};
+		F82C1BF02720690900616762 /* PopoToday */ = {
+			isa = PBXGroup;
+			children = (
+				F82C1BF12720693A00616762 /* PopoToday.swift */,
+				F82C1BF327206A4F00616762 /* Option.swift */,
+			);
+			path = PopoToday;
 			sourceTree = "<group>";
 		};
 		F873648726A6A60100F121DC /* Onboarding */ = {
@@ -492,6 +520,7 @@
 			children = (
 				F881A73D26FC191400AEE21E /* Concept.swift */,
 				F88FBC59271C9473003A5F0B /* InsertPopoRequest.swift */,
+				F82C1BF527206A7300616762 /* OptionRequest.swift */,
 			);
 			path = PopoConcept;
 			sourceTree = "<group>";
@@ -636,9 +665,11 @@
 				562F555626452103000F8CAB /* Assets.xcassets in Resources */,
 				F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */,
 				567BF244265A571300285956 /* CoverCalendar.storyboard in Resources */,
+				F82C1BEF27205E4700616762 /* TodayGoalImageCollectionViewCell.xib in Resources */,
 				F86E64E6271C461C00C1DBF9 /* ConceptCollectionViewCell.xib in Resources */,
 				562F555426452101000F8CAB /* Main.storyboard in Resources */,
 				56EE71BB265E165B005AC12A /* Concept.storyboard in Resources */,
+				F82C1BEB2720573700616762 /* GoalPopoToday.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +748,7 @@
 				56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */,
 				F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */,
 				F87958AB271A93A800804C4C /* CustomOptionsViewController.swift in Sources */,
+				F82C1BF22720693A00616762 /* PopoToday.swift in Sources */,
 				F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */,
 				F816E66226FC6CAB000C0270 /* URL.swift in Sources */,
 				56A375D42723FB4B00B47B6D /* UIImageView+Extension.swift in Sources */,
@@ -726,9 +758,12 @@
 				F88FBC5D271C9CF7003A5F0B /* OptionsList.swift in Sources */,
 				F8D39A5E27171F530032DDD2 /* OptionView.swift in Sources */,
 				F84AA56C27057633008D77ED /* Xib.swift in Sources */,
+				F82C1BF627206A7300616762 /* OptionRequest.swift in Sources */,
 				565A1F1D27070768000CAB1B /* Tracker.swift in Sources */,
 				F88FBC5A271C9473003A5F0B /* InsertPopoRequest.swift in Sources */,
 				F816E66026FC6441000C0270 /* TrackerAPI.swift in Sources */,
+				F816E66026FC6441000C0270 /* TempAPI.swift in Sources */,
+				F82C1BF427206A4F00616762 /* Option.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				56DE351B271DC69E009649CE /* PopoTodayViewController.swift in Sources */,
 				F86E64E5271C461C00C1DBF9 /* ConceptCollectionViewCell.swift in Sources */,
@@ -737,11 +772,13 @@
 				F8967D8E26F9FA6100F034E3 /* CategoryViewController.swift in Sources */,
 				F8731B0F265C05E900770760 /* ConceptSelectCollectionViewCell.swift in Sources */,
 				F8D39A6027171FEA0032DDD2 /* PlusOptionView.swift in Sources */,
+				F82C1BEE27205E4700616762 /* TodayGoalImageCollectionViewCell.swift in Sources */,
 				F8D39A62271862C20032DDD2 /* Notification.swift in Sources */,
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
 				F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */,
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
 				56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */,
+				F82C1BE92720560700616762 /* GoalPopoTodayViewController.swift in Sources */,
 				56DE351F271DC6C6009649CE /* TodayImageCollectionViewCell.swift in Sources */,
 				F8D39A58271702CA0032DDD2 /* OptionsViewController.swift in Sources */,
 				F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */,

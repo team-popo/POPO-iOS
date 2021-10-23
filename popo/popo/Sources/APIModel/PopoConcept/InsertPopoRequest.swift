@@ -7,14 +7,12 @@
 
 import Foundation
 
+// MARK: - InsertPopoRequest
+
 struct InsertPopoRequest: Codable {
     let category: Int
     let id: Int
-    let options: [Options]
+    let options: [OptionRequest]
 }
 
-struct Options: Codable {
-    let name: String
-    let order: Int
-    let type: Int
-}
+
