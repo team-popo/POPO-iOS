@@ -60,19 +60,21 @@ extension OptionsViewController {
         guard let recommendationOptionsList = recommendationOptionsList as? [OptionsList] else { return }
         if recommendationOptionsList[0].isRequired {
             // required options
-            for value in recommendationOptionsList {
-                if value.isRequired {
+            var endIndex = -1
+            for (index, value) in recommendationOptionsList.enumerated() where value.isRequired {
                     optionsParameter.append(value)
                     let recommendationOptionView = OptionView(title: value.options,
                                                                             isRequired: value.isRequired)
                     optionViewList.append(recommendationOptionView)
                     optionsStackView.addArrangedSubview(recommendationOptionView)
-                } else {
-                    // add to optionsCollectionViewList
-                    optionsParameter.append(value)
-                    optionsCollectionViewList.append(value)
-                }
+                    endIndex = index
             }
+            // add to optionsCollectionViewList
+            optionsParameter.append(recommendationOptionsList[endIndex + 1])
+            for index in (endIndex + 1)..<recommendationOptionsList.count {
+                optionsCollectionViewList.append(recommendationOptionsList[index])
+            }
+            
             let recommendationOptionView = OptionView(title: optionsCollectionViewList[0].options)
             let plusOptionView = PlusOptionView()
             
@@ -123,39 +125,37 @@ extension OptionsViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(addCustomOption(_:)), name: .addCustomOption, object: nil)
     }
     
-// TODO: 서버통신 해결
-//    private func insertPopoWithAPI(completion: @escaping (NetworkResult<Any>) -> Void) {
-//        //        optionsParameter
-//        var insertPopoRequest: InsertPopoRequest
-//        var options = [Options]()
-//        for (index, parameter) in optionsParameter.enumerated() {
-//            options.append(Options(name: parameter.options, order: index, type: parameter.type))
-//        }
-//        insertPopoRequest = InsertPopoRequest(category: self.category ?? -1, id: id ?? -1, options: options)
-//        print(insertPopoRequest)
-//        PopoAPI.shared.postInsertPopo(parameter: insertPopoRequest) { result in
-//            completion(result)
-//        }
-//    }
+    private func insertPopoWithAPI(completion: @escaping (NetworkResult<Any>) -> Void) {
+        //        optionsParameter
+        var insertPopoRequest: InsertPopoRequest
+        var options = [OptionRequest]()
+        for (index, parameter) in optionsParameter.enumerated() {
+            options.append(OptionRequest(name: parameter.options, order: index + 1, type: parameter.type))
+        }
+        insertPopoRequest = InsertPopoRequest(category: self.category ?? 0, id: id ?? 0, options: options)
+        PopoAPI.shared.postInsertPopo(parameter: insertPopoRequest) { result in
+            completion(result)
+        }
+    }
     
     @objc
     private func pushToConceptViewController() {
-//        insertPopoWithAPI { result in
-//            switch result {
-//            case .success(_) :
-//                let storyboard = UIStoryboard(name: Const.Storyboard.Name.concept, bundle: nil)
-//                guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.concept) as? ConceptViewController else { return }
-//                self.navigationController?.pushViewController(nextVC, animated: true)
-//            case .requestErr(let message):
-//                print("getPopoListWithAPI - requestErr: \(message)")
-//            case .pathErr:
-//                print("getPopoListWithAPI - pathErr")
-//            case .serverErr:
-//                print("getPopoListWithAPI - serverErr")
-//            case .networkFail:
-//                print("getPopoListWithAPI - networkFail")
-//            }
-//        }
+        insertPopoWithAPI { result in
+            switch result {
+            case .success(_) :
+                let storyboard = UIStoryboard(name: Const.Storyboard.Name.concept, bundle: nil)
+                guard let nextVC = storyboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.concept) as? ConceptViewController else { return }
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            case .requestErr(let message):
+                print("getPopoListWithAPI - requestErr: \(message)")
+            case .pathErr:
+                print("getPopoListWithAPI - pathErr")
+            case .serverErr:
+                print("getPopoListWithAPI - serverErr")
+            case .networkFail:
+                print("getPopoListWithAPI - networkFail")
+            }
+        }
     }
     
     @objc

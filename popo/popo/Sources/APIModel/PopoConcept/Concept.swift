@@ -7,12 +7,14 @@
 
 import Foundation
 
+// MARK: - Concept
+
 struct Concept: Codable {
-    let identifier, category, order: Int
+    let id, category, order: Int
     let background: String
 
     enum CodingKeys: String, CodingKey {
-        case identifier = "id"
+        case id = "id"
         case category, order, background
     }
 }
