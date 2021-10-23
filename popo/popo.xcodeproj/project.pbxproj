@@ -32,21 +32,23 @@
 		5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */; };
 		56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E08265635ED00745273 /* LoginMethodViewController.swift */; };
 		56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E0A265648EB00745273 /* UIView+Extension.swift */; };
-		56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */; };
-		56DE3529271DD185009649CE /* ChangeMonthPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */; };
-		56DE352B271DD66F009649CE /* AppDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE352A271DD66F009649CE /* AppDate.swift */; };
+		56A375D22723F09800B47B6D /* TrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A375D12723F09800B47B6D /* TrackerService.swift */; };
+		56A375D42723FB4B00B47B6D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A375D32723FB4B00B47B6D /* UIImageView+Extension.swift */; };
 		56DE3518271DC619009649CE /* PopoToday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DE3517271DC619009649CE /* PopoToday.storyboard */; };
 		56DE351B271DC69E009649CE /* PopoTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE351A271DC69E009649CE /* PopoTodayViewController.swift */; };
 		56DE351F271DC6C6009649CE /* TodayImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE351D271DC6C6009649CE /* TodayImageCollectionViewCell.swift */; };
 		56DE3520271DC6C6009649CE /* TodayImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DE351E271DC6C6009649CE /* TodayImageCollectionViewCell.xib */; };
 		56DE3524271DC6DA009649CE /* OptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE3522271DC6DA009649CE /* OptionCollectionViewCell.swift */; };
 		56DE3525271DC6DA009649CE /* OptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DE3523271DC6DA009649CE /* OptionCollectionViewCell.xib */; };
+		56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */; };
+		56DE3529271DD185009649CE /* ChangeMonthPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */; };
+		56DE352B271DD66F009649CE /* AppDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE352A271DD66F009649CE /* AppDate.swift */; };
 		56EE71BB265E165B005AC12A /* Concept.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56EE71BA265E165B005AC12A /* Concept.storyboard */; };
 		56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE71BC265E18BA005AC12A /* ConceptViewController.swift */; };
 		F065790638E6CE247683CA74 /* Pods_popo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9900D9492EE36CE1A8C04071 /* Pods_popo.framework */; };
 		F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65926FC62FD000C0270 /* PopoService.swift */; };
 		F816E65D26FC631F000C0270 /* PopoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65C26FC631F000C0270 /* PopoAPI.swift */; };
-		F816E66026FC6441000C0270 /* TempAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65F26FC6441000C0270 /* TempAPI.swift */; };
+		F816E66026FC6441000C0270 /* TrackerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E65F26FC6441000C0270 /* TrackerAPI.swift */; };
 		F816E66226FC6CAB000C0270 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816E66126FC6CAB000C0270 /* URL.swift */; };
 		F84AA56C27057633008D77ED /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84AA56B27057633008D77ED /* Xib.swift */; };
 		F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */; };
@@ -114,22 +116,24 @@
 		5686FA4D265A728600B7B9D5 /* CoverUserPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverUserPhotoViewController.swift; sourceTree = "<group>"; };
 		56924E08265635ED00745273 /* LoginMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodViewController.swift; sourceTree = "<group>"; };
 		56924E0A265648EB00745273 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMonthPopupViewController.swift; sourceTree = "<group>"; };
-		56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeMonthPopupViewController.xib; sourceTree = "<group>"; };
-		56DE352A271DD66F009649CE /* AppDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDate.swift; sourceTree = "<group>"; };
+		56A375D12723F09800B47B6D /* TrackerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerService.swift; sourceTree = "<group>"; };
+		56A375D32723FB4B00B47B6D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		56DE3517271DC619009649CE /* PopoToday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopoToday.storyboard; sourceTree = "<group>"; };
 		56DE351A271DC69E009649CE /* PopoTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoTodayViewController.swift; sourceTree = "<group>"; };
 		56DE351D271DC6C6009649CE /* TodayImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		56DE351E271DC6C6009649CE /* TodayImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		56DE3522271DC6DA009649CE /* OptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		56DE3523271DC6DA009649CE /* OptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		56DE3526271DD185009649CE /* ChangeMonthPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMonthPopupViewController.swift; sourceTree = "<group>"; };
+		56DE3527271DD185009649CE /* ChangeMonthPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeMonthPopupViewController.xib; sourceTree = "<group>"; };
+		56DE352A271DD66F009649CE /* AppDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDate.swift; sourceTree = "<group>"; };
 		56EE71BA265E165B005AC12A /* Concept.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Concept.storyboard; sourceTree = "<group>"; };
 		56EE71BC265E18BA005AC12A /* ConceptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptViewController.swift; sourceTree = "<group>"; };
 		9900D9492EE36CE1A8C04071 /* Pods_popo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_popo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C232EAFF605BCD2CA3B4168B /* Pods-popo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-popo.release.xcconfig"; path = "Target Support Files/Pods-popo/Pods-popo.release.xcconfig"; sourceTree = "<group>"; };
 		F816E65926FC62FD000C0270 /* PopoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoService.swift; sourceTree = "<group>"; };
 		F816E65C26FC631F000C0270 /* PopoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoAPI.swift; sourceTree = "<group>"; };
-		F816E65F26FC6441000C0270 /* TempAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAPI.swift; sourceTree = "<group>"; };
+		F816E65F26FC6441000C0270 /* TrackerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAPI.swift; sourceTree = "<group>"; };
 		F816E66126FC6CAB000C0270 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		F84AA56B27057633008D77ED /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				56924E0A265648EB00745273 /* UIView+Extension.swift */,
 				567840FC265E211300BDBF26 /* UINavigationController+Extension.swift */,
 				F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */,
+				56A375D32723FB4B00B47B6D /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -436,7 +441,8 @@
 		F816E65E26FC6413000C0270 /* TrackerAPI */ = {
 			isa = PBXGroup;
 			children = (
-				F816E65F26FC6441000C0270 /* TempAPI.swift */,
+				56A375D12723F09800B47B6D /* TrackerService.swift */,
+				F816E65F26FC6441000C0270 /* TrackerAPI.swift */,
 			);
 			path = TrackerAPI;
 			sourceTree = "<group>";
@@ -713,6 +719,7 @@
 				F87958AB271A93A800804C4C /* CustomOptionsViewController.swift in Sources */,
 				F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */,
 				F816E66226FC6CAB000C0270 /* URL.swift in Sources */,
+				56A375D42723FB4B00B47B6D /* UIImageView+Extension.swift in Sources */,
 				56924E09265635ED00745273 /* LoginMethodViewController.swift in Sources */,
 				F816E65D26FC631F000C0270 /* PopoAPI.swift in Sources */,
 				56DE352B271DD66F009649CE /* AppDate.swift in Sources */,
@@ -721,7 +728,7 @@
 				F84AA56C27057633008D77ED /* Xib.swift in Sources */,
 				565A1F1D27070768000CAB1B /* Tracker.swift in Sources */,
 				F88FBC5A271C9473003A5F0B /* InsertPopoRequest.swift in Sources */,
-				F816E66026FC6441000C0270 /* TempAPI.swift in Sources */,
+				F816E66026FC6441000C0270 /* TrackerAPI.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				56DE351B271DC69E009649CE /* PopoTodayViewController.swift in Sources */,
 				F86E64E5271C461C00C1DBF9 /* ConceptCollectionViewCell.swift in Sources */,
@@ -738,6 +745,7 @@
 				56DE351F271DC6C6009649CE /* TodayImageCollectionViewCell.swift in Sources */,
 				F8D39A58271702CA0032DDD2 /* OptionsViewController.swift in Sources */,
 				F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */,
+				56A375D22723F09800B47B6D /* TrackerService.swift in Sources */,
 				F881A73E26FC191400AEE21E /* Concept.swift in Sources */,
 				56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */,
 				567BF248265A604100285956 /* CoverCalendarViewController.swift in Sources */,

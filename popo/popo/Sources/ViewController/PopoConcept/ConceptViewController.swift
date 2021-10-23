@@ -100,6 +100,8 @@ extension ConceptViewController: UICollectionViewDelegate {
                 return
             }
             
+            nextVC.popoId = indexPath.row + 1
+            
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }

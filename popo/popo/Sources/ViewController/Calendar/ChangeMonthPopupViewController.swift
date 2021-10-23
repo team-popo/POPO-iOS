@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CalendarModalViewDelegate: AnyObject {
+    func passData(year: Int, month: Int)
+}
+
 class ChangeMonthPopupViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
@@ -26,6 +30,7 @@ class ChangeMonthPopupViewController: UIViewController {
     var currentYearMonths: [String] = []
     
     var currentDate = AppDate()
+    weak var calendarModalViewDelegate: CalendarModalViewDelegate?
     
     // MARK: - View Life Cycle
 
@@ -64,7 +69,7 @@ class ChangeMonthPopupViewController: UIViewController {
     }
     
     private func setData() {
-        for tempYear in 2000...currentDate.getYear() {
+        for tempYear in 2020...currentDate.getYear() {
             self.yearArray.append(String(tempYear))
         }
         for tempMonth in 1...12 {
@@ -95,7 +100,19 @@ class ChangeMonthPopupViewController: UIViewController {
             self.year = unwrappedYear
         }
     }
+    
+    private func dismissToCalnedarViewController() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
+    @IBAction func touchApplyButton(_ sender: Any) {
+        
+        if let modal = calendarModalViewDelegate {
+            modal.passData(year: self.year, month: self.month)
+        }
+        
+        dismissToCalnedarViewController()
+    }
 }
 
 extension ChangeMonthPopupViewController: UIPickerViewDelegate {
