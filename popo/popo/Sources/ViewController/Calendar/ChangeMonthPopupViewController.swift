@@ -69,7 +69,7 @@ class ChangeMonthPopupViewController: UIViewController {
     }
     
     private func setData() {
-        for tempYear in 2020...currentDate.getYear() {
+        for tempYear in 2021...currentDate.getYear() {
             self.yearArray.append(String(tempYear))
         }
         for tempMonth in 1...12 {
@@ -104,6 +104,8 @@ class ChangeMonthPopupViewController: UIViewController {
     private func dismissToCalnedarViewController() {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: - @IBAction Functions
 
     @IBAction func touchApplyButton(_ sender: Any) {
         
@@ -113,7 +115,13 @@ class ChangeMonthPopupViewController: UIViewController {
         
         dismissToCalnedarViewController()
     }
+    
+    @IBAction func touchCloseButton(_ sender: Any) {
+        dismissToCalnedarViewController()
+    }
 }
+
+// MARK: - UIPickerViewDelegate
 
 extension ChangeMonthPopupViewController: UIPickerViewDelegate {
     
@@ -146,6 +154,8 @@ extension ChangeMonthPopupViewController: UIPickerViewDelegate {
         }
     }
 }
+
+// MARK: - UIPickerViewDataSource
 
 extension ChangeMonthPopupViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

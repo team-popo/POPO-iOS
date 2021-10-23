@@ -36,6 +36,9 @@ class CalendarViewController: UIViewController {
     // date
     var dateArray: [String] = ["", "", ""]
     
+    // photo picker
+    var photoPicker = UIImagePickerController()
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -79,6 +82,7 @@ class CalendarViewController: UIViewController {
     private func assignDelegation() {
         self.calendarCollectionView.delegate = self
         self.calendarCollectionView.dataSource = self
+        photoPicker.delegate = self
     }
     
     private func registerXib() {
@@ -99,7 +103,8 @@ class CalendarViewController: UIViewController {
     
     // @objc functions
     @objc func touchChangeBackgroundButton(_ sender: UIBarButtonItem) {
-        // TODO: - 갤러리 열기
+        photoPicker.sourceType = .photoLibrary
+        present(photoPicker, animated: true, completion: nil)
     }
     
     @objc func touchCalendarButton(_ sender: UIBarButtonItem) {
@@ -192,7 +197,29 @@ extension CalendarViewController {
         
     }
     
+    func patchBackgroundImage(popoId: Int, image: UIImage) {
+        
+        TrackerAPI.shared.patchBackgroundImage(popoId: popoId, image: image) { (response) in
+            switch response {
+            case .success(let trackerData):
+                // 이미지 업로드 성공
+                print("success - patchBackgroundImage")
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
+    }
+    
 }
+
+// MARK: - CalendarModalViewDelegate
 
 extension CalendarViewController: CalendarModalViewDelegate {
     func passData(year: Int, month: Int) {
@@ -201,5 +228,19 @@ extension CalendarViewController: CalendarModalViewDelegate {
         
         getTracker(popoId: popoId, year: year, month: month)
         
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+extension CalendarViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+    
+    // didFinishPickingMediaWithInfo
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            backgroundImageView.image = image
+            patchBackgroundImage(popoId: popoId, image: image)
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
