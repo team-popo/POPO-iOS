@@ -10,6 +10,7 @@ import Moya
 
 enum TodayService {
     case todayFetch(popoID: Int, dayID: Int)
+    case todayPatch(popoID: Int, dayID: Int, contentsID: Int)
 }
 
 extension TodayService: TargetType {
@@ -21,6 +22,8 @@ extension TodayService: TargetType {
         switch self {
         case .todayFetch(let popoID, let dayID):
             return "/\(popoID)/tracker/\(dayID)"
+        case .todayPatch(let popoID, let dayID, let contentsID):
+            return "/\(popoID)/tracker/\(dayID)/contents/\(contentsID)"
         }
     }
     
@@ -28,12 +31,16 @@ extension TodayService: TargetType {
         switch self {
         case .todayFetch:
             return .get
+        case .todayPatch:
+            return .patch
         }
     }
     
     var task: Task {
         switch self {
         case .todayFetch:
+            return .requestPlain
+        case .todayPatch:
             return .requestPlain
         }
     }
@@ -42,6 +49,8 @@ extension TodayService: TargetType {
         switch self {
         case .todayFetch:
             return .none
+        case .todayPatch:
+            return ["Content-Type": "application/json"]
         }
     }
 }

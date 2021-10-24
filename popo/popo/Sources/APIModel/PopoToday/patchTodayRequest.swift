@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct patchTodayRequest {
+    let id: Int
+    let contents: String
+}
