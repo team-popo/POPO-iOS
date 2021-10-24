@@ -55,6 +55,8 @@
 		F82C1BF22720693A00616762 /* PopoToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF12720693A00616762 /* PopoToday.swift */; };
 		F82C1BF427206A4F00616762 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF327206A4F00616762 /* Option.swift */; };
 		F82C1BF627206A7300616762 /* OptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF527206A7300616762 /* OptionRequest.swift */; };
+		F82C1BF927207D7B00616762 /* TodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF827207D7B00616762 /* TodayService.swift */; };
+		F82C1BFB27207D8000616762 /* TodayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BFA27207D8000616762 /* TodayAPI.swift */; };
 		F84AA56C27057633008D77ED /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84AA56B27057633008D77ED /* Xib.swift */; };
 		F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */; };
 		F86E64E5271C461C00C1DBF9 /* ConceptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E64E3271C461C00C1DBF9 /* ConceptCollectionViewCell.swift */; };
@@ -145,6 +147,8 @@
 		F82C1BF12720693A00616762 /* PopoToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoToday.swift; sourceTree = "<group>"; };
 		F82C1BF327206A4F00616762 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		F82C1BF527206A7300616762 /* OptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionRequest.swift; sourceTree = "<group>"; };
+		F82C1BF827207D7B00616762 /* TodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayService.swift; sourceTree = "<group>"; };
+		F82C1BFA27207D8000616762 /* TodayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAPI.swift; sourceTree = "<group>"; };
 		F84AA56B27057633008D77ED /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F86E64E3271C461C00C1DBF9 /* ConceptCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -315,8 +319,9 @@
 		562F5567264521DC000F8CAB /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				F816E65E26FC6413000C0270 /* TrackerAPI */,
 				F816E65B26FC6306000C0270 /* PopoAPI */,
+				F816E65E26FC6413000C0270 /* TrackerAPI */,
+				F82C1BF727207D6D00616762 /* TodayAPI */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -467,6 +472,15 @@
 				F82C1BF327206A4F00616762 /* Option.swift */,
 			);
 			path = PopoToday;
+			sourceTree = "<group>";
+		};
+		F82C1BF727207D6D00616762 /* TodayAPI */ = {
+			isa = PBXGroup;
+			children = (
+				F82C1BF827207D7B00616762 /* TodayService.swift */,
+				F82C1BFA27207D8000616762 /* TodayAPI.swift */,
+			);
+			path = TodayAPI;
 			sourceTree = "<group>";
 		};
 		F873648726A6A60100F121DC /* Onboarding */ = {
@@ -767,6 +781,7 @@
 				F82C1BEE27205E4700616762 /* TodayGoalImageCollectionViewCell.swift in Sources */,
 				F8D39A62271862C20032DDD2 /* Notification.swift in Sources */,
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
+				F82C1BFB27207D8000616762 /* TodayAPI.swift in Sources */,
 				F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */,
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
 				56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */,
@@ -787,6 +802,7 @@
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
 				565A1F152706F58F000CAB1B /* CalendarCollectionViewCell.swift in Sources */,
 				5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */,
+				F82C1BF927207D7B00616762 /* TodayService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

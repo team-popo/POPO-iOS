@@ -11,7 +11,7 @@ import Moya
 public class PopoAPI {
     
     static let shared = PopoAPI()
-    var popoProvider = MoyaProvider<PopoService>()
+    var popoProvider = MoyaProvider<PopoService>(plugins: [NetworkLoggerPlugin()])
     
     public init() { }
     

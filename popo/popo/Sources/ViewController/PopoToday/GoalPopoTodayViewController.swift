@@ -13,13 +13,14 @@ class GoalPopoTodayViewController: UIViewController {
     
     private var nameList = [String]()
     private var contentList = [String]()
-    private var imageURL = ""
+    private var imageURL: String?
+    private var goalText: String?
+    private var acheivementText: String?
     
     enum Size {
         static let screenWidth = UIScreen.main.bounds.width
-        static let screenHeight = UIScreen.main.bounds.height
         static let cellWidth: CGFloat = screenWidth
-        static let cellHeight: CGFloat = screenHeight
+        static let cellHeight: CGFloat = cellWidth
         
         static let cellLineSpacing: CGFloat = 10
         static let cellInterItemSpacing: CGFloat = 0
@@ -55,14 +56,37 @@ extension GoalPopoTodayViewController {
     
     private func registerXib() {
         let goalNib = UINib(nibName: Const.Xib.todayGoalImageCollectionViewCell, bundle: nil)
-        todayCollectionView.register(goalNib, forCellWithReuseIdentifier: Const.Xib.todayImageCollectionViewCell)
+        todayCollectionView.register(goalNib, forCellWithReuseIdentifier: Const.Xib.todayGoalImageCollectionViewCell)
         
         let optionNib = UINib(nibName: Const.Xib.optionCollectionViewCell, bundle: nil)
         todayCollectionView.register(optionNib, forCellWithReuseIdentifier: Const.Xib.optionCollectionViewCell)
     }
     
     private func popoTodayFetchWithAPI() {
-        // TODO: 서버통신
+        TodayAPI.shared.getTodayFetch(popoID: 1, dayID: 4) { result in
+            switch result {
+            case .success(let data):
+                if let popoToday = data as? PopoToday {
+                    self.goalText = popoToday.options[0].contents
+                    self.acheivementText = popoToday.options[1].contents
+                    
+                    for index in 2..<popoToday.options.count {
+                        self.nameList.append(popoToday.options[index].name)
+                        self.contentList.append(popoToday.options[index].contents)
+                    }
+                    self.imageURL = popoToday.image
+                    self.todayCollectionView.reloadData()
+                }
+            case .requestErr(let message):
+                print("getPopoListWithAPI - requestErr: \(message)")
+            case .pathErr:
+                print("getPopoListWithAPI - pathErr")
+            case .serverErr:
+                print("getPopoListWithAPI - serverErr")
+            case .networkFail:
+                print("getPopoListWithAPI - networkFail")
+            }
+        }
     }
 }
 
@@ -85,14 +109,13 @@ extension GoalPopoTodayViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            cell.initCell(imageURL, nameList[0], contentList[0], nameList[1], contentList[1])
+            cell.initCell(imageURL ?? "", goalText ?? "", acheivementText ?? "")
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.optionCollectionViewCell, for: indexPath) as? OptionCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            // 목표, 달성에 해당하는 0,1 index 제외 고려.
-            cell.initCell(title: nameList[indexPath.item + 1], content: contentList[indexPath.item + 1])
+            cell.initCell(title: nameList[indexPath.item - 1], content: contentList[indexPath.item - 1])
             return cell
         }
     }
@@ -102,7 +125,7 @@ extension GoalPopoTodayViewController: UICollectionViewDataSource {
 
 extension GoalPopoTodayViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return Size.cellLineSpacing
+        return Size.cellLineSpacing - 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -112,9 +135,7 @@ extension GoalPopoTodayViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.item == 0 {
             return CGSize(width: Size.cellWidth, height: Size.cellHeight)
-        }
-        else {
-            // TODO: 동적인 높이 조절
+        } else {
             let optionSize = NSString(string: contentList[indexPath.row - 1]).boundingRect(
                 with: CGSize(width: Size.screenWidth - 50, height: CGFloat.greatestFiniteMagnitude),
                 options: .usesLineFragmentOrigin,
@@ -128,6 +149,6 @@ extension GoalPopoTodayViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero
+        return UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
     }
 }

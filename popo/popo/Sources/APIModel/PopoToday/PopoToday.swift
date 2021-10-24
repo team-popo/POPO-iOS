@@ -15,4 +15,3 @@ struct PopoToday: Codable {
     let image: String
     let options: [Option]
 }
-
