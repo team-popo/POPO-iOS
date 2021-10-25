@@ -7,10 +7,15 @@
 
 import Foundation
 
-// MARK: - Tracker
+// MARK: - TrackerData
+struct TrackerData: Codable {
+    let category: Int
+    let background: String
+    let tracker: [Tracker]
+}
 
+// MARK: - Tracker
 struct Tracker: Codable {
-    let id: Int
-    let date: Int
+    let id, date: Int
     let image: String
 }

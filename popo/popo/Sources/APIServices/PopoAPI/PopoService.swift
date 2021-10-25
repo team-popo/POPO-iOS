@@ -13,7 +13,6 @@ enum PopoService {
 //    case setDefaultPopo
     case insertPopo(popoID: Int, parameter: InsertPopoRequest)
 //    case deletePopo(popoID: Int)
-    case changeBackground(popoID: Int, backgroundImage: UIImage)
 }
 
 extension PopoService: TargetType {
@@ -27,8 +26,6 @@ extension PopoService: TargetType {
             return ""
         case .insertPopo(let popoID, _):
             return "/\(popoID)"
-        case .changeBackground(let popoID, _):
-            return "\(popoID)/background"
         }
     }
     
@@ -38,8 +35,6 @@ extension PopoService: TargetType {
             return .get
         case .insertPopo:
             return .post
-        case .changeBackground:
-            return .patch
         }
     }
     
@@ -49,11 +44,6 @@ extension PopoService: TargetType {
             return .requestPlain
         case .insertPopo(_, let parameter):
             return .requestJSONEncodable(parameter)
-        case .changeBackground(_, let backgroundImage):
-            if let backgroundImage = backgroundImage.jpegData(compressionQuality: 1.0) {
-                return .uploadMultipart([MultipartFormData(provider: .data(backgroundImage), name: "image", fileName: "background.jpg", mimeType: "image/jpg")])
-            }
-            return .requestPlain
         }
     }
     
@@ -63,8 +53,6 @@ extension PopoService: TargetType {
             return .none
         case .insertPopo:
             return ["Content-Type": "application/json"]
-        case .changeBackground:
-            return ["Content-Type": "multipart/form-data"]
         }
     }
 }
