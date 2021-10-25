@@ -11,6 +11,7 @@ import Moya
 enum TrackerService {
     case getTracker(popoId: Int, year: Int, month: Int)
     case patchBackgroundImage(popoID: Int, backgroundImage: UIImage)
+    case getOptions(popoId: Int)
 }
 
 extension TrackerService: TargetType {
@@ -24,6 +25,8 @@ extension TrackerService: TargetType {
             return "\(popoId)/tracker"
         case .patchBackgroundImage(let popoID, _):
             return "\(popoID)/background"
+        case .getOptions(let popoId):
+            return "\(popoId)/option"
         }
     }
     
@@ -33,6 +36,8 @@ extension TrackerService: TargetType {
             return .get
         case .patchBackgroundImage:
             return .patch
+        case .getOptions(_):
+            return .get
         }
     }
     
@@ -47,12 +52,14 @@ extension TrackerService: TargetType {
             let imageData = backgroundImage.jpegData(compressionQuality: 1.0)
             let imgData = MultipartFormData(provider: .data(imageData!), name: "background", fileName: "image", mimeType: "image/jpeg")
             return .uploadMultipart([imgData])
+        case .getOptions(_):
+            return .requestPlain
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .getTracker(_, _, _):
+        case .getTracker(_, _, _), .getOptions(_):
             return [
                 "Content-Type": "application/json",
                 "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlhdCI6MTYyOTExMjcyNCwiZXhwIjoxNjMxNzA0NzI0LCJpc3MiOiJmb3J0aWNlIn0.CkrwwZe7sJ9RxLbkbbeIz-w4fs2AkQ-FrERDcZNQI2E"

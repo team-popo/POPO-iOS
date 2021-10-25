@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dv6-AV-TN1">
                         <rect key="frame" x="0.0" y="0.0" width="290" height="351"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient2" translatesAutoresizingMaskIntoConstraints="NO" id="bOA-ub-Tpc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="bOA-ub-Tpc">
                                 <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bOA-ub-Tpc" secondAttribute="height" multiplier="1:1" id="5zH-aI-RCz"/>
@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="bOA-ub-Tpc" firstAttribute="leading" secondItem="dv6-AV-TN1" secondAttribute="leading" id="IEy-1k-Ax6"/>
                             <constraint firstAttribute="trailing" secondItem="bOA-ub-Tpc" secondAttribute="trailing" id="TqB-8h-ezb"/>
@@ -61,9 +61,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="gradient2" width="100" height="130"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="emptyImage" width="414" height="414"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
