@@ -9,44 +9,6 @@ import UIKit
 
 class CalendarViewController: UIViewController {
     
-    // dummy data
-    var data = Calendar(category: 0, tracker: [
-        Tracker(id: -1, date: 1, image: ""),
-        Tracker(id: 0, date: 2, image: "https://miro.medium.com/max/531/0*ODOq4YoezGa42saH.jpg"),
-        Tracker(id: -1, date: 3, image: ""),
-        Tracker(id: 0, date: 4, image: "https://i.imgur.com/8orhXgvb.jpg"),
-        Tracker(id: 0, date: 5, image: "https://i.imgur.com/emWIrPZb.jpg"),
-        Tracker(id: 0, date: 6, image: "https://i.imgur.com/6EJI7b.jpg"),
-        Tracker(id: 0, date: 7, image: "https://i.imgur.com/LF5Y90yb.jpg"),
-        Tracker(id: 0, date: 8, image: "https://i.imgur.com/rdSGowpb.jpg"),
-        Tracker(id: 0, date: 9, image: "https://i.imgur.com/zMd4EZ4b.jpg"),
-        Tracker(id: 0, date: 10, image: "https://i.imgur.com/ITwKqOWb.jpg"),
-        Tracker(id: 0, date: 11, image: "https://i.imgur.com/FYxuRyQb.jpg"),
-        Tracker(id: 0, date: 12, image: "https://i.imgur.com/RMlBYTab.jpg"),
-        Tracker(id: 0, date: 13, image: "https://i.imgur.com/lJbhoXRb.jpg"),
-        Tracker(id: 0, date: 14, image: "https://i.imgur.com/1gk0bavb.jpg"),
-        Tracker(id: 0, date: 15, image: "https://i.imgur.com/1cQaAgCb.jpg"),
-        Tracker(id: 0, date: 16, image: "https://i.imgur.com/p4UOAkrb.jpg"),
-        Tracker(id: 0, date: 17, image: "https://i.imgur.com/VnbOWZZb.jpg"),
-        Tracker(id: 0, date: 18, image: "https://i.imgur.com/ypCOswFb.jpg"),
-        Tracker(id: 0, date: 19, image: "https://i.imgur.com/8Dud2uIb.jpg"),
-        Tracker(id: 0, date: 20, image: "https://i.imgur.com/m2JAoDqb.jpg"),
-        Tracker(id: 0, date: 21, image: "https://i.imgur.com/1vHhn6sb.jpg"),
-        Tracker(id: -1, date: 22, image: ""),
-        Tracker(id: 0, date: 23, image: "https://i.imgur.com/ufHTxWVb.jpg"),
-        Tracker(id: 0, date: 24, image: "https://i.imgur.com/g3ynoCOb.jpg"),
-        Tracker(id: 0, date: 25, image: "https://i.imgur.com/eTeppWOb.jpg"),
-        Tracker(id: -1, date: 26, image: ""),
-        Tracker(id: 0, date: 27, image: "https://i.imgur.com/ahcnBy5b.jpg"),
-        Tracker(id: -1, date: 28, image: ""),
-        Tracker(id: 0, date: 29, image: "https://i.imgur.com/fvJXuvj.jpg"),
-        Tracker(id: 0, date: 30, image: "https://i.imgur.com/M1MHdezb.jpg"),
-        Tracker(id: 0, date: 31, image: "https://i.imgur.com/HNWMaIvb.jpg")
-    ])
-    
-    // date
-    var dateArray: [String] = ["", "", ""]
-    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var yearMonthLabel: UILabel!
@@ -57,7 +19,7 @@ class CalendarViewController: UIViewController {
     
     // MARK: - Properties
     var year: Int = 2021
-    var month: Int = 12
+    var month: Int = 10
     
     enum Size {
         static let screenWidth = UIScreen.main.bounds.width
@@ -68,18 +30,28 @@ class CalendarViewController: UIViewController {
         static let cellWidth = ( screenWidth - collectionViewSpacing - cellSpacing * 4 ) / 5
         static let cellHeight = cellWidth * 1.3
     }
+    var trackerData = TrackerData(category: 0, background: "", tracker: [])
+    var popoId: Int = 1
+    
+    // date
+    var dateArray: [String] = ["", "", ""]
+    
+    // photo picker
+    var photoPicker = UIImagePickerController()
     
     // MARK: - View Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initNavigationBar()
         initView()
-        initYearMonthLabel()
+        initYearMonthLabel(year: year, month: month)
         assignDelegation()
         registerXib()
         getCurrentFormattedDate()
+        
+        getTracker(popoId: popoId, year: self.year, month: self.month)
     }
     
     // MARK: - Functions
@@ -100,16 +72,17 @@ class CalendarViewController: UIViewController {
         bgViewTopConstraint.constant = Size.topSpacing
     }
     
-    private func initYearMonthLabel() {
+    private func initYearMonthLabel(year: Int, month: Int) {
         guard let monthName = AppMonth(rawValue: month)?.getFullEnglish() else { return }
         
-        yearMonthLabel.text = "\(self.year)\n\(monthName)"
+        yearMonthLabel.text = "\(year)\n\(monthName)"
     }
     
     // assign, register functions
     private func assignDelegation() {
         self.calendarCollectionView.delegate = self
         self.calendarCollectionView.dataSource = self
+        photoPicker.delegate = self
     }
     
     private func registerXib() {
@@ -130,7 +103,8 @@ class CalendarViewController: UIViewController {
     
     // @objc functions
     @objc func touchChangeBackgroundButton(_ sender: UIBarButtonItem) {
-        // TODO: - 갤러리 열기
+        photoPicker.sourceType = .photoLibrary
+        present(photoPicker, animated: true, completion: nil)
     }
     
     @objc func touchCalendarButton(_ sender: UIBarButtonItem) {
@@ -140,10 +114,17 @@ class CalendarViewController: UIViewController {
         
         changeMonthPopupViewController.year = Int(dateArray[0]) ?? 0
         changeMonthPopupViewController.month = Int(dateArray[1]) ?? 0
+        changeMonthPopupViewController.calendarModalViewDelegate = self
         
         self.present(changeMonthPopupViewController, animated: true, completion: nil)
     }
-
+    
+    func updateData(data: TrackerData) {
+        self.trackerData = data
+        self.calendarCollectionView.reloadData()
+        self.backgroundImageView.updateServerImage(trackerData.background)
+    }
+    
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -173,9 +154,7 @@ extension CalendarViewController: UICollectionViewDataSource {
     // numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        guard let dayCount = AppMonth(rawValue: month)?.getDayCount() else { return 30 }
-        
-        return dayCount
+        return trackerData.tracker.count
     }
     
     // cellForItemAt
@@ -184,9 +163,84 @@ extension CalendarViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.initCell(tracker: data.tracker[indexPath.row])
+        cell.initCell(tracker: trackerData.tracker[indexPath.row])
         
         return cell
     }
     
+}
+
+// MARK: - 통신
+
+extension CalendarViewController {
+    
+    func getTracker(popoId: Int, year: Int, month: Int) {
+        
+        TrackerAPI.shared.getPopoList(popoId: popoId, year: year, month: month) { (response) in
+            switch response {
+            case .success(let trackerData):
+                
+                if let data = trackerData as? TrackerData {
+                    self.updateData(data: data)
+                    self.initYearMonthLabel(year: year, month: month)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
+    }
+    
+    func patchBackgroundImage(popoId: Int, image: UIImage) {
+        
+        TrackerAPI.shared.patchBackgroundImage(popoId: popoId, image: image) { (response) in
+            switch response {
+            case .success(let trackerData):
+                // 이미지 업로드 성공
+                print("success - patchBackgroundImage")
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
+    }
+    
+}
+
+// MARK: - CalendarModalViewDelegate
+
+extension CalendarViewController: CalendarModalViewDelegate {
+    func passData(year: Int, month: Int) {
+        self.dateArray[0] = "\(year)"
+        self.dateArray[1] = "\(month)"
+        
+        getTracker(popoId: popoId, year: year, month: month)
+        
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
+extension CalendarViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+    
+    // didFinishPickingMediaWithInfo
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            backgroundImageView.image = image
+            patchBackgroundImage(popoId: popoId, image: image)
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }

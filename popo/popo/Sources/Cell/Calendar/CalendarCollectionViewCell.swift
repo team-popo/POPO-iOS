@@ -36,7 +36,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         if tracker.id != -1 {
             dateLabel.isHidden = true
             thumbImageView.isHidden = false
-            thumbImageView.kf.setImage(with: URL(string: tracker.image))
+            thumbImageView.updateServerImage(tracker.image)
             imageBgView.backgroundColor = UIColor.white
         } else {
             dateLabel.isHidden = false
