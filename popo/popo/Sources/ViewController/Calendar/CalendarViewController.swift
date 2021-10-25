@@ -32,9 +32,13 @@ class CalendarViewController: UIViewController {
     }
     var trackerData = TrackerData(category: 0, background: "", tracker: [])
     var popoId: Int = 1
+    var category: Int?
     
     // date
-    var dateArray: [String] = ["", "", ""]
+    var dateArray: [String] = ["", "", "", ""]
+    
+    // options
+    var options: [TrackerOptions] = []
     
     // photo picker
     var photoPicker = UIImagePickerController()
@@ -52,6 +56,7 @@ class CalendarViewController: UIViewController {
         getCurrentFormattedDate()
         
         getTracker(popoId: popoId, year: self.year, month: self.month)
+        getTrackerOptions(popoId: popoId)
     }
     
     // MARK: - Functions
@@ -94,11 +99,12 @@ class CalendarViewController: UIViewController {
         let year = today.getYearToString()
         let month = today.getMonthToString()
         let day = today.getDayToString()
-        let weekDay = today.getWeekday().toKorean()
+        let weekday = today.getWeekday().toKorean()
         
         dateArray[0] = year
         dateArray[1] = month
         dateArray[2] = day
+        dateArray[3] = weekday
     }
     
     // @objc functions
@@ -120,6 +126,7 @@ class CalendarViewController: UIViewController {
     }
     
     func updateData(data: TrackerData) {
+        self.category = data.category
         self.trackerData = data
         self.calendarCollectionView.reloadData()
         self.backgroundImageView.updateServerImage(trackerData.background)
@@ -166,6 +173,51 @@ extension CalendarViewController: UICollectionViewDataSource {
         cell.initCell(tracker: trackerData.tracker[indexPath.row])
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let category = self.category {
+            // goalPopoToday
+            if category == 5 || category == 6 || category == 7 {
+                let goalPopoTodayStoryboard = UIStoryboard(name: Const.Storyboard.Name.goalPopoToday, bundle: nil)
+                guard let goalPopoTodayViewController = goalPopoTodayStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.goalPopoToday) as? PopoTodayViewController else { return }
+                
+                if trackerData.tracker[indexPath.row].id != -1 {
+                    // 트래커 조회
+                    
+                } else {
+                    // 트래커 생성
+                    
+                }
+                
+                self.navigationController?.pushViewController(goalPopoTodayViewController, animated: true)
+                
+            // popoToday
+            } else {
+                let popoTodayStoryboard = UIStoryboard(name: Const.Storyboard.Name.popoToday, bundle: nil)
+                guard let popoTodayViewController = popoTodayStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.popoToday) as? PopoTodayViewController else { return }
+                
+                if trackerData.tracker[indexPath.row].id != -1 {
+                    // 트래커 조회
+                    
+                    popoTodayViewController.isEditingMode = false
+                    
+                } else {
+                    // 트래커 생성
+                    
+                    popoTodayViewController.isEditingMode = true
+                    
+                }
+                
+                popoTodayViewController.dateArray = [dateArray[0], dateArray[1], "\(indexPath.row+1)", ""]
+                popoTodayViewController.options = self.options
+                popoTodayViewController.popoId = self.popoId
+                popoTodayViewController.reloadCalendarProtocol = self
+                
+                self.navigationController?.pushViewController(popoTodayViewController, animated: true)
+            }
+        }
     }
     
 }
@@ -217,6 +269,27 @@ extension CalendarViewController {
         
     }
     
+    func getTrackerOptions(popoId: Int) {
+    
+        TrackerAPI.shared.getOptions(popoId: popoId) { (response) in
+            switch response {
+            case .success(let options):
+                if let data = options as? [TrackerOptions] {
+                    self.options = data
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
+    }
+    
 }
 
 // MARK: - CalendarModalViewDelegate
@@ -242,5 +315,13 @@ extension CalendarViewController: UIImagePickerControllerDelegate, UINavigationC
             patchBackgroundImage(popoId: popoId, image: image)
         }
         dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - ReloadCalendarProtocol
+
+extension CalendarViewController: ReloadCalendarProtocol {
+    func reloadCalendar() {
+        self.getTracker(popoId: popoId, year: Int(self.dateArray[0])!, month: Int(self.dateArray[1])!)
     }
 }

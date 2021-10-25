@@ -34,6 +34,9 @@
 		56924E0B265648EB00745273 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56924E0A265648EB00745273 /* UIView+Extension.swift */; };
 		56A375D22723F09800B47B6D /* TrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A375D12723F09800B47B6D /* TrackerService.swift */; };
 		56A375D42723FB4B00B47B6D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A375D32723FB4B00B47B6D /* UIImageView+Extension.swift */; };
+		56A375D62726B0DF00B47B6D /* TrackerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A375D52726B0DE00B47B6D /* TrackerOptions.swift */; };
+		56A375D82726B75C00B47B6D /* NewPopo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A375D72726B75C00B47B6D /* NewPopo.swift */; };
+		56A375DA2726DEDD00B47B6D /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A375D92726DEDD00B47B6D /* MoyaLoggingPlugin.swift */; };
 		56DE3518271DC619009649CE /* PopoToday.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DE3517271DC619009649CE /* PopoToday.storyboard */; };
 		56DE351B271DC69E009649CE /* PopoTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE351A271DC69E009649CE /* PopoTodayViewController.swift */; };
 		56DE351F271DC6C6009649CE /* TodayImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DE351D271DC6C6009649CE /* TodayImageCollectionViewCell.swift */; };
@@ -128,6 +131,9 @@
 		56924E0A265648EB00745273 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		56A375D12723F09800B47B6D /* TrackerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerService.swift; sourceTree = "<group>"; };
 		56A375D32723FB4B00B47B6D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		56A375D52726B0DE00B47B6D /* TrackerOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerOptions.swift; sourceTree = "<group>"; };
+		56A375D72726B75C00B47B6D /* NewPopo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPopo.swift; sourceTree = "<group>"; };
+		56A375D92726DEDD00B47B6D /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		56DE3517271DC619009649CE /* PopoToday.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopoToday.storyboard; sourceTree = "<group>"; };
 		56DE351A271DC69E009649CE /* PopoTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoTodayViewController.swift; sourceTree = "<group>"; };
 		56DE351D271DC6C6009649CE /* TodayImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -326,6 +332,7 @@
 		562F5567264521DC000F8CAB /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				56A375D92726DEDD00B47B6D /* MoyaLoggingPlugin.swift */,
 				F816E65B26FC6306000C0270 /* PopoAPI */,
 				F816E65E26FC6413000C0270 /* TrackerAPI */,
 				F82C1BF727207D6D00616762 /* TodayAPI */,
@@ -412,6 +419,7 @@
 			children = (
 				565A1F1A2707073E000CAB1B /* Calendar.swift */,
 				565A1F1C27070768000CAB1B /* Tracker.swift */,
+				56A375D52726B0DE00B47B6D /* TrackerOptions.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -479,6 +487,7 @@
 				F82C1BF12720693A00616762 /* PopoToday.swift */,
 				F82C1BF327206A4F00616762 /* Option.swift */,
 				F8B7EB9027256BD600B89B29 /* PatchTodayRequest.swift */,
+				56A375D72726B75C00B47B6D /* NewPopo.swift */,
 			);
 			path = PopoToday;
 			sourceTree = "<group>";
@@ -760,6 +769,7 @@
 				565A1F182706FC22000CAB1B /* AppMonth.swift in Sources */,
 				565A1F0527056C47000CAB1B /* CalendarViewController.swift in Sources */,
 				56DE3524271DC6DA009649CE /* OptionCollectionViewCell.swift in Sources */,
+				56A375D62726B0DF00B47B6D /* TrackerOptions.swift in Sources */,
 				F881A74026FC50B200AEE21E /* GenericResponse.swift in Sources */,
 				567BF24C265A62C000285956 /* ViewController.swift in Sources */,
 				56EE71BD265E18BA005AC12A /* ConceptViewController.swift in Sources */,
@@ -798,6 +808,7 @@
 				56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */,
 				F82C1BE92720560700616762 /* GoalPopoTodayViewController.swift in Sources */,
 				56DE351F271DC6C6009649CE /* TodayImageCollectionViewCell.swift in Sources */,
+				56A375DA2726DEDD00B47B6D /* MoyaLoggingPlugin.swift in Sources */,
 				F8D39A58271702CA0032DDD2 /* OptionsViewController.swift in Sources */,
 				F816E65A26FC62FD000C0270 /* PopoService.swift in Sources */,
 				56A375D22723F09800B47B6D /* TrackerService.swift in Sources */,
@@ -816,6 +827,7 @@
 				565A1F152706F58F000CAB1B /* CalendarCollectionViewCell.swift in Sources */,
 				5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */,
 				F82C1BF927207D7B00616762 /* TodayService.swift in Sources */,
+				56A375D82726B75C00B47B6D /* NewPopo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

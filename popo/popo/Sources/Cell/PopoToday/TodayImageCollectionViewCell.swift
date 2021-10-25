@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol PopoTodayImageUploadProtocol: AnyObject {
+    func uploadImage(_ sender: UITapGestureRecognizer)
+}
+
 class TodayImageCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Property
+    
+    weak var popoTodayImageUploadProtocol: PopoTodayImageUploadProtocol?
     
     // MARK: - @IBOutlet Properties
     
@@ -15,19 +23,29 @@ class TodayImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     // MARK: - View Life Cycle
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        addTapGestureRecognizer()
     }
     
     // MARK: - Functions
     
-    func initCell(image: UIImage, date: String) {
+    func initCell(image: UIImage, dateArray: [String]) {
         todayImageView.image = image
-        dateLabel.text = date
+        dateLabel.text = "\(dateArray[0]). \(dateArray[1]). \(dateArray[2]) \(dateArray[3])"
+    }
+    
+    func addTapGestureRecognizer() {
+        let todayImageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(uploadImage(_:)))
+        todayImageView.addGestureRecognizer(todayImageTapRecognizer)
+        todayImageView.isUserInteractionEnabled = true
     }
     
     // MARK: - @IBAction Function
-
+    
+    @objc func uploadImage(_ gesture: UITapGestureRecognizer) {
+        popoTodayImageUploadProtocol?.uploadImage(gesture)
+    }
 }

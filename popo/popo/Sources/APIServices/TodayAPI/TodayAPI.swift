@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import UIKit
 
 public class TodayAPI {
     
@@ -33,6 +34,22 @@ public class TodayAPI {
     
     func patchTodayPatch(popoID: Int, dayID: Int, contentsID: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         popoProvider.request(.todayPatch(popoID: popoID, dayID: dayID, contentsID: contentsID)) { (result) in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func postNewPopo(popoId: Int, contents: NewPopo, image: UIImage, completion: @escaping (NetworkResult<Any>) -> Void) {
+        popoProvider.request(.createTodayPopo(popoId: popoId, contents: contents, image: image)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode

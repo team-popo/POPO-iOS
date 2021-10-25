@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ReloadCalendarProtocol: AnyObject {
+    func reloadCalendar()
+}
+
 class PopoTodayViewController: UIViewController {
     
     // MARK: - Properties
@@ -22,8 +26,33 @@ class PopoTodayViewController: UIViewController {
     }
     
     var dummyStrings = [
-        "ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ", "미나리는 어디서든 잘 자라 낯선 미국, 아칸소로 떠나온 한국 가족. 가족들에게 뭔가 해내는 걸 보여주고 싶은 아빠 '제이콥'(스티븐 연)", "오늘 물이 도착하지 않아 목표만큼 마시지 못했다. 내일 아침 물이 배달되면 제대로 마셔야겠다. 미리미리 사둘걸 ㅠㅠ", "오늘 물이 도착하지 않아 목표만큼 마시지 못했다. 내일 아침 물이 배달되면 제대로 마셔야겠다. 미리미리 사둘걸 ㅠㅠ오늘 물이 도착하지 않아 목표만큼 마시지 못했다. 내일 아침 물이 배달되면 제대로 마셔야겠다. 미리미리 사둘걸 ㅠㅠ오늘 물이 도착하지 않아 목표만큼 마시지 못했다. 내일 아침 물이 배달되면 제대로 마셔야겠다. 미리미리 사둘걸 ㅠㅠ오늘 물이 도착하지 않아 목표만큼 마시지 못했다. 내일 아침 물이 배달되면 제대로 마셔야겠다. 미리미리 사둘걸 ㅠㅠ오늘 물이 도착하지 않아 목표만큼 마시지 못했다. 내일 아침 물이 배달되면 제대로 마셔야겠다. 미리미리 사둘걸 ㅠㅠ222aㅁㅁㅁ"
+        "", "", "", "", "", ""
     ]
+    
+    // date
+    var dateArray: [String] = ["", "", "", ""] {
+        didSet {
+            date = AppDate(year: Int(dateArray[0])!, month: Int(dateArray[1])!, day: Int(dateArray[2])!)
+            dateArray[3] = date.getWeekday().toKorean()
+        }
+    }
+    var date = AppDate()
+    // options
+    var options: [TrackerOptions] = [] {
+        didSet {
+            contents = Array(repeating: "", count: options.count)
+        }
+    }
+    // contents of each cell's contentTextView
+    var contents = [String]()
+    // popo id
+    var popoId: Int = 0
+    
+    var isEditingMode: Bool = false
+    var editingImage: UIImage = UIImage(named: "emptyImage")!
+    var imagePicker = UIImagePickerController()
+    
+    weak var reloadCalendarProtocol: ReloadCalendarProtocol?
     
     // MARK: - @IBOutlet Properties
     
@@ -42,12 +71,18 @@ class PopoTodayViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initWithBackButton()
+        
+        if isEditingMode {
+            self.navigationController?.initWithBackAndDoneButton(navigationItem: self.navigationItem, doneButtonClosure: #selector(touchDoneButton(_:)))
+        } else {
+            self.navigationController?.initWithBackButton()
+        }
     }
     
     private func assignDelegation() {
         todayCollectionView.delegate = self
         todayCollectionView.dataSource = self
+        imagePicker.delegate = self
     }
     
     private func registerXib() {
@@ -56,7 +91,22 @@ class PopoTodayViewController: UIViewController {
     }
     
     // MARK: - @IBAction Functions
-
+    
+    @objc func touchDoneButton(_ sender: UIBarButtonItem) {
+        // 통신 할 데이터 만들기
+        var newPopoOptions = [NewPopoOption]()
+        
+        for optionIdx in 0..<options.count {
+            var newOption = NewPopoOption(optionId: options[optionIdx].id, contents: contents[optionIdx])
+            newPopoOptions.append(newOption)
+        }
+        print(newPopoOptions)
+        
+        let newPopo = NewPopo(id: popoId, date: date.getFormattedDate(with: "-"), options: newPopoOptions)
+        
+        // 통신
+        postNewPopo(popoId: popoId, contents: newPopo, image: editingImage)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -88,6 +138,10 @@ extension PopoTodayViewController: UICollectionViewDelegateFlowLayout {
         ],
             context: nil)
         
+        if dummyStrings[indexPath.row - 1] == "" {
+            return CGSize(width: Size.cellWidth, height: itemSize.height + 110)
+        }
+        
         return CGSize(width: Size.cellWidth, height: itemSize.height + 80)
     }
 }
@@ -96,8 +150,7 @@ extension PopoTodayViewController: UICollectionViewDelegateFlowLayout {
 
 extension PopoTodayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // 서버 통신 후 수정
-        return dummyStrings.count + 1
+        return options.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -107,6 +160,15 @@ extension PopoTodayViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
+            if isEditingMode {
+                cell.initCell(image: editingImage, dateArray: self.dateArray)
+            } else {
+                // 서버 통신 후 이미지 수정
+                cell.initCell(image: UIImage(named: "emptyImage")!, dateArray: self.dateArray)
+            }
+            
+            cell.popoTodayImageUploadProtocol = self
+            
             return cell
         }
         
@@ -114,9 +176,76 @@ extension PopoTodayViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.initCell(title: "제목", content: dummyStrings[indexPath.row - 1])
+        cell.initCell(title: options[indexPath.row - 1].name, content: dummyStrings[indexPath.row - 1])
+        cell.initEditingStatus(isEditing: isEditingMode)
+        cell.contentTextView.delegate = self
+        cell.contentTextView.tag = indexPath.row
         
         return cell
+    }
+    
+}
+
+// MARK: - PopoTodayImageUploadProtocol
+
+extension PopoTodayViewController: PopoTodayImageUploadProtocol {
+    
+    func uploadImage(_ sender: UITapGestureRecognizer) {
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+}
+
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+
+extension PopoTodayViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // didFinishPickingMediaWithInfo
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.editingImage = image
+            self.todayCollectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
+        }
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - UITextViewDelegate
+
+extension PopoTodayViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        let text = textView.text ?? ""
+        let row = textView.tag - 1
+        self.contents[row] = text
+    }
+}
+
+// MARK: - 통신
+
+extension PopoTodayViewController {
+    
+    func postNewPopo(popoId: Int, contents: NewPopo, image: UIImage) {
+    
+        TodayAPI.shared.postNewPopo(popoId: popoId, contents: contents, image: image) { (response) in
+            switch response {
+            case .success(let data):
+                // delegate로 calendar view reload
+                self.reloadCalendarProtocol?.reloadCalendar()
+                // 완료되면 pop
+                self.navigationController?.popViewController(animated: true)
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
     }
     
 }

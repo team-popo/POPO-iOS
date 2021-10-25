@@ -13,6 +13,8 @@ class OptionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var borderView: UIView!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var lineView: UIView!
     
     // MARK: - View Life Cycle
 
@@ -32,6 +34,13 @@ class OptionCollectionViewCell: UICollectionViewCell {
     func initCell(title: String, content: String) {
         titleLabel.text = title
         contentTextView.text = content
+    }
+    
+    func initEditingStatus(isEditing: Bool) {
+        contentTextView.isEditable = isEditing
+        contentTextView.isScrollEnabled = isEditing
+        editButton.isHidden = isEditing
+        lineView.isHidden = !isEditing
     }
     
     // MARK: - @IBAction Functions
