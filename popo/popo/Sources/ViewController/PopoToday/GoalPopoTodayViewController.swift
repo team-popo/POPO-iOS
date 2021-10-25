@@ -13,6 +13,7 @@ class GoalPopoTodayViewController: UIViewController {
     
     private var nameList = [String]()
     private var contentList = [String]()
+    private var typeList = [Int]()
     private var imageURL: String?
     private var goalText: String?
     private var acheivementText: String?
@@ -63,7 +64,7 @@ extension GoalPopoTodayViewController {
     }
     
     private func popoTodayFetchWithAPI() {
-        TodayAPI.shared.getTodayFetch(popoID: 1, dayID: 4) { result in
+        TodayAPI.shared.getTodayFetch(popoID: 2, dayID: 35) { result in
             switch result {
             case .success(let data):
                 if let popoToday = data as? PopoToday {
@@ -73,6 +74,7 @@ extension GoalPopoTodayViewController {
                     for index in 2..<popoToday.options.count {
                         self.nameList.append(popoToday.options[index].name)
                         self.contentList.append(popoToday.options[index].contents)
+                        self.typeList.append(popoToday.options[index].type)
                     }
                     self.imageURL = popoToday.image
                     self.todayCollectionView.reloadData()
@@ -112,11 +114,23 @@ extension GoalPopoTodayViewController: UICollectionViewDataSource {
             cell.initCell(imageURL ?? "", goalText ?? "", acheivementText ?? "")
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.optionCollectionViewCell, for: indexPath) as? OptionCollectionViewCell else {
-                return UICollectionViewCell()
+            if typeList[indexPath.item - 1] == 1 {
+                // star option
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.starOptionCollectionViewCell, for: indexPath) as? StarOptionCollectionViewCell else {
+                    return UICollectionViewCell()
+                }
+                cell.initCell(title: nameList[indexPath.item - 1], content: contentList[indexPath.item - 1])
+                
+                return cell
+            } else {
+                // text option
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.optionCollectionViewCell, for: indexPath) as? OptionCollectionViewCell else {
+                    return UICollectionViewCell()
+                }
+                cell.initCell(title: nameList[indexPath.item - 1], content: contentList[indexPath.item - 1])
+                
+                return cell
             }
-            cell.initCell(title: nameList[indexPath.item - 1], content: contentList[indexPath.item - 1])
-            return cell
         }
     }
 }

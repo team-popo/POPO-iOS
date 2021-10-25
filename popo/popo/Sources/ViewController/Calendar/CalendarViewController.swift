@@ -202,18 +202,17 @@ extension CalendarViewController: UICollectionViewDataSource {
                     // 트래커 조회
                     
                     popoTodayViewController.isEditingMode = false
-                    
+                    popoTodayViewController.popoId = self.popoId
+                    popoTodayViewController.dayID = trackerData.tracker[indexPath.row].id
                 } else {
                     // 트래커 생성
                     
                     popoTodayViewController.isEditingMode = true
-                    
+                    popoTodayViewController.dateArray = [dateArray[0], dateArray[1], "\(indexPath.row+1)", ""]
+                    popoTodayViewController.options = self.options
+                    popoTodayViewController.popoId = self.popoId
+                    popoTodayViewController.reloadCalendarProtocol = self
                 }
-                
-                popoTodayViewController.dateArray = [dateArray[0], dateArray[1], "\(indexPath.row+1)", ""]
-                popoTodayViewController.options = self.options
-                popoTodayViewController.popoId = self.popoId
-                popoTodayViewController.reloadCalendarProtocol = self
                 
                 self.navigationController?.pushViewController(popoTodayViewController, animated: true)
             }

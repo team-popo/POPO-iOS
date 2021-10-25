@@ -77,9 +77,9 @@ class AppDate {
     }
     
     func getFormattedDateAndWeekday(with separator: String) -> String {
-        let formattedDate = self.getDateComponent(with: "yyyy\(separator)MM\(separator)dd")
+        let formattedDate = self.getDateComponent(with: "yyyy\(separator) MM\(separator) dd")
         guard let weekday = self.weekday?.toKorean() else { return "000" }
-        return "\(formattedDate)\(separator)\(weekday)"
+        return "\(formattedDate) \(weekday)"
     }
     
     func getDay() -> Int {

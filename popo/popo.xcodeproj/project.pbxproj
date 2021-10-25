@@ -87,6 +87,8 @@
 		F8967D9426FA01F300F034E3 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */; };
 		F8967D9626FA090500F034E3 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9526FA090500F034E3 /* Category.storyboard */; };
 		F8B7EB9127256BD600B89B29 /* PatchTodayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7EB9027256BD600B89B29 /* PatchTodayRequest.swift */; };
+		F8B7EB952726BBBF00B89B29 /* StarOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7EB932726BBBF00B89B29 /* StarOptionCollectionViewCell.swift */; };
+		F8B7EB962726BBBF00B89B29 /* StarOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B7EB942726BBBF00B89B29 /* StarOptionCollectionViewCell.xib */; };
 		F8C284DC265CCD2300B41054 /* CoverColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DB265CCD2300B41054 /* CoverColor.storyboard */; };
 		F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */; };
 		F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */; };
@@ -185,6 +187,8 @@
 		F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		F8967D9526FA090500F034E3 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
 		F8B7EB9027256BD600B89B29 /* PatchTodayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchTodayRequest.swift; sourceTree = "<group>"; };
+		F8B7EB932726BBBF00B89B29 /* StarOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StarOptionCollectionViewCell.swift; path = popo/Sources/APIModel/PopoToday/StarOptionCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		F8B7EB942726BBBF00B89B29 /* StarOptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = StarOptionCollectionViewCell.xib; path = popo/Sources/APIModel/PopoToday/StarOptionCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		F8C284DB265CCD2300B41054 /* CoverColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverColor.storyboard; sourceTree = "<group>"; };
 		F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverColorViewController.swift; sourceTree = "<group>"; };
 		F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverGradient.storyboard; sourceTree = "<group>"; };
@@ -451,6 +455,8 @@
 				56DE3523271DC6DA009649CE /* OptionCollectionViewCell.xib */,
 				F82C1BEC27205E4700616762 /* TodayGoalImageCollectionViewCell.swift */,
 				F82C1BED27205E4700616762 /* TodayGoalImageCollectionViewCell.xib */,
+				F8B7EB932726BBBF00B89B29 /* StarOptionCollectionViewCell.swift */,
+				F8B7EB942726BBBF00B89B29 /* StarOptionCollectionViewCell.xib */,
 			);
 			path = PopoToday;
 			sourceTree = "<group>";
@@ -683,6 +689,7 @@
 				56DE3518271DC619009649CE /* PopoToday.storyboard in Resources */,
 				F8967D9626FA090500F034E3 /* Category.storyboard in Resources */,
 				565A1F162706F58F000CAB1B /* CalendarCollectionViewCell.xib in Resources */,
+				F8B7EB962726BBBF00B89B29 /* StarOptionCollectionViewCell.xib in Resources */,
 				F8731B0C265C01A800770760 /* ConceptSelect.storyboard in Resources */,
 				565A1F0B2705EEC8000CAB1B /* LoginMethod.storyboard in Resources */,
 				F8C284DC265CCD2300B41054 /* CoverColor.storyboard in Resources */,
@@ -823,6 +830,7 @@
 				567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */,
 				F873648526A6A5E500F121DC /* OnboardingCollectionViewCell.swift in Sources */,
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
+				F8B7EB952726BBBF00B89B29 /* StarOptionCollectionViewCell.swift in Sources */,
 				F8B7EB9127256BD600B89B29 /* PatchTodayRequest.swift in Sources */,
 				565A1F152706F58F000CAB1B /* CalendarCollectionViewCell.swift in Sources */,
 				5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */,

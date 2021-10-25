@@ -26,15 +26,24 @@ class TodayImageCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        initUI()
         addTapGestureRecognizer()
     }
     
     // MARK: - Functions
     
+    private func initUI() {
+        todayImageView.makeRounded(radius: 10)
+    }
+    
     func initCell(image: UIImage, dateArray: [String]) {
         todayImageView.image = image
         dateLabel.text = "\(dateArray[0]). \(dateArray[1]). \(dateArray[2]) \(dateArray[3])"
+    }
+    
+    func initCell(imageURL: String, todayDate: String) {
+        todayImageView.updateServerImage(imageURL)
+        dateLabel.text = AppDate(serverDate: todayDate).getFormattedDateAndWeekday(with: ".")
     }
     
     func addTapGestureRecognizer() {
