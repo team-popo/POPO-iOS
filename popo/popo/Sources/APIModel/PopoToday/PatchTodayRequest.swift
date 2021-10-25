@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct patchTodayRequest {
+struct PatchTodayRequest {
     let id: Int
     let contents: String
 }

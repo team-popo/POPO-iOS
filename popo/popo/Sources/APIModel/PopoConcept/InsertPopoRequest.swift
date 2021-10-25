@@ -14,5 +14,3 @@ struct InsertPopoRequest: Codable {
     let id: Int
     let options: [OptionRequest]
 }
-
-

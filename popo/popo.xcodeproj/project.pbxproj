@@ -83,7 +83,7 @@
 		F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */; };
 		F8967D9426FA01F300F034E3 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */; };
 		F8967D9626FA090500F034E3 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9526FA090500F034E3 /* Category.storyboard */; };
-		F8B7EB9127256BD600B89B29 /* patchTodayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7EB9027256BD600B89B29 /* patchTodayRequest.swift */; };
+		F8B7EB9127256BD600B89B29 /* PatchTodayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7EB9027256BD600B89B29 /* PatchTodayRequest.swift */; };
 		F8C284DC265CCD2300B41054 /* CoverColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DB265CCD2300B41054 /* CoverColor.storyboard */; };
 		F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */; };
 		F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */; };
@@ -178,7 +178,7 @@
 		F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		F8967D9526FA090500F034E3 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
-		F8B7EB9027256BD600B89B29 /* patchTodayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = patchTodayRequest.swift; sourceTree = "<group>"; };
+		F8B7EB9027256BD600B89B29 /* PatchTodayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchTodayRequest.swift; sourceTree = "<group>"; };
 		F8C284DB265CCD2300B41054 /* CoverColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverColor.storyboard; sourceTree = "<group>"; };
 		F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverColorViewController.swift; sourceTree = "<group>"; };
 		F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverGradient.storyboard; sourceTree = "<group>"; };
@@ -478,7 +478,7 @@
 			children = (
 				F82C1BF12720693A00616762 /* PopoToday.swift */,
 				F82C1BF327206A4F00616762 /* Option.swift */,
-				F8B7EB9027256BD600B89B29 /* patchTodayRequest.swift */,
+				F8B7EB9027256BD600B89B29 /* PatchTodayRequest.swift */,
 			);
 			path = PopoToday;
 			sourceTree = "<group>";
@@ -779,7 +779,7 @@
 				565A1F1D27070768000CAB1B /* Tracker.swift in Sources */,
 				F88FBC5A271C9473003A5F0B /* InsertPopoRequest.swift in Sources */,
 				F816E66026FC6441000C0270 /* TrackerAPI.swift in Sources */,
-				F816E66026FC6441000C0270 /* TempAPI.swift in Sources */,
+				F816E66026FC6441000C0270 /* TrackerAPI.swift in Sources */,
 				F82C1BF427206A4F00616762 /* Option.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				56DE351B271DC69E009649CE /* PopoTodayViewController.swift in Sources */,
@@ -812,7 +812,7 @@
 				567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */,
 				F873648526A6A5E500F121DC /* OnboardingCollectionViewCell.swift in Sources */,
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
-				F8B7EB9127256BD600B89B29 /* patchTodayRequest.swift in Sources */,
+				F8B7EB9127256BD600B89B29 /* PatchTodayRequest.swift in Sources */,
 				565A1F152706F58F000CAB1B /* CalendarCollectionViewCell.swift in Sources */,
 				5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */,
 				F82C1BF927207D7B00616762 /* TodayService.swift in Sources */,
