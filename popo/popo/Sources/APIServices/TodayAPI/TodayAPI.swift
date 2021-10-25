@@ -1,22 +1,22 @@
 //
-//  ConceptAPI.swift
+//  TodayAPI.swift
 //  popo
 //
-//  Created by kimhyungyu on 2021/09/23.
+//  Created by kimhyungyu on 2021/10/21.
 //
 
 import Foundation
 import Moya
 
-public class PopoAPI {
+public class TodayAPI {
     
-    static let shared = PopoAPI()
-    var popoProvider = MoyaProvider<PopoService>(plugins: [NetworkLoggerPlugin()])
+    static let shared = TodayAPI()
+    var popoProvider = MoyaProvider<TodayService>(plugins: [NetworkLoggerPlugin()])
     
     public init() { }
     
-    func getPopoList(completion: @escaping (NetworkResult<Any>) -> Void) {
-        popoProvider.request(.fetchPopoList) { (result) in
+    func getTodayFetch(popoID: Int, dayID: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        popoProvider.request(.todayFetch(popoID: popoID, dayID: dayID)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
@@ -31,8 +31,8 @@ public class PopoAPI {
         }
     }
     
-    func postInsertPopo(parameter: InsertPopoRequest, completion: @escaping (NetworkResult<Any>) -> Void) {
-        popoProvider.request(.insertPopo(popoID: parameter.id, parameter: parameter)) { (result) in
+    func patchTodayPatch(popoID: Int, dayID: Int, contentsID: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        popoProvider.request(.todayPatch(popoID: popoID, dayID: dayID, contentsID: contentsID)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
@@ -50,7 +50,7 @@ public class PopoAPI {
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<[Concept]>.self, from: data)
+        guard let decodedData = try? decoder.decode(GenericResponse<PopoToday>.self, from: data)
         else {
             return .pathErr
         }

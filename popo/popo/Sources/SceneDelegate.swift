@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        // This delegate does not imply the connecting scene or session are new (see /Users/kimhyungyu/Desktop/POPO-iOS/popo/popo/Resources/Storyboard/PopoConcept`application:configurationForConnectingSceneSession` instead).
         
         let firstStoryboard = UIStoryboard(name: Const.Storyboard.Name.loginMethod, bundle: nil)
         let firstViewController = firstStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.loginMethod)

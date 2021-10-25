@@ -6,16 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TodayGoalImageCollectionViewCell: UICollectionViewCell {
 
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var goalBolderView: UIView!
-    @IBOutlet weak var goalTitleLabel: UILabel!
     @IBOutlet weak var goalContentTextView: UITextView!
     @IBOutlet weak var acheivementBolderView: UIView!
-    @IBOutlet weak var acheivementTitleLabel: UILabel!
     @IBOutlet weak var acheivementContentTextView: UITextView!
     
     // MARK: - Cell Life Cycle
@@ -31,19 +30,16 @@ class TodayGoalImageCollectionViewCell: UICollectionViewCell {
         
         acheivementBolderView.makeRoundedWithBorder(radius: 30, color: UIColor.systemGray2.cgColor)
         acheivementContentTextView.textContainerInset = .zero
+        imageView.makeRounded(radius: 30)
     }
     
     func initCell(_ url: String,
-                  _ goalTitle: String,
-                  _ goadlContent: String,
-                  _ acheivementTitle: String,
+                  _ goalContent: String,
                   _ acheivementContent: String) {
         if let url = URL(string: url) {
             imageView.kf.setImage(with: url)
         }
-        goalTitleLabel.text = goalTitle
-        goalContentTextView.text = goadlContent
-        acheivementTitleLabel.text = acheivementTitle
+        goalContentTextView.text = goalContent
         acheivementContentTextView.text = acheivementContent
     }
     

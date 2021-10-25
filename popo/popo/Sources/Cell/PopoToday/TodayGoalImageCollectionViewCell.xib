@@ -20,32 +20,32 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hHv-f0-s9S">
-                        <rect key="frame" x="0.0" y="0.0" width="429" height="262"/>
+                        <rect key="frame" x="8" y="8" width="413" height="246"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-yj-XHt">
-                                <rect key="frame" x="0.0" y="0.0" width="209.5" height="262"/>
+                                <rect key="frame" x="0.0" y="0.0" width="201.5" height="246"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHk-Sy-SuA">
-                                        <rect key="frame" x="0.0" y="0.0" width="209.5" height="126"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201.5" height="118"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlQ-Fd-pOe">
-                                                <rect key="frame" x="24" y="19" width="41.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlQ-Fd-pOe">
+                                                <rect key="frame" x="24" y="19" width="29.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" name="popoPurple"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="neD-S0-SD8">
-                                                <rect key="frame" x="21" y="49.5" width="167.5" height="66.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="text" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neD-S0-SD8">
+                                                <rect key="frame" x="21" y="49.5" width="159.5" height="58.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6m-uT-YJ2">
-                                                <rect key="frame" x="145" y="14" width="45.5" height="31"/>
+                                                <rect key="frame" x="161" y="19" width="21.5" height="20.5"/>
                                                 <color key="tintColor" systemColor="systemGray2Color"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="highlighter" catalog="system"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="highlighter" catalog="system"/>
                                                 <connections>
                                                     <action selector="touchGoalEditButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="EkC-ip-8J3"/>
                                                 </connections>
@@ -64,26 +64,26 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJJ-Hl-hAP">
-                                        <rect key="frame" x="0.0" y="136" width="209.5" height="126"/>
+                                        <rect key="frame" x="0.0" y="128" width="201.5" height="118"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOW-L1-wzw">
-                                                <rect key="frame" x="24" y="19" width="41.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOW-L1-wzw">
+                                                <rect key="frame" x="24" y="19" width="29.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" name="popoPurple"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="s8I-Ra-hHD">
-                                                <rect key="frame" x="21" y="49.5" width="167.5" height="66.5"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="text" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8I-Ra-hHD">
+                                                <rect key="frame" x="21" y="49.5" width="159.5" height="58.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98d-2Z-0ic">
-                                                <rect key="frame" x="145" y="14" width="45.5" height="31"/>
+                                                <rect key="frame" x="161" y="19" width="21.5" height="20.5"/>
                                                 <color key="tintColor" systemColor="systemGray2Color"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="highlighter" catalog="system"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="highlighter" catalog="system"/>
                                                 <connections>
                                                     <action selector="touchAcheivementEditButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="cm5-qE-ZdC"/>
                                                 </connections>
@@ -103,8 +103,8 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xxr-JD-dti">
-                                <rect key="frame" x="219.5" y="0.0" width="209.5" height="262"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xxr-JD-dti">
+                                <rect key="frame" x="211.5" y="0.0" width="201.5" height="246"/>
                             </imageView>
                         </subviews>
                     </stackView>
@@ -112,19 +112,17 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="hHv-f0-s9S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3Ya-Kx-qeC"/>
-                <constraint firstAttribute="trailing" secondItem="hHv-f0-s9S" secondAttribute="trailing" id="ER0-Pn-pnQ"/>
-                <constraint firstItem="hHv-f0-s9S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gTO-0v-qNs"/>
-                <constraint firstAttribute="bottom" secondItem="hHv-f0-s9S" secondAttribute="bottom" id="pzH-Fh-omJ"/>
+                <constraint firstAttribute="trailing" secondItem="hHv-f0-s9S" secondAttribute="trailing" constant="8" id="BB6-YL-dpc"/>
+                <constraint firstAttribute="bottom" secondItem="hHv-f0-s9S" secondAttribute="bottom" constant="8" id="P7z-lq-DXF"/>
+                <constraint firstItem="hHv-f0-s9S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="mnB-Li-S45"/>
+                <constraint firstItem="hHv-f0-s9S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="nGA-Ru-ZIY"/>
             </constraints>
             <size key="customSize" width="429" height="262"/>
             <connections>
                 <outlet property="acheivementBolderView" destination="MJJ-Hl-hAP" id="FJu-Jw-7vD"/>
                 <outlet property="acheivementContentTextView" destination="s8I-Ra-hHD" id="MTm-8Z-RKQ"/>
-                <outlet property="acheivementTitleLabel" destination="mOW-L1-wzw" id="dsc-nd-AKe"/>
                 <outlet property="goalBolderView" destination="aHk-Sy-SuA" id="e2t-Sq-2jE"/>
                 <outlet property="goalContentTextView" destination="neD-S0-SD8" id="YEJ-D2-j4C"/>
-                <outlet property="goalTitleLabel" destination="SlQ-Fd-pOe" id="5cn-xc-j7c"/>
                 <outlet property="imageView" destination="Xxr-JD-dti" id="2oS-c7-wZO"/>
             </connections>
             <point key="canvasLocation" x="412.31884057971018" y="200.89285714285714"/>

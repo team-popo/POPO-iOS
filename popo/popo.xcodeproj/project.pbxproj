@@ -57,6 +57,8 @@
 		F82C1BF22720693A00616762 /* PopoToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF12720693A00616762 /* PopoToday.swift */; };
 		F82C1BF427206A4F00616762 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF327206A4F00616762 /* Option.swift */; };
 		F82C1BF627206A7300616762 /* OptionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF527206A7300616762 /* OptionRequest.swift */; };
+		F82C1BF927207D7B00616762 /* TodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BF827207D7B00616762 /* TodayService.swift */; };
+		F82C1BFB27207D8000616762 /* TodayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C1BFA27207D8000616762 /* TodayAPI.swift */; };
 		F84AA56C27057633008D77ED /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84AA56B27057633008D77ED /* Xib.swift */; };
 		F8624C5F26B43ADB0067C9DC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */; };
 		F86E64E5271C461C00C1DBF9 /* ConceptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E64E3271C461C00C1DBF9 /* ConceptCollectionViewCell.swift */; };
@@ -81,6 +83,7 @@
 		F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */; };
 		F8967D9426FA01F300F034E3 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */; };
 		F8967D9626FA090500F034E3 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8967D9526FA090500F034E3 /* Category.storyboard */; };
+		F8B7EB9127256BD600B89B29 /* PatchTodayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7EB9027256BD600B89B29 /* PatchTodayRequest.swift */; };
 		F8C284DC265CCD2300B41054 /* CoverColor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DB265CCD2300B41054 /* CoverColor.storyboard */; };
 		F8C284DE265CCD4500B41054 /* CoverColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */; };
 		F8C284E0265CD4DE00B41054 /* CoverGradient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */; };
@@ -149,6 +152,8 @@
 		F82C1BF12720693A00616762 /* PopoToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoToday.swift; sourceTree = "<group>"; };
 		F82C1BF327206A4F00616762 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		F82C1BF527206A7300616762 /* OptionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionRequest.swift; sourceTree = "<group>"; };
+		F82C1BF827207D7B00616762 /* TodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayService.swift; sourceTree = "<group>"; };
+		F82C1BFA27207D8000616762 /* TodayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAPI.swift; sourceTree = "<group>"; };
 		F84AA56B27057633008D77ED /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		F8624C5E26B43ADB0067C9DC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		F86E64E3271C461C00C1DBF9 /* ConceptCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConceptCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -173,6 +178,7 @@
 		F8967D9126FA01F300F034E3 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8967D9226FA01F300F034E3 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		F8967D9526FA090500F034E3 /* Category.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		F8B7EB9027256BD600B89B29 /* PatchTodayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchTodayRequest.swift; sourceTree = "<group>"; };
 		F8C284DB265CCD2300B41054 /* CoverColor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverColor.storyboard; sourceTree = "<group>"; };
 		F8C284DD265CCD4500B41054 /* CoverColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverColorViewController.swift; sourceTree = "<group>"; };
 		F8C284DF265CD4DE00B41054 /* CoverGradient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoverGradient.storyboard; sourceTree = "<group>"; };
@@ -320,8 +326,9 @@
 		562F5567264521DC000F8CAB /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				F816E65E26FC6413000C0270 /* TrackerAPI */,
 				F816E65B26FC6306000C0270 /* PopoAPI */,
+				F816E65E26FC6413000C0270 /* TrackerAPI */,
+				F82C1BF727207D6D00616762 /* TodayAPI */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -471,8 +478,18 @@
 			children = (
 				F82C1BF12720693A00616762 /* PopoToday.swift */,
 				F82C1BF327206A4F00616762 /* Option.swift */,
+				F8B7EB9027256BD600B89B29 /* PatchTodayRequest.swift */,
 			);
 			path = PopoToday;
+			sourceTree = "<group>";
+		};
+		F82C1BF727207D6D00616762 /* TodayAPI */ = {
+			isa = PBXGroup;
+			children = (
+				F82C1BF827207D7B00616762 /* TodayService.swift */,
+				F82C1BFA27207D8000616762 /* TodayAPI.swift */,
+			);
+			path = TodayAPI;
 			sourceTree = "<group>";
 		};
 		F873648726A6A60100F121DC /* Onboarding */ = {
@@ -762,7 +779,7 @@
 				565A1F1D27070768000CAB1B /* Tracker.swift in Sources */,
 				F88FBC5A271C9473003A5F0B /* InsertPopoRequest.swift in Sources */,
 				F816E66026FC6441000C0270 /* TrackerAPI.swift in Sources */,
-				F816E66026FC6441000C0270 /* TempAPI.swift in Sources */,
+				F816E66026FC6441000C0270 /* TrackerAPI.swift in Sources */,
 				F82C1BF427206A4F00616762 /* Option.swift in Sources */,
 				562F556E26452218000F8CAB /* Const.swift in Sources */,
 				56DE351B271DC69E009649CE /* PopoTodayViewController.swift in Sources */,
@@ -775,6 +792,7 @@
 				F82C1BEE27205E4700616762 /* TodayGoalImageCollectionViewCell.swift in Sources */,
 				F8D39A62271862C20032DDD2 /* Notification.swift in Sources */,
 				F873648226A668DE00F121DC /* OnboardingViewController.swift in Sources */,
+				F82C1BFB27207D8000616762 /* TodayAPI.swift in Sources */,
 				F8967D9326FA01F300F034E3 /* CategoryCollectionViewCell.swift in Sources */,
 				F8C284E2265CD4EB00B41054 /* CoverGradientViewController.swift in Sources */,
 				56DE3528271DD185009649CE /* ChangeMonthPopupViewController.swift in Sources */,
@@ -794,8 +812,10 @@
 				567840FD265E211300BDBF26 /* UINavigationController+Extension.swift in Sources */,
 				F873648526A6A5E500F121DC /* OnboardingCollectionViewCell.swift in Sources */,
 				562F554F26452101000F8CAB /* SceneDelegate.swift in Sources */,
+				F8B7EB9127256BD600B89B29 /* PatchTodayRequest.swift in Sources */,
 				565A1F152706F58F000CAB1B /* CalendarCollectionViewCell.swift in Sources */,
 				5686FA4E265A728600B7B9D5 /* CoverUserPhotoViewController.swift in Sources */,
+				F82C1BF927207D7B00616762 /* TodayService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
