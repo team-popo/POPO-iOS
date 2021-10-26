@@ -25,6 +25,14 @@ class PopoTodayViewController: UIViewController {
         static let imageCellHeight: CGFloat = screenWidth + 50
     }
     
+    // for today popo fetch
+    private var nameList = [String]()
+    private var contentList = [String]()
+    private var typeList = [Int]()
+    private var imageURL: String?
+    private var todayDate: String?
+    var dayID: Int?
+    
     var dummyStrings = [
         "", "", "", "", "", ""
     ]
@@ -66,6 +74,7 @@ class PopoTodayViewController: UIViewController {
         initNavigationBar()
         assignDelegation()
         registerXib()
+        popoTodayFetchWithAPI(isEditingMode: isEditingMode)
     }
     
     // MARK: - Functions
@@ -88,6 +97,7 @@ class PopoTodayViewController: UIViewController {
     private func registerXib() {
         todayCollectionView.register(UINib(nibName: Const.Xib.todayImageCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.todayImageCollectionViewCell)
         todayCollectionView.register(UINib(nibName: Const.Xib.optionCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.optionCollectionViewCell)
+        todayCollectionView.register(UINib(nibName: Const.Xib.starOptionCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.starOptionCollectionViewCell)
     }
     
     // MARK: - @IBAction Functions
@@ -97,10 +107,9 @@ class PopoTodayViewController: UIViewController {
         var newPopoOptions = [NewPopoOption]()
         
         for optionIdx in 0..<options.count {
-            var newOption = NewPopoOption(optionId: options[optionIdx].id, contents: contents[optionIdx])
+            let newOption = NewPopoOption(optionId: options[optionIdx].id, contents: contents[optionIdx])
             newPopoOptions.append(newOption)
         }
-        print(newPopoOptions)
         
         let newPopo = NewPopo(id: popoId, date: date.getFormattedDate(with: "-"), options: newPopoOptions)
         
@@ -128,21 +137,29 @@ extension PopoTodayViewController: UICollectionViewDelegateFlowLayout {
         
         if indexPath.row == 0 {
             return CGSize(width: Size.cellWidth, height: Size.imageCellHeight)
+        } else {
+            if isEditingMode {
+                let itemSize = NSString(string: dummyStrings[indexPath.row - 1]).boundingRect(
+                    with: CGSize(width: Size.screenWidth - 50, height: CGFloat.greatestFiniteMagnitude),
+                    options: .usesLineFragmentOrigin,
+                    attributes: [
+                        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)
+                    ],
+                    context: nil)
+                
+                return CGSize(width: Size.cellWidth, height: itemSize.height + 110)
+            } else {
+                let itemSize = NSString(string: contentList[indexPath.row - 1]).boundingRect(
+                    with: CGSize(width: Size.screenWidth - 50, height: CGFloat.greatestFiniteMagnitude),
+                    options: .usesLineFragmentOrigin,
+                    attributes: [
+                        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)
+                    ],
+                    context: nil)
+                
+                return CGSize(width: Size.cellWidth, height: itemSize.height + 80)
+            }
         }
-        
-        let itemSize = NSString(string: dummyStrings[indexPath.row - 1]).boundingRect(
-            with: CGSize(width: Size.screenWidth - 50, height: CGFloat.greatestFiniteMagnitude),
-            options: .usesLineFragmentOrigin,
-            attributes: [
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)
-        ],
-            context: nil)
-        
-        if dummyStrings[indexPath.row - 1] == "" {
-            return CGSize(width: Size.cellWidth, height: itemSize.height + 110)
-        }
-        
-        return CGSize(width: Size.cellWidth, height: itemSize.height + 80)
     }
 }
 
@@ -150,11 +167,14 @@ extension PopoTodayViewController: UICollectionViewDelegateFlowLayout {
 
 extension PopoTodayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return options.count + 1
+        if isEditingMode {
+            return options.count + 1
+        } else {
+            return nameList.count + 1
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if indexPath.row == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.todayImageCollectionViewCell, for: indexPath) as? TodayImageCollectionViewCell else {
                 return UICollectionViewCell()
@@ -162,28 +182,49 @@ extension PopoTodayViewController: UICollectionViewDataSource {
             
             if isEditingMode {
                 cell.initCell(image: editingImage, dateArray: self.dateArray)
+                cell.popoTodayImageUploadProtocol = self
             } else {
                 // 서버 통신 후 이미지 수정
-                cell.initCell(image: UIImage(named: "emptyImage")!, dateArray: self.dateArray)
+                cell.initCell(imageURL: imageURL ?? "", todayDate: todayDate ?? "")
             }
             
-            cell.popoTodayImageUploadProtocol = self
-            
             return cell
+        } else {
+            if isEditingMode {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.optionCollectionViewCell, for: indexPath) as? OptionCollectionViewCell else {
+                    return UICollectionViewCell()
+                }
+                
+                cell.initCell(title: options[indexPath.row - 1].name, content: dummyStrings[indexPath.row - 1])
+                cell.initEditingStatus(isEditing: isEditingMode)
+                cell.contentTextView.delegate = self
+                cell.contentTextView.tag = indexPath.item
+                
+                return cell
+                
+            } else {
+                if typeList[indexPath.item - 1] == 1 {
+                    // star option
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.starOptionCollectionViewCell, for: indexPath) as? StarOptionCollectionViewCell else {
+                        return UICollectionViewCell()
+                    }
+                    cell.initEditingStatus(isEditing: isEditingMode)
+                    cell.initCell(title: nameList[indexPath.item - 1], content: contentList[indexPath.item - 1])
+                    
+                    return cell
+                } else {
+                    // text option
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.optionCollectionViewCell, for: indexPath) as? OptionCollectionViewCell else {
+                        return UICollectionViewCell()
+                    }
+                    cell.initEditingStatus(isEditing: isEditingMode)
+                    cell.initCell(title: nameList[indexPath.item - 1], content: contentList[indexPath.item - 1])
+                    
+                    return cell
+                }
+            }
         }
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.optionCollectionViewCell, for: indexPath) as? OptionCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        
-        cell.initCell(title: options[indexPath.row - 1].name, content: dummyStrings[indexPath.row - 1])
-        cell.initEditingStatus(isEditing: isEditingMode)
-        cell.contentTextView.delegate = self
-        cell.contentTextView.tag = indexPath.row
-        
-        return cell
     }
-    
 }
 
 // MARK: - PopoTodayImageUploadProtocol
@@ -245,7 +286,35 @@ extension PopoTodayViewController {
                 print("networkFail")
             }
         }
-        
+    }
+    
+    private func popoTodayFetchWithAPI(isEditingMode: Bool) {
+        if !isEditingMode {
+//            TodayAPI.shared.getTodayFetch(popoID: popoId, dayID: dayID ?? 0) { result in
+            TodayAPI.shared.getTodayFetch(popoID: popoId, dayID: dayID ?? 0) { result in
+                switch result {
+                case .success(let data):
+                    if let popoToday = data as? PopoToday {
+                        for option in popoToday.options {
+                            self.nameList.append(option.name)
+                            self.contentList.append(option.contents)
+                            self.typeList.append(option.type)
+                        }
+                        self.imageURL = popoToday.image
+                        self.todayDate = popoToday.date
+                        self.todayCollectionView.reloadData()
+                    }
+                case .requestErr(let message):
+                    print("getPopoListWithAPI - requestErr: \(message)")
+                case .pathErr:
+                    print("getPopoListWithAPI - pathErr")
+                case .serverErr:
+                    print("getPopoListWithAPI - serverErr")
+                case .networkFail:
+                    print("getPopoListWithAPI - networkFail")
+                }
+            }
+        }
     }
     
 }

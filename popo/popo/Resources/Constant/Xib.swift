@@ -21,5 +21,6 @@ extension Const {
         static let todayImageCollectionViewCell = "TodayImageCollectionViewCell"
         static let optionCollectionViewCell = "OptionCollectionViewCell"
         static let todayGoalImageCollectionViewCell = "TodayGoalImageCollectionViewCell"
+        static let starOptionCollectionViewCell = "StarOptionCollectionViewCell"
     }
 }
