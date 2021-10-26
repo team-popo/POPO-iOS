@@ -9,4 +9,5 @@ target 'popo' do
 	pod 'SwiftLint'
 	pod 'Moya', '~> 15.0'
 	pod 'Kingfisher', '~> 7.0'
+	pod 'IQKeyboardManagerSwift'
 end

@@ -10,9 +10,10 @@ import Moya
 
 enum TodayService {
     case todayFetch(popoID: Int, dayID: Int)
-    case todayPatch(popoID: Int, dayID: Int, contentsID: Int)
+    case todayPatch(popoID: Int, dayID: Int, contentsID: Int, contents: String)
     
     case createTodayPopo(popoId: Int, contents: NewPopo, image: UIImage)
+    case patchTodayImage(popoId: Int, dayId: Int, image: UIImage)
 }
 
 extension TodayService: TargetType {
@@ -24,10 +25,12 @@ extension TodayService: TargetType {
         switch self {
         case .todayFetch(let popoID, let dayID):
             return "/\(popoID)/tracker/\(dayID)"
-        case .todayPatch(let popoID, let dayID, let contentsID):
+        case .todayPatch(let popoID, let dayID, let contentsID, _):
             return "/\(popoID)/tracker/\(dayID)/contents/\(contentsID)"
         case .createTodayPopo(let popoId, _, _):
-            return "\(popoId)/tracker"
+            return "/\(popoId)/tracker"
+        case .patchTodayImage(let popoId, let dayId, _):
+            return "/\(popoId)/tracker/\(dayId)/image"
         }
     }
     
@@ -39,6 +42,8 @@ extension TodayService: TargetType {
             return .patch
         case .createTodayPopo(_, _, _):
             return .post
+        case .patchTodayImage(_, _, _):
+            return .patch
         }
     }
     
@@ -46,8 +51,12 @@ extension TodayService: TargetType {
         switch self {
         case .todayFetch:
             return .requestPlain
-        case .todayPatch:
-            return .requestPlain
+        case .todayPatch(_, _, let contentsID, let contents):
+            return .requestParameters(parameters: [
+                "id": contentsID,
+                "contents": contents
+            ], encoding: JSONEncoding.default)
+            
         case .createTodayPopo(let popoId, let contents, let image):
             
             var options: [[String: Any]] = []
@@ -75,6 +84,10 @@ extension TodayService: TargetType {
             multiPartFormData.append(imgData)
             
             return .uploadMultipart(multiPartFormData)
+        case .patchTodayImage(_, _, let image):
+            let imageData = image.jpegData(compressionQuality: 1.0)
+            let imgData = MultipartFormData(provider: .data(imageData!), name: "image", fileName: "image", mimeType: "image/jpeg")
+            return .uploadMultipart([imgData])
         }
     }
     
@@ -85,6 +98,11 @@ extension TodayService: TargetType {
         case .todayPatch:
             return ["Content-Type": "application/json"]
         case .createTodayPopo(_, _, _):
+            return [
+                "Content-Type": "multipart/form-data",
+                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlhdCI6MTYyOTExMjcyNCwiZXhwIjoxNjMxNzA0NzI0LCJpc3MiOiJmb3J0aWNlIn0.CkrwwZe7sJ9RxLbkbbeIz-w4fs2AkQ-FrERDcZNQI2E"
+            ]
+        case .patchTodayImage:
             return [
                 "Content-Type": "multipart/form-data",
                 "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlhdCI6MTYyOTExMjcyNCwiZXhwIjoxNjMxNzA0NzI0LCJpc3MiOiJmb3J0aWNlIn0.CkrwwZe7sJ9RxLbkbbeIz-w4fs2AkQ-FrERDcZNQI2E"

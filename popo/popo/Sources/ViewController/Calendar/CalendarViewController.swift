@@ -43,6 +43,8 @@ class CalendarViewController: UIViewController {
     // photo picker
     var photoPicker = UIImagePickerController()
     
+    private var refreshControl = UIRefreshControl()
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -88,6 +90,8 @@ class CalendarViewController: UIViewController {
         self.calendarCollectionView.delegate = self
         self.calendarCollectionView.dataSource = self
         photoPicker.delegate = self
+        self.calendarCollectionView.refreshControl = refreshControl
+        self.calendarCollectionView.refreshControl?.addTarget(self, action: #selector(reloadCalendar), for: .valueChanged)
     }
     
     private func registerXib() {
@@ -131,7 +135,6 @@ class CalendarViewController: UIViewController {
         self.calendarCollectionView.reloadData()
         self.backgroundImageView.updateServerImage(trackerData.background)
     }
-    
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -320,7 +323,8 @@ extension CalendarViewController: UIImagePickerControllerDelegate, UINavigationC
 // MARK: - ReloadCalendarProtocol
 
 extension CalendarViewController: ReloadCalendarProtocol {
-    func reloadCalendar() {
+    @objc func reloadCalendar() {
         self.getTracker(popoId: popoId, year: Int(self.dateArray[0])!, month: Int(self.dateArray[1])!)
+        self.refreshControl.endRefreshing()
     }
 }

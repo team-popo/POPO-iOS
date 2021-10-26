@@ -32,8 +32,8 @@ public class TodayAPI {
         }
     }
     
-    func patchTodayPatch(popoID: Int, dayID: Int, contentsID: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        popoProvider.request(.todayPatch(popoID: popoID, dayID: dayID, contentsID: contentsID)) { (result) in
+    func patchTodayPatch(popoID: Int, dayID: Int, contentsID: Int, contents: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        popoProvider.request(.todayPatch(popoID: popoID, dayID: dayID, contentsID: contentsID, contents: contents)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
@@ -50,6 +50,22 @@ public class TodayAPI {
     
     func postNewPopo(popoId: Int, contents: NewPopo, image: UIImage, completion: @escaping (NetworkResult<Any>) -> Void) {
         popoProvider.request(.createTodayPopo(popoId: popoId, contents: contents, image: image)) { (result) in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                
+                let networkResult = self.judgeStatus(by: statusCode, data)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func patchTodayImage(popoId: Int, dayId: Int, image: UIImage, completion: @escaping (NetworkResult<Any>) -> Void) {
+        popoProvider.request(.patchTodayImage(popoId: popoId, dayId: dayId, image: image)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
