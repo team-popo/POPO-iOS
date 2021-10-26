@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol ReloadCalendarProtocol: AnyObject {
     func reloadCalendar()
@@ -51,6 +52,10 @@ class PopoTodayViewController: UIViewController {
             contents = Array(repeating: "", count: options.count)
         }
     }
+    
+    // from get popo
+    var optionData: [Option] = [Option(id: 0, name: "", contents: "", type: 0, order: 0)]
+    
     // contents of each cell's contentTextView
     var contents = [String]()
     // popo id
@@ -185,7 +190,8 @@ extension PopoTodayViewController: UICollectionViewDataSource {
                 cell.popoTodayImageUploadProtocol = self
             } else {
                 // 서버 통신 후 이미지 수정
-                cell.initCell(imageURL: imageURL ?? "", todayDate: todayDate ?? "")
+                cell.initCell(image: editingImage, todayDate: todayDate ?? "")
+                cell.popoTodayImageUploadProtocol = self
             }
             
             return cell
@@ -219,6 +225,7 @@ extension PopoTodayViewController: UICollectionViewDataSource {
                     }
                     cell.initEditingStatus(isEditing: isEditingMode)
                     cell.initCell(title: nameList[indexPath.item - 1], content: contentList[indexPath.item - 1])
+                    cell.setData(popoId: popoId, dayId: indexPath.item - 1, contentsId: optionData[indexPath.item - 1].id)
                     
                     return cell
                 }
@@ -234,6 +241,7 @@ extension PopoTodayViewController: PopoTodayImageUploadProtocol {
     func uploadImage(_ sender: UITapGestureRecognizer) {
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
+        print("이게안되는거임")
     }
     
 }
@@ -247,6 +255,12 @@ extension PopoTodayViewController: UIImagePickerControllerDelegate, UINavigation
 
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.editingImage = image
+            if !isEditingMode {
+                // 이미지 수정 통신
+                if let dayId = dayID {
+                    patchTodayImage(popoId: popoId, dayId: dayId, image: image)
+                }
+            }
             self.todayCollectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
         }
         dismiss(animated: true, completion: nil)
@@ -300,6 +314,15 @@ extension PopoTodayViewController {
                             self.contentList.append(option.contents)
                             self.typeList.append(option.type)
                         }
+                        self.optionData = popoToday.options
+                        
+                        
+                        if let url = URL(string: popoToday.image) {
+                            if let data = try? Data(contentsOf: url) {
+                                self.editingImage = UIImage(data: data)!
+                            }
+                        }
+                        
                         self.imageURL = popoToday.image
                         self.todayDate = popoToday.date
                         self.todayCollectionView.reloadData()
@@ -315,6 +338,26 @@ extension PopoTodayViewController {
                 }
             }
         }
+    }
+    
+    func patchTodayImage(popoId: Int, dayId: Int, image: UIImage) {
+        
+        TodayAPI.shared.patchTodayImage(popoId: popoId, dayId: dayId, image: image) { (response) in
+            switch response {
+            case .success(let data):
+                // 이미지 업로드 성공
+                print("success - patchTodayImage")
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
     }
     
 }
