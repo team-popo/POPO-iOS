@@ -42,9 +42,8 @@ class TodayImageCollectionViewCell: UICollectionViewCell {
         dateLabel.text = "\(dateArray[0]). \(dateArray[1]). \(dateArray[2]) \(dateArray[3])"
     }
     
-    func initCell(_ imageURL: String,
-                  _ todayDate: String) {
-        todayImageView.updateServerImage(imageURL)
+    func initCell(image: UIImage, todayDate: String) {
+        todayImageView.image = image
         dateLabel.text = AppDate(serverDate: todayDate).getFormattedDateAndWeekday(with: ".")
         addTapGestureRecognizer()
     }

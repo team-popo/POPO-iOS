@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "물50.png",
+      "filename" : "water50.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "물50@2x.png",
+      "filename" : "water50@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "물50@3x.png",
+      "filename" : "water50@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
