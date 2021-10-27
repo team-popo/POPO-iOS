@@ -27,6 +27,7 @@ class StarOptionCollectionViewCell: UICollectionViewCell {
     
     func initUI() {
         borderView.makeRoundedWithBorder(radius: 30, color: UIColor.systemGray2.cgColor)
+        editButton.isHidden = true
     }
     
     func initCell(title: String, content: String) {
@@ -37,7 +38,7 @@ class StarOptionCollectionViewCell: UICollectionViewCell {
     }
     
     func initEditingStatus(isEditing: Bool) {
-        editButton.isHidden = isEditing
+//        editButton.isHidden = isEditing
         starList.forEach {
             $0.isUserInteractionEnabled = isEditing
         }

@@ -184,14 +184,24 @@ extension CalendarViewController: UICollectionViewDataSource {
             // goalPopoToday
             if category == 5 || category == 6 || category == 7 {
                 let goalPopoTodayStoryboard = UIStoryboard(name: Const.Storyboard.Name.goalPopoToday, bundle: nil)
-                guard let goalPopoTodayViewController = goalPopoTodayStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.goalPopoToday) as? PopoTodayViewController else { return }
+                guard let goalPopoTodayViewController = goalPopoTodayStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.goalPopoToday) as? GoalPopoTodayViewController else { return }
                 
                 if trackerData.tracker[indexPath.row].id != -1 {
                     // 트래커 조회
                     
+                    goalPopoTodayViewController.isEditingMode = false
+                    goalPopoTodayViewController.popoId = self.popoId
+                    goalPopoTodayViewController.dayID = trackerData.tracker[indexPath.item].id
+                    goalPopoTodayViewController.category = self.category
                 } else {
                     // 트래커 생성
                     
+                    goalPopoTodayViewController.isEditingMode = true
+                    goalPopoTodayViewController.dateArray = [dateArray[0], dateArray[1], "\(indexPath.row+1)", ""]
+                    goalPopoTodayViewController.options = self.options
+                    goalPopoTodayViewController.popoId = self.popoId
+                    goalPopoTodayViewController.category = self.category
+                    goalPopoTodayViewController.reloadCalendarProtocol = self
                 }
                 
                 self.navigationController?.pushViewController(goalPopoTodayViewController, animated: true)
@@ -206,7 +216,7 @@ extension CalendarViewController: UICollectionViewDataSource {
                     
                     popoTodayViewController.isEditingMode = false
                     popoTodayViewController.popoId = self.popoId
-                    popoTodayViewController.dayID = trackerData.tracker[indexPath.row].id
+                    popoTodayViewController.dayID = trackerData.tracker[indexPath.item].id
                 } else {
                     // 트래커 생성
                     

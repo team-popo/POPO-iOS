@@ -79,14 +79,14 @@ extension TodayService: TargetType {
                 
             }
             
-            let imageData = image.jpegData(compressionQuality: 1.0)
-            let imgData = MultipartFormData(provider: .data(imageData!), name: "image", fileName: "image", mimeType: "image/jpeg")
+            let imageData = image.pngData()
+            let imgData = MultipartFormData(provider: .data(imageData!), name: "image", fileName: "image", mimeType: "image/png")
             multiPartFormData.append(imgData)
             
             return .uploadMultipart(multiPartFormData)
         case .patchTodayImage(_, _, let image):
-            let imageData = image.jpegData(compressionQuality: 1.0)
-            let imgData = MultipartFormData(provider: .data(imageData!), name: "image", fileName: "image", mimeType: "image/jpeg")
+            let imageData = image.pngData()
+            let imgData = MultipartFormData(provider: .data(imageData!), name: "image", fileName: "image", mimeType: "image/png")
             return .uploadMultipart([imgData])
         }
     }
