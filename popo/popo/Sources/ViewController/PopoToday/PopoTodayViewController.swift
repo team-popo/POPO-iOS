@@ -72,10 +72,10 @@ class PopoTodayViewController: UIViewController {
     @IBOutlet weak var todayCollectionView: UICollectionView!
     
     // MARK: - View Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initNavigationBar()
         assignDelegation()
         registerXib()
@@ -187,10 +187,10 @@ extension PopoTodayViewController: UICollectionViewDataSource {
             
             if isEditingMode {
                 cell.initCell(editingImage, self.dateArray)
-                cell.popoTodayImageUploadProtocol = self
             } else {
-                cell.initCell(imageURL ?? "", todayDate ?? "")
+                cell.initCell(image: editingImage, todayDate: todayDate ?? "")
             }
+            cell.popoTodayImageUploadProtocol = self
             
             return cell
         } else {
@@ -238,7 +238,6 @@ extension PopoTodayViewController: PopoTodayImageUploadProtocol {
     func uploadImage(_ sender: UITapGestureRecognizer) {
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
-        print("이게안되는거임")
     }
     
 }
@@ -249,7 +248,7 @@ extension PopoTodayViewController: UIImagePickerControllerDelegate, UINavigation
     
     // didFinishPickingMediaWithInfo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-
+        
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.editingImage = image
             if !isEditingMode {
@@ -282,7 +281,7 @@ extension PopoTodayViewController: UITextViewDelegate {
 extension PopoTodayViewController {
     
     func postNewPopo(popoId: Int, contents: NewPopo, image: UIImage) {
-    
+        
         TodayAPI.shared.postNewPopo(popoId: popoId, contents: contents, image: image) { (response) in
             switch response {
             case .success(let data):
