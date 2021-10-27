@@ -36,13 +36,15 @@ class TodayImageCollectionViewCell: UICollectionViewCell {
         todayImageView.makeRounded(radius: 10)
     }
     
-    func initCell(image: UIImage, dateArray: [String]) {
+    func initCell(_ image: UIImage,
+                  _ dateArray: [String]) {
         todayImageView.image = image
         dateLabel.text = "\(dateArray[0]). \(dateArray[1]). \(dateArray[2]) \(dateArray[3])"
     }
     
-    func initCell(image: UIImage, todayDate: String) {
-        todayImageView.image = image
+    func initCell(_ imageURL: String,
+                  _ todayDate: String) {
+        todayImageView.updateServerImage(imageURL)
         dateLabel.text = AppDate(serverDate: todayDate).getFormattedDateAndWeekday(with: ".")
         addTapGestureRecognizer()
     }

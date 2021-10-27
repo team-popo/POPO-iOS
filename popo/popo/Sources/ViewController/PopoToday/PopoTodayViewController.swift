@@ -186,12 +186,10 @@ extension PopoTodayViewController: UICollectionViewDataSource {
             }
             
             if isEditingMode {
-                cell.initCell(image: editingImage, dateArray: self.dateArray)
+                cell.initCell(editingImage, self.dateArray)
                 cell.popoTodayImageUploadProtocol = self
             } else {
-                // 서버 통신 후 이미지 수정
-                cell.initCell(image: editingImage, todayDate: todayDate ?? "")
-                cell.popoTodayImageUploadProtocol = self
+                cell.initCell(imageURL ?? "", todayDate ?? "")
             }
             
             return cell
@@ -201,13 +199,12 @@ extension PopoTodayViewController: UICollectionViewDataSource {
                     return UICollectionViewCell()
                 }
                 
-                cell.initCell(title: options[indexPath.row - 1].name, content: dummyStrings[indexPath.row - 1])
+                cell.initCell(options[indexPath.row - 1].name, dummyStrings[indexPath.item - 1])
                 cell.initEditingStatus(isEditing: isEditingMode)
                 cell.contentTextView.delegate = self
                 cell.contentTextView.tag = indexPath.item
                 
                 return cell
-                
             } else {
                 if typeList[indexPath.item - 1] == 1 {
                     // star option
@@ -224,7 +221,7 @@ extension PopoTodayViewController: UICollectionViewDataSource {
                         return UICollectionViewCell()
                     }
                     cell.initEditingStatus(isEditing: isEditingMode)
-                    cell.initCell(title: nameList[indexPath.item - 1], content: contentList[indexPath.item - 1])
+                    cell.initCell(nameList[indexPath.item - 1], contentList[indexPath.item - 1])
                     cell.setData(popoId: popoId, dayId: indexPath.item - 1, contentsId: optionData[indexPath.item - 1].id)
                     
                     return cell
@@ -270,6 +267,9 @@ extension PopoTodayViewController: UIImagePickerControllerDelegate, UINavigation
 // MARK: - UITextViewDelegate
 
 extension PopoTodayViewController: UITextViewDelegate {
+    
+    // TODO: textView 작성중 완료누르면 들어가지 않는 이슈
+    
     func textViewDidEndEditing(_ textView: UITextView) {
         let text = textView.text ?? ""
         let row = textView.tag - 1
@@ -291,20 +291,19 @@ extension PopoTodayViewController {
                 // 완료되면 pop
                 self.navigationController?.popViewController(animated: true)
             case .requestErr(let message):
-                print("requestErr", message)
+                print("postNewPopo - requestErr", message)
             case .pathErr:
-                print(".pathErr")
+                print("postNewPopo - .pathErr")
             case .serverErr:
-                print("serverErr")
+                print("postNewPopo - serverErr")
             case .networkFail:
-                print("networkFail")
+                print("postNewPopo - networkFail")
             }
         }
     }
     
     private func popoTodayFetchWithAPI(isEditingMode: Bool) {
         if !isEditingMode {
-//            TodayAPI.shared.getTodayFetch(popoID: popoId, dayID: dayID ?? 0) { result in
             TodayAPI.shared.getTodayFetch(popoID: popoId, dayID: dayID ?? 0) { result in
                 switch result {
                 case .success(let data):
@@ -315,7 +314,6 @@ extension PopoTodayViewController {
                             self.typeList.append(option.type)
                         }
                         self.optionData = popoToday.options
-                        
                         
                         if let url = URL(string: popoToday.image) {
                             if let data = try? Data(contentsOf: url) {
@@ -328,13 +326,13 @@ extension PopoTodayViewController {
                         self.todayCollectionView.reloadData()
                     }
                 case .requestErr(let message):
-                    print("getPopoListWithAPI - requestErr: \(message)")
+                    print("popoTodayFetchWithAPI - requestErr: \(message)")
                 case .pathErr:
-                    print("getPopoListWithAPI - pathErr")
+                    print("popoTodayFetchWithAPI - pathErr")
                 case .serverErr:
-                    print("getPopoListWithAPI - serverErr")
+                    print("popoTodayFetchWithAPI - serverErr")
                 case .networkFail:
-                    print("getPopoListWithAPI - networkFail")
+                    print("popoTodayFetchWithAPI - networkFail")
                 }
             }
         }
@@ -357,7 +355,5 @@ extension PopoTodayViewController {
                 print("networkFail")
             }
         }
-        
     }
-    
 }

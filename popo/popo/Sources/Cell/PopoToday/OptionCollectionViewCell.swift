@@ -37,7 +37,8 @@ class OptionCollectionViewCell: UICollectionViewCell {
         contentTextView.textContainerInset = .zero
     }
     
-    func initCell(title: String, content: String) {
+    func initCell(_ title: String,
+                  _ content: String) {
         titleLabel.text = title
         contentTextView.text = content
     }
